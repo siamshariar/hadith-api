@@ -1043,67 +1043,74 @@ class HadithController extends Controller
         }
     }
 
-    /**
-     * Get all categories - FIXED VERSION (without deleted_at)
-     */
-    public function categories(Request $request): JsonResponse
-    {
-        try {
-            $language = $request->query('language', 'en');
-            $perPage = (int) $request->query('per_page', 20);
-            $page = (int) $request->query('page', 1);
-            $parent = $request->query('parent');
+/**
+ * Get all categories - FIXED VERSION (without category_localizations table)
+ */
+public function categories(Request $request): JsonResponse
+{
+    try {
+        $language = $request->query('language', 'en');
+        $perPage = (int) $request->query('per_page', 20);
+        $page = (int) $request->query('page', 1);
+        $parent = $request->query('parent');
 
-            // Build query without deleted_at
-            $query = Category::query()
-                ->select('id', 'parent_id', 'name_en', 'name_ar');
+        // Build query - use basic Category model without localizations
+        $query = Category::query()
+            ->select('id', 'parent_id', 'name_en', 'name_ar');
 
-            if ($parent === 'null' || $parent === 'root') {
-                $query->whereNull('parent_id');
-            } elseif ($parent) {
-                $query->where('parent_id', $parent);
+        if ($parent === 'null' || $parent === 'root') {
+            $query->whereNull('parent_id');
+        } elseif ($parent) {
+            $query->where('parent_id', $parent);
+        }
+
+        // Count total
+        $total = $query->count();
+
+        // Get paginated results
+        $categories = $query->orderBy('name_en')
+            ->skip(($page - 1) * $perPage)
+            ->take($perPage)
+            ->get();
+
+        $formattedCategories = $categories->map(function($category) use ($language) {
+            // Get hadith count
+            $hadithCount = DB::table('hadith_category')
+                ->where('category_id', $category->id)
+                ->count();
+
+            // Determine which name to show based on language
+            $title = $category->name_en; // Default to English
+            if ($language === 'ar' && !empty($category->name_ar)) {
+                $title = $category->name_ar; // Use Arabic if requested and available
             }
 
-            // Count manually to avoid deleted_at issue
-            $totalQuery = clone $query;
-            $total = $totalQuery->count();
+            return [
+                'id' => (string) $category->id,
+                'parent_id' => $category->parent_id ? (string) $category->parent_id : null,
+                'title' => $title,
+                'name_en' => $category->name_en,
+                'name_ar' => $category->name_ar,
+                'hadith_count' => (string) $hadithCount
+            ];
+        });
 
-            $categories = $query->orderBy('name_en')
-                ->skip(($page - 1) * $perPage)
-                ->take($perPage)
-                ->get();
+        $lastPage = ceil($total / $perPage);
 
-            $formattedCategories = $categories->map(function($category) use ($language) {
-                // Get hadith count without deleted_at
-                $hadithCount = DB::table('hadith_category')
-                    ->where('category_id', $category->id)
-                    ->count();
+        return $this->successResponse($formattedCategories, [
+            'total' => $total,
+            'per_page' => $perPage,
+            'current_page' => $page,
+            'last_page' => $lastPage,
+            'filter' => ['parent' => $parent],
+            'language' => $language
+        ]);
 
-                return [
-                    'id' => (string) $category->id,
-                    'parent_id' => $category->parent_id ? (string) $category->parent_id : null,
-                    'title' => $language === 'ar' && $category->name_ar ? $category->name_ar : $category->name_en,
-                    'name_en' => $category->name_en,
-                    'name_ar' => $category->name_ar,
-                    'hadith_count' => (string) $hadithCount
-                ];
-            });
-
-            $lastPage = ceil($total / $perPage);
-
-            return $this->successResponse($formattedCategories, [
-                'total' => $total,
-                'per_page' => $perPage,
-                'current_page' => $page,
-                'last_page' => $lastPage,
-                'filter' => ['parent' => $parent]
-            ]);
-
-        } catch (\Exception $e) {
-            Log::error('Categories fetch error: ' . $e->getMessage());
-            return $this->errorResponse('Failed to fetch categories', $e->getMessage());
-        }
+    } catch (\Exception $e) {
+        Log::error('Categories fetch error: ' . $e->getMessage());
+        return $this->errorResponse('Failed to fetch categories', $e->getMessage());
     }
+}
 
     /**
      * Get specific category
