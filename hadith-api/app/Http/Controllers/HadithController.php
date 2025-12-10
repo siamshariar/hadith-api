@@ -545,39 +545,44 @@ class HadithController extends Controller
     /**
      * Get chapter details
      */
-    public function getChapter($chapter): JsonResponse
-    {
-        try {
-            $chapterModel = Chapter::with(['book:id,code,name_en,name_ar'])->find($chapter);
-            
-            if (!$chapterModel) {
-                return $this->notFoundResponse('Chapter not found');
-            }
+public function getChapter($id): JsonResponse
+{
+    try {
+        $chapter = Chapter::with(['book:id,code,name_en,name_ar'])->find($id);
 
-            $language = request()->query('language', 'en');
-            
-            $chapterData = [
-                'id' => (string) $chapterModel->id,
-                'book_id' => (string) $chapterModel->book_id,
-                'chapter_no' => (string) $chapterModel->chapter_no,
-                'name' => $language === 'ar' && $chapterModel->name_ar ? $chapterModel->name_ar : $chapterModel->name_en,
-                'name_en' => $chapterModel->name_en,
-                'name_ar' => $chapterModel->name_ar,
-                'total_hadith' => (string) $chapterModel->total_hadith,
-                'book' => [
-                    'id' => $chapterModel->book->id,
-                    'code' => $chapterModel->book->code,
-                    'name' => $language === 'ar' && $chapterModel->book->name_ar ? $chapterModel->book->name_ar : $chapterModel->book->name_en
-                ]
-            ];
-
-            return $this->successResponse($chapterData);
-
-        } catch (\Exception $e) {
-            Log::error("Get chapter error: {$chapter}", ['error' => $e->getMessage()]);
-            return $this->errorResponse('Failed to fetch chapter', $e->getMessage());
+        if (!$chapter) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Chapter not found',
+                'message' => "Chapter with ID '{$id}' not found"
+            ], 404);
         }
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'id' => (string) $chapter->id,
+                'book_id' => (string) $chapter->book_id,
+                'chapter_no' => (string) $chapter->chapter_no,
+                'name_en' => $chapter->name_en,
+                'name_ar' => $chapter->name_ar,
+                'total_hadith' => (string) $chapter->total_hadith,
+                'book' => $chapter->book ? [
+                    'id' => $chapter->book->id,
+                    'code' => $chapter->book->code,
+                    'name_en' => $chapter->book->name_en,
+                    'name_ar' => $chapter->book->name_ar
+                ] : null
+            ]
+        ], 200, [], JSON_UNESCAPED_UNICODE);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'error' => 'Failed to fetch chapter',
+            'message' => $e->getMessage()
+        ], 500);
     }
+}
 
     /**
      * Get hadiths for chapter by ID
