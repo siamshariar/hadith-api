@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadith Book</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+        }
+        
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content-layout {
+            display: flex;
+            flex: 1;
+        }
+        
+        .sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 2px solid #dee2e6;
+            overflow-y: auto;
+            max-height: calc(100vh - 120px);
+        }
+        
+        .sidebar-title {
+            padding: 20px;
+            background: #667eea;
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .chapter-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .chapter-item:hover {
+            background: #e9ecef;
+        }
+        
+        .chapter-item.active {
+            background: #667eea;
+            color: white;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .chapter-number {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .chapter-item.active .chapter-number {
+            color: white;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            max-height: calc(100vh - 120px);
+        }
+        
+        .hadith-card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .hadith-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .hadith-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .hadith-arabic {
+            font-size: 1.3em;
+            line-height: 2;
+            text-align: right;
+            direction: rtl;
+            color: #2c3e50;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .hadith-translation {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #495057;
+            margin: 15px 0;
+        }
+        
+        .hadith-meta {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .meta-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .grade-sahih {
+            background: #28a745;
+            color: white;
+        }
+        
+        .grade-hasan {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 768px) {
+            .content-layout {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="bookTitle">Loading...</h1>
+            <p id="bookMeta"></p>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </header>
+        
+        <div class="content-layout">
+            <!-- Left Sidebar - Chapters -->
+            <div class="sidebar">
+                <div class="sidebar-title">📑 Chapters</div>
+                <div id="chaptersList">
+                    <div class="loading">Loading chapters...</div>
+                </div>
+            </div>
+            
+            <!-- Right Content - Hadiths -->
+            <div class="main-content">
+                <div id="hadithsList">
+                    <div class="loading">Select a chapter to view hadiths</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://127.0.0.1:8000/api';
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('id');
+        const bookSlug = urlParams.get('slug');
+        const currentLang = urlParams.get('lang') || 'en';
+        
+        let selectedChapter = null;
+        
+        // Load book details
+        async function loadBook() {
+            try {
+                const response = await fetch(`${API_BASE}/books/${bookId || bookSlug}?lang=${currentLang}`);
+                const data = await response.json();
+                
+                const book = data.book || data.data || data;
+                document.getElementById('bookTitle').textContent = book.name || book.title;
+                document.getElementById('bookMeta').textContent = book.name_ar || '';
+            } catch (error) {
+                console.error('Error loading book:', error);
+            }
+        }
+        
+        // Load chapters
+        async function loadChapters() {
+            const container = document.getElementById('chaptersList');
+            container.innerHTML = '<div class="loading">Loading chapters...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/books/${bookId || bookSlug}/chapters?lang=${currentLang}`);
+                const data = await response.json();
+                
+                const chapters = data.chapters || data.data || data;
+                
+                if (chapters && chapters.length > 0) {
+                    container.innerHTML = chapters.map((chapter, index) => `
+                        <div class="chapter-item" onclick="loadChapterHadiths(${chapter.id}, ${index + 1})">
+                            <div class="chapter-number">Chapter ${index + 1}</div>
+                            <div>${chapter.title || chapter.name}</div>
+                        </div>
+                    `).join('');
+                    
+                    // Auto-load first chapter
+                    if (!selectedChapter) {
+                        loadChapterHadiths(chapters[0].id, 1);
+                    }
+                } else {
+                    container.innerHTML = '<div class="loading">No chapters found</div>';
+                }
+            } catch (error) {
+                console.error('Error loading chapters:', error);
+                container.innerHTML = '<div class="loading">Error loading chapters</div>';
+            }
+        }
+        
+        // Load chapter hadiths
+        async function loadChapterHadiths(chapterId, chapterNumber) {
+            selectedChapter = chapterId;
+            
+            // Update active chapter
+            document.querySelectorAll('.chapter-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.closest('.chapter-item').classList.add('active');
+            
+            const container = document.getElementById('hadithsList');
+            container.innerHTML = '<div class="loading">Loading hadiths...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/books/${bookId || bookSlug}/chapters/${chapterId}?lang=${currentLang}`);
+                const data = await response.json();
+                
+                const hadiths = data.hadiths || data.data || data;
+                
+                if (hadiths && hadiths.length > 0) {
+                    container.innerHTML = hadiths.map(hadith => `
+                        <div class="hadith-card" onclick="openHadith(${hadith.id})">
+                            <div class="hadith-number">Hadith #${hadith.hadith_number || hadith.id}</div>
+                            
+                            ${hadith.arabic_text || hadith.hadeeth ? `
+                                <div class="hadith-arabic">${hadith.arabic_text || hadith.hadeeth}</div>
+                            ` : ''}
+                            
+                            ${hadith.text || hadith.translation ? `
+                                <div class="hadith-translation">${hadith.text || hadith.translation}</div>
+                            ` : ''}
+                            
+                            <div class="hadith-meta">
+                                ${hadith.grade ? `
+                                    <span class="meta-badge grade-${hadith.grade.toLowerCase().includes('sahih') ? 'sahih' : 'hasan'}">
+                                        ${hadith.grade}
+                                    </span>
+                                ` : ''}
+                                <span class="meta-badge" style="background: #6c757d; color: white;">
+                                    Click for details →
+                                </span>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<div class="loading">No hadiths found in this chapter</div>';
+                }
+            } catch (error) {
+                console.error('Error loading hadiths:', error);
+                container.innerHTML = '<div class="loading">Error loading hadiths</div>';
+            }
+        }
+        
+        // Open hadith details page
+        function openHadith(hadithId) {
+            window.location.href = `hadith.html?id=${hadithId}&lang=${currentLang}`;
+        }
+        
+        // Initialize
+        window.onload = function() {
+            loadBook();
+            loadChapters();
+        };
+    </script>
+</body>
+</html>

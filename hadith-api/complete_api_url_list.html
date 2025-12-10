@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Hadith API URL List - Books & Categories</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        .api-section {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .books-section {
+            border-color: #3498db;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+        }
+        .categories-section {
+            border-color: #27ae60;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
+        }
+        .hierarchy {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 16px;
+        }
+        .endpoint {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 8px 0;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .method {
+            font-weight: bold;
+            color: #27ae60;
+            background: #d4edda;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .url {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .description {
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .stats {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            margin: 10px;
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .test-links {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .test-links h4 {
+            margin-top: 0;
+            color: #856404;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #495057;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .level {
+            background: #e9ecef;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #495057;
+            display: inline-block;
+            margin: 2px;
+        }
+        .books-level { background: #cce5ff; color: #004085; }
+        .categories-level { background: #d4edda; color: #155724; }
+        .arrow {
+            font-size: 18px;
+            color: #6c757d;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Complete Hadith API URL List</h1>
+        <p style="text-align: center; color: #7f8c8d;">Comprehensive REST API showing hierarchical relationships for Books and Categories</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Books</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">411</div>
+                <div class="stat-label">Hadiths</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2,320</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Languages</div>
+            </div>
+        </div>
+
+        <!-- Important Notice -->
+        <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 15px; margin: 20px 0; text-align: center;">
+            <h3 style="color: #856404; margin-top: 0;">⚠️ Important: Hadith ID Range</h3>
+            <p style="color: #856404; margin-bottom: 0;"><strong>Hadith database IDs range from 1590 to 2000</strong></p>
+            <p style="color: #856404; margin-bottom: 0;">IDs 1, 2, 3... do not exist. Use IDs like 1590, 1591, etc.</p>
+        </div>
+
+        <!-- Featured Hadith -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+            <h3 style="margin: 0 0 10px 0;">⭐ Featured Hadith Example</h3>
+            <p style="margin: 0; font-size: 18px;">Hadith ID: <strong>1590</strong> - "Actions are judged by intentions"</p>
+            <div style="margin-top: 15px;">
+                <a href="http://127.0.0.1:8000/api/hadiths/1590" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; margin: 0 5px;">📖 View Hadith</a>
+                <a href="http://127.0.0.1:8000/api/hadiths/1590/translations/en" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; margin: 0 5px;">🌍 English</a>
+                <a href="http://127.0.0.1:8000/api/hadiths/1590/translations/bn" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; margin: 0 5px;">🇧🇩 Bengali</a>
+            </div>
+        </div>
+
+        <!-- Books API Section -->
+        <div class="api-section books-section">
+            <h2>📚 Books API Hierarchy</h2>
+            <div class="hierarchy">
+                <strong>📚 Books</strong>
+                <span class="arrow">→</span>
+                <strong>📑 Chapters</strong>
+                <span class="arrow">→</span>
+                <strong>📖 Hadiths</strong>
+                <span class="arrow">→</span>
+                <strong>🌍 Translations</strong>
+            </div>
+
+            <h3>🏠 Books Home Page</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/books</span><br>
+                <span class="description">Get all books with their chapters and hadith counts</span>
+            </div>
+
+            <h3>📖 Book Details & Chapters</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/books/{book}</span><br>
+                <span class="description">Get specific book details + all chapters (book ID, code, or slug)</span>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/books/{book}/chapters</span><br>
+                <span class="description">Get all chapters for a specific book</span>
+            </div>
+
+            <h3>📜 Chapter Hadiths</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/books/{book}/chapters/{chapter}</span><br>
+                <span class="description">Get hadiths for a specific chapter (paginated)</span>
+            </div>
+
+            <h3>📝 Individual Hadiths</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/hadiths/{id}</span><br>
+                <span class="description">Get specific hadith by database ID</span>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/books/{book}/hadiths/{hadith_number}</span><br>
+                <span class="description">Get specific hadith by book and hadith number</span>
+            </div>
+
+            <h3>🌍 Translations</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/hadiths/{id}/translations/{lang}</span><br>
+                <span class="description">Get translation by hadith ID (en, bn, tr, ur)</span>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/books/{book}/hadiths/{hadith_number}/translations/{lang}</span><br>
+                <span class="description">Get translation by book and hadith number</span>
+            </div>
+        </div>
+
+        <!-- Categories API Section -->
+        <div class="api-section categories-section">
+            <h2>🏷️ Categories API Hierarchy</h2>
+            <div class="hierarchy">
+                <strong>🏷️ Categories</strong>
+                <span class="arrow">→</span>
+                <strong>📖 Hadiths</strong>
+                <span class="arrow">→</span>
+                <strong>🌍 Translations</strong>
+            </div>
+
+            <h3>🏠 Categories Home Page</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/categories</span><br>
+                <span class="description">Get all categories with hierarchical structure</span>
+            </div>
+
+            <h3>🏷️ Category Details</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/categories/{category}</span><br>
+                <span class="description">Get specific category details with subcategories and hadith count</span>
+            </div>
+
+            <h3>📖 Category Hadiths</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/categories/{category}/hadiths</span><br>
+                <span class="description">Get hadiths for a specific category (paginated)</span>
+            </div>
+
+            <h3>🌍 Translations (Same as Books)</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/hadiths/{id}/translations/{lang}</span><br>
+                <span class="description">Get translation by hadith ID (en, bn, tr, ur)</span>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="url">/api/books/{book}/hadiths/{hadith_number}/translations/{lang}</span><br>
+                <span class="description">Get translation by book and hadith number</span>
+            </div>
+        </div>
+
+        <!-- Complete URL List -->
+        <h2>📋 Complete API URL List</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>📚 Books API</th>
+                    <th>🏷️ Categories API</th>
+                    <th>Response Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="level books-level">1. Home</span></td>
+                    <td><code>/api/books</code></td>
+                    <td><code>/api/categories</code></td>
+                    <td>List of all items</td>
+                </tr>
+                <tr>
+                    <td><span class="level books-level">2. Details</span></td>
+                    <td><code>/api/books/{book}</code></td>
+                    <td><code>/api/categories/{category}</code></td>
+                    <td>Single item details</td>
+                </tr>
+                <tr>
+                    <td><span class="level books-level">3. Sub-items</span></td>
+                    <td><code>/api/books/{book}/chapters</code></td>
+                    <td><em>Subcategories in details</em></td>
+                    <td>Child items list</td>
+                </tr>
+                <tr>
+                    <td><span class="level books-level">4. Content</span></td>
+                    <td><code>/api/books/{book}/chapters/{chapter}</code></td>
+                    <td><code>/api/categories/{category}/hadiths</code></td>
+                    <td>Hadiths list (paginated)</td>
+                </tr>
+                <tr>
+                    <td><span class="level books-level">5. Individual</span></td>
+                    <td><code>/api/hadiths/{id}</code><br><code>/api/books/{book}/hadiths/{num}</code></td>
+                    <td><em>Same as Books</em></td>
+                    <td>Single hadith</td>
+                </tr>
+                <tr>
+                    <td><span class="level books-level">6. Translations</span></td>
+                    <td><code>/api/hadiths/{id}/translations/{lang}</code><br><code>/api/books/{book}/hadiths/{num}/translations/{lang}</code></td>
+                    <td><em>Same as Books</em></td>
+                    <td>Hadith + translation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Test Links -->
+        <div class="test-links">
+            <h4>🧪 Quick Test Links (Click to test in browser)</h4>
+
+            <h3>📚 Books Flow</h3>
+            <ol>
+                <li><a href="http://127.0.0.1:8000/api/books" target="_blank">📚 All Books</a></li>
+                <li><a href="http://127.0.0.1:8000/api/books/1" target="_blank">📖 Book 1 Details (Bukhari)</a></li>
+                <li><a href="http://127.0.0.1:8000/api/books/1/chapters" target="_blank">📑 Bukhari Chapters</a></li>
+                <li><a href="http://127.0.0.1:8000/api/books/1/chapters/1" target="_blank">📜 Chapter 1 Hadiths</a></li>
+                <li><a href="http://127.0.0.1:8000/api/books/bukhari/hadiths/1" target="_blank">📝 Hadith by Book & Number (1)</a></li>
+                <li><a href="http://127.0.0.1:8000/api/hadiths/1590" target="_blank">📝 Hadith by ID (1590)</a></li>
+                <li><a href="http://127.0.0.1:8000/api/hadiths/1590/translations/en" target="_blank">🌍 English Translation</a></li>
+                <li><a href="http://127.0.0.1:8000/api/hadiths/1590/translations/bn" target="_blank">🌍 Bengali Translation</a></li>
+            </ol>
+
+            <h3>🏷️ Categories Flow</h3>
+            <ol>
+                <li><a href="http://127.0.0.1:8000/api/categories" target="_blank">🏷️ All Categories (2,320)</a></li>
+                <li><a href="http://127.0.0.1:8000/api/categories/2" target="_blank">🏷️ Category 2 Details (Hadith)</a></li>
+                <li><a href="http://127.0.0.1:8000/api/categories/2/hadiths" target="_blank">📖 Category 2 Hadiths (65)</a></li>
+                <li><a href="http://127.0.0.1:8000/api/hadiths/1590" target="_blank">📝 Hadith 1590 Details</a></li>
+                <li><a href="http://127.0.0.1:8000/api/hadiths/1590/translations/en" target="_blank">🌍 Hadith 1590 English</a></li>
+            </ol>
+
+            <h3>🔍 Additional Features</h3>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/api/search/faith" target="_blank">🔍 Search "faith"</a></li>
+                <li><a href="http://127.0.0.1:8000/api/random" target="_blank">🎲 Random Hadith</a></li>
+            </ul>
+        </div>
+
+        <!-- Navigation Flow -->
+        <h2>🧭 Navigation Flow Examples</h2>
+
+        <h3>📚 Books Navigation Path</h3>
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0;">
+            <code style="font-size: 14px;">
+                /api/books<br>
+                &nbsp;&nbsp;↓<br>
+                /api/books/1 (Bukhari)<br>
+                &nbsp;&nbsp;↓<br>
+                /api/books/1/chapters (All chapters)<br>
+                &nbsp;&nbsp;↓<br>
+                /api/books/1/chapters/1 (Chapter hadiths)<br>
+                &nbsp;&nbsp;↓<br>
+                /api/books/bukhari/hadiths/1 (Specific hadith by number)<br>
+                &nbsp;&nbsp;↓<br>
+                /api/hadiths/1590/translations/en (English translation)
+            </code>
+        </div>
+
+        <h3>🏷️ Categories Navigation Path</h3>
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0;">
+            <code style="font-size: 14px;">
+                /api/categories<br>
+                &nbsp;&nbsp;↓<br>
+                /api/categories/2 (Hadith category)<br>
+                &nbsp;&nbsp;↓<br>
+                /api/categories/2/hadiths (Category hadiths)<br>
+                &nbsp;&nbsp;↓<br>
+                /api/hadiths/1590 (Specific hadith)<br>
+                &nbsp;&nbsp;↓<br>
+                /api/hadiths/1590/translations/en (English translation)
+            </code>
+        </div>
+
+        <!-- Parameter Reference -->
+        <h2>📋 Parameter Reference</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                    <th>Examples</th>
+                    <th>Used In</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>{book}</code></td>
+                    <td>Book identifier</td>
+                    <td><code>1</code>, <code>bukhari</code>, <code>sahih-al-bukhari</code></td>
+                    <td>Books API</td>
+                </tr>
+                <tr>
+                    <td><code>{chapter}</code></td>
+                    <td>Chapter number</td>
+                    <td><code>1</code>, <code>5</code>, <code>24</code></td>
+                    <td>Books API</td>
+                </tr>
+                <tr>
+                    <td><code>{hadith_number}</code></td>
+                    <td>Hadith number within book</td>
+                    <td><code>31</code>, <code>150</code></td>
+                    <td>Books API</td>
+                </tr>
+                <tr>
+                    <td><code>{id}</code></td>
+                    <td>Database ID</td>
+                    <td><code>1590</code>, <code>1591</code>, <code>2000</code></td>
+                    <td>All APIs</td>
+                </tr>
+                <tr>
+                    <td><code>{category}</code></td>
+                    <td>Category ID</td>
+                    <td><code>1</code>, <code>2</code>, <code>2320</code></td>
+                    <td>Categories API</td>
+                </tr>
+                <tr>
+                    <td><code>{lang}</code></td>
+                    <td>Language code</td>
+                    <td><code>en</code>, <code>bn</code>, <code>tr</code>, <code>ur</code></td>
+                    <td>Translations</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Summary -->
+        <div style="background: #e9ecef; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+            <h3>🎯 API Summary</h3>
+            <p><strong>Books API:</strong> 7 Books → Chapters → Hadiths → Translations</p>
+            <p><strong>Categories API:</strong> 2,320 Categories → Hadiths → Translations</p>
+            <p><strong>Shared:</strong> Individual hadiths, translations, search, and random endpoints</p>
+            <p><strong>Languages:</strong> English (en), Bengali (bn), Turkish (tr), Urdu (ur)</p>
+            <p><strong>Hadith IDs:</strong> Range from 1590 to 2000 (411 total hadiths)</p>
+            <p style="color: #28a745; font-weight: bold;">✅ Fixed: Added missing getHadith() method for /books/{book}/hadiths/{number} endpoint</p>
+        </div>
+
+        <!-- Hadith 1590 Example -->
+        <h2>📖 Complete Hadith Example (ID: 1590)</h2>
+        <div style="background: #f8f9fa; border: 2px solid #3498db; border-radius: 8px; padding: 20px; margin: 20px 0;">
+            <h3>🏷️ Hadith Details</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr style="background: #e9ecef;">
+                    <td style="padding: 8px; border: 1px solid #dee2e6; font-weight: bold;">Database ID</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">1590</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #dee2e6; font-weight: bold;">Book</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">Sahih al-Bukhari (ID: 1, Code: bukhari)</td>
+                </tr>
+                <tr style="background: #e9ecef;">
+                    <td style="padding: 8px; border: 1px solid #dee2e6; font-weight: bold;">Chapter</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">Clothing (Chapter No: 77)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #dee2e6; font-weight: bold;">Hadith Number</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">1</td>
+                </tr>
+                <tr style="background: #e9ecef;">
+                    <td style="padding: 8px; border: 1px solid #dee2e6; font-weight: bold;">Grade</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">Sahih</td>
+                </tr>
+            </table>
+
+            <h3>📝 Arabic Text</h3>
+            <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0; font-family: 'Arial Unicode MS', serif; direction: rtl; text-align: right;">
+                حَدَّثَنَا الْحُمَيْدِيُّ عَبْدُ اللَّهِ بْنُ الزُّبَيْرِ ، قَالَ : حَدَّثَنَا سُفْيَانُ ، قَالَ : حَدَّثَنَا يَحْيَى بْنُ سَعِيدٍ الأَنْصَارِيُّ ، قَالَ : أَخْبَرَنِي مُحَمَّدُ بْنُ إِبْرَاهِيمَ التَّيْمِيُّ ، أَنَّهُ سَمِعَ عَلْقَمَةَ بْنَ وَقَّاصٍ اللَّيْثِيَّ يَقُولُ : سَمِعْتُ عُمَرَ بْنَ الْخَطَّابِ رَضِيَ اللَّهُ عَنْهُ ، يَقُولُ : سَمِعْتُ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ، يَقُولُ : « إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى ، فَمَنْ كَانَتْ هِجْرَتُهُ إِلَى اللَّهِ وَرَسُولِهِ فَهِجْرَتُهُ إِلَى اللَّهِ وَرَسُولِهِ ، وَمَنْ كَانَتْ هِجْرَتُهُ لِدُنْيَا يُصِيبُهَا أَوِ امْرَأَةٍ يَنْكِحُهَا فَهِجْرَتُهُ إِلَى مَا هَاجَرَ إِلَيْهِ »
+            </div>
+
+            <h3>🌍 Available Translations</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;">
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 5px;">
+                    <strong>🇺🇸 English (en):</strong><br>
+                    <em>Narrated 'Umar bin Al-Khattab:</em> I heard Allah's Messenger (ﷺ) saying, "The reward of deeds depends upon the intentions and every person will get the reward according to what he has intended. So whoever emigrated for worldly benefits or for a woman to marry, his emigration was for what he emigrated for."
+                </div>
+                <div style="background: #e8f5e8; padding: 15px; border-radius: 5px;">
+                    <strong>🇧🇩 Bengali (bn):</strong><br>
+                    <em>উমর ইবনুল খাত্তাব (রাঃ) থেকে বর্ণিত:</em> আমি আল্লাহর রাসূল (সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম)-কে বলতে শুনেছি, "আমলসমূহ নিয়তের উপর নির্ভরশীল এবং প্রত্যেক ব্যক্তি তার নিয়ত অনুযায়ী প্রতিফল পাবে। যার হিজরত আল্লাহ ও তাঁর রাসূলের উদ্দেশ্যে, তার হিজরত আল্লাহ ও তাঁর রাসূলের উদ্দেশ্যে। আর যার হিজরত দুনিয়া লাভের জন্য অথবা কোন মহিলাকে বিবাহ করার জন্য, তার হিজরত সেই উদ্দেশ্যের জন্য যার জন্য সে হিজরত করেছে।"
+                </div>
+            </div>
+
+            <h3>🏷️ Categories Containing This Hadith</h3>
+            <div style="background: #fff3cd; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                <strong>Category 2:</strong> "The Hadith and Hadith Sciences" (Contains 65 hadiths including this one)<br>
+                <code style="font-size: 12px; background: white; padding: 2px 4px; border-radius: 3px;">GET /api/categories/2/hadiths</code>
+            </div>
+
+            <h3>🔗 API Endpoints for Hadith 1590</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0;">
+                <div style="background: #e8f5e8; padding: 10px; border-radius: 5px;">
+                    <strong>📝 Hadith Data:</strong><br>
+                    <code style="font-size: 12px;">GET /api/hadiths/1590</code>
+                </div>
+                <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">
+                    <strong>🌍 English Translation:</strong><br>
+                    <code style="font-size: 12px;">GET /api/hadiths/1590/translations/en</code>
+                </div>
+                <div style="background: #fff3cd; padding: 10px; border-radius: 5px;">
+                    <strong>📖 By Book & Number:</strong><br>
+                    <code style="font-size: 12px;">GET /api/books/bukhari/hadiths/1</code>
+                </div>
+                <div style="background: #f8d7da; padding: 10px; border-radius: 5px;">
+                    <strong>🏷️ Categories:</strong><br>
+                    <code style="font-size: 12px;">GET /api/categories/2/hadiths</code> (contains this hadith)
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

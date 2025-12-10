@@ -1,0 +1,13 @@
+id,category_id,localization_code,name,slug
+1,1,en,Faith (Iman),faith-iman
+2,1,ar,الإيمان,faith-iman
+3,2,en,Prayer (Salah),prayer-salah
+4,2,ar,الصلاة,prayer-salah
+5,3,en,Purification (Taharah),purification-taharah
+6,3,ar,الطهارة,purification-taharah
+7,4,en,Fasting (Sawm),fasting-sawm
+8,4,ar,الصوم,fasting-sawm
+9,5,en,Charity (Zakat),charity-zakat
+10,5,ar,الزكاة,charity-zakat
+11,6,en,Pilgrimage (Hajj),pilgrimage-hajj
+12,6,ar,الحج,pilgrimage-hajj

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories API Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        .endpoint {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .method {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .url {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .response {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .error {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .stats {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb {
+            background: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .hierarchy {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .hierarchy h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .arrow {
+            font-size: 24px;
+            color: #3498db;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏷️ Categories API Documentation</h1>
+        <p>Comprehensive REST API for accessing Hadith categories with hierarchical organization and hadith listings.</p>
+
+        <div class="stats">
+            <h3>📊 Categories Statistics</h3>
+            <ul>
+                <li><strong>2,320 Categories</strong> - Comprehensive categorization system</li>
+                <li><strong>Hierarchical Structure</strong> - Parent-child category relationships</li>
+                <li><strong>Cross-linked</strong> - Categories connected to hadiths via many-to-many relationships</li>
+                <li><strong>Multi-language</strong> - English and Arabic category names</li>
+            </ul>
+        </div>
+
+        <div class="hierarchy">
+            <h3>📂 Categories Hierarchy Structure</h3>
+            <div style="font-size: 18px; margin: 20px 0;">
+                <strong>🏷️ Categories</strong>
+                <span class="arrow">→</span>
+                <strong>📖 Hadiths</strong>
+                <span class="arrow">→</span>
+                <strong>🌍 Translations</strong>
+            </div>
+            <p style="color: #7f8c8d; margin-top: 10px;">Similar to Books structure but organized by topics/themes</p>
+        </div>
+
+        <h2>📋 Categories API Endpoints</h2>
+
+        <h3>🏠 Categories Home Page</h3>
+
+        <div class="endpoint">
+            <span class="method">GET</span> <span class="url">/api/categories</span><br>
+            <strong>Description:</strong> Get all categories with hierarchical structure<br>
+            <strong>Response:</strong> Array of all categories with parent-child relationships
+        </div>
+
+        <div class="endpoint">
+            <span class="method">GET</span> <span class="url">/api/categories/{category}</span><br>
+            <strong>Description:</strong> Get specific category details with subcategories and hadith count<br>
+            <strong>Parameters:</strong> <code>category</code> - Category ID<br>
+            <strong>Response:</strong> Single category with subcategories and statistics
+        </div>
+
+        <h3>📖 Category Hadiths</h3>
+
+        <div class="endpoint">
+            <span class="method">GET</span> <span class="url">/api/categories/{category}/hadiths</span><br>
+            <strong>Description:</strong> Get hadiths for a specific category (paginated)<br>
+            <strong>Parameters:</strong> <code>category</code> - Category ID<br>
+            <strong>Response:</strong> Paginated hadiths belonging to the category with book and chapter details
+        </div>
+
+        <h3>🌍 Hadith Translations (Same as Books)</h3>
+
+        <div class="endpoint">
+            <span class="method">GET</span> <span class="url">/api/hadiths/{id}/translations/{lang}</span><br>
+            <strong>Description:</strong> Get translation for hadith by database ID<br>
+            <strong>Parameters:</strong> <code>id</code> - Hadith database ID, <code>lang</code> - Language code (en, bn, tr, ur)<br>
+            <strong>Response:</strong> Hadith with translation object
+        </div>
+
+        <div class="endpoint">
+            <span class="method">GET</span> <span class="url">/api/books/{book}/hadiths/{hadith_number}/translations/{lang}</span><br>
+            <strong>Description:</strong> Get translation for hadith by book and hadith number<br>
+            <strong>Parameters:</strong> <code>book</code> - Book ID/code/slug, <code>hadith_number</code> - Hadith number, <code>lang</code> - Language code<br>
+            <strong>Response:</strong> Hadith with translation object
+        </div>
+
+        <h2>📝 Response Examples</h2>
+
+        <h3>Categories List Response</h3>
+        <div class="response">
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "name_en": "The Noble Qur'an and Qur'anic Sciences",
+      "name_ar": "القرآن الكريم وعلم القرآن",
+      "parent_id": null
+    },
+    {
+      "id": 2,
+      "name_en": "The Hadith and Hadith Sciences",
+      "name_ar": "الحديث وعلم الحديث",
+      "parent_id": null
+    },
+    {
+      "id": 3,
+      "name_en": "The Creed",
+      "name_ar": "العقيدة",
+      "parent_id": null
+    }
+  ],
+  "meta": {
+    "total": 2320
+  }
+}
+        </div>
+
+        <h3>Category Details Response</h3>
+        <div class="response">
+{
+  "success": true,
+  "data": {
+    "id": 2,
+    "name_en": "The Hadith and Hadith Sciences",
+    "name_ar": "الحديث وعلم الحديث",
+    "parent_id": null,
+    "hadith_count": 45,
+    "subcategories": [
+      {
+        "id": 15,
+        "name_en": "Classification of Hadith",
+        "name_ar": "تصنيف الحديث",
+        "parent_id": 2
+      }
+    ]
+  }
+}
+        </div>
+
+        <h3>Category Hadiths Response</h3>
+        <div class="response">
+{
+  "success": true,
+  "data": [
+    {
+      "id": 31,
+      "book_id": 1,
+      "chapter_id": 1,
+      "hadith_number": 31,
+      "arabic_text": "Arabic text here...",
+      "grade": "Sahih",
+      "book": {
+        "id": 1,
+        "code": "bukhari",
+        "name_en": "Sahih al-Bukhari",
+        "name_ar": "صحيح البخاري"
+      },
+      "chapter": {
+        "id": 1,
+        "chapter_no": 1,
+        "name_en": "Revelation",
+        "name_ar": ""
+      }
+    }
+  ],
+  "meta": {
+    "total": 45,
+    "per_page": 20,
+    "current_page": 1,
+    "last_page": 3,
+    "category": {
+      "id": 2,
+      "name_en": "The Hadith and Hadith Sciences",
+      "name_ar": "الحديث وعلم الحديث"
+    }
+  }
+}
+        </div>
+
+        <h2>🔗 Quick Test Links</h2>
+        <div class="breadcrumb">
+            <strong>Base URL:</strong> <code>http://127.0.0.1:8000/api/</code>
+        </div>
+
+        <h3>🏷️ Categories</h3>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/api/categories" target="_blank">📂 All Categories (2,320)</a></li>
+            <li><a href="http://127.0.0.1:8000/api/categories/1" target="_blank">🏷️ Category Details (Qur'an)</a></li>
+            <li><a href="http://127.0.0.1:8000/api/categories/2" target="_blank">🏷️ Category Details (Hadith)</a></li>
+            <li><a href="http://127.0.0.1:8000/api/categories/3" target="_blank">🏷️ Category Details (Creed)</a></li>
+        </ul>
+
+        <h3>📖 Category Hadiths</h3>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/api/categories/1/hadiths" target="_blank">📜 Qur'an Category Hadiths (0)</a></li>
+            <li><a href="http://127.0.0.1:8000/api/categories/2/hadiths" target="_blank">📜 Hadith Category Hadiths (45)</a></li>
+            <li><a href="http://127.0.0.1:8000/api/categories/3/hadiths" target="_blank">📜 Creed Category Hadiths</a></li>
+        </ul>
+
+        <h3>🌍 Translations (Same as Books)</h3>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/api/hadiths/31/translations/en" target="_blank">🌍 Hadith 31 English</a></li>
+            <li><a href="http://127.0.0.1:8000/api/hadiths/31/translations/bn" target="_blank">🌍 Hadith 31 Bengali</a></li>
+            <li><a href="http://127.0.0.1:8000/api/books/1/hadiths/31/translations/en" target="_blank">🌍 Bukhari Hadith 31 English</a></li>
+        </ul>
+
+        <h2>📊 Categories vs Books Comparison</h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr style="background: #f8f9fa;">
+                    <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Aspect</th>
+                    <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">📚 Books API</th>
+                    <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">🏷️ Categories API</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Home Page</strong></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><code>/api/books</code></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><code>/api/categories</code></td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Details Page</strong></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><code>/api/books/{book}</code></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><code>/api/categories/{category}</code></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Sub-items</strong></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><code>/api/books/{book}/chapters</code></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;">Subcategories in details response</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Content List</strong></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><code>/api/books/{book}/chapters/{chapter}</code></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><code>/api/categories/{category}/hadiths</code></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Translations</strong></td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;">Same endpoints for both</td>
+                    <td style="border: 1px solid #dee2e6; padding: 10px;">Same endpoints for both</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>⚠️ Error Responses</h2>
+        <div class="response">
+{
+  "success": false,
+  "error": "Category not found",
+  "message": "No query results for model [App\\Models\\Category] 999"
+}
+        </div>
+
+        <div class="response">
+{
+  "success": false,
+  "error": "Failed to fetch hadiths for category",
+  "message": "Category relationship not properly configured"
+}
+        </div>
+
+        <h2>🛠️ Implementation Notes</h2>
+        <div class="note">
+            <strong>✅ Categories API Features:</strong><br>
+            - Hierarchical category structure with parent-child relationships<br>
+            - Many-to-many relationship between categories and hadiths<br>
+            - Pagination support for large category hadith lists<br>
+            - Consistent JSON response structure matching Books API<br>
+            - Subcategory information included in category details
+        </div>
+
+        <div class="note">
+            <strong>🔧 Database Relationships:</strong><br>
+            - <code>categories</code> table with <code>parent_id</code> for hierarchy<br>
+            - <code>hadith_category</code> pivot table for many-to-many relationships<br>
+            - Categories can have multiple hadiths, hadiths can belong to multiple categories<br>
+            - Translations work identically to Books API (same endpoints)
+        </div>
+    </div>
+</body>
+</html>

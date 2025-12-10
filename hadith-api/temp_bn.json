@@ -1,0 +1,24 @@
+﻿
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {"success":true,"data":{"id":3,"title":"à¦à¦à§à¦¦à¦¾","name_en":"The 
+                    Creed","name_ar":"Ø§ÙØ¹ÙÙØ¯Ø©","parent_id":null,"hadith_count":13896,"subcategories":[{"id":59,"title":"à¦ªà§à¦°à¦¤à¦¾à¦ª à¦...
+RawContent        : HTTP/1.1 200 OK
+                    Host: 127.0.0.1:8000
+                    Connection: close
+                    Access-Control-Allow-Origin: *
+                    Cache-Control: no-cache, private
+                    Content-Type: application/json
+                    Date: Sat, 08 Nov 2025 10:54:35 GMT
+                    X-Power...
+Forms             : {}
+Headers           : {[Host, 127.0.0.1:8000], [Connection, close], [Access-Control-Allow-Origin, *], [Cache-Control, no-cache, private]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : System.__ComObject
+RawContentLength  : 58761
+
+
+

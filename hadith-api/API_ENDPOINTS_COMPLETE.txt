@@ -1,0 +1,365 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         HADITH API - ALL ENDPOINTS                           ║
+║                         Base URL: http://127.0.0.1:8000/api                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 GENERAL / INFO ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/
+     → API index and welcome message
+
+GET  /api/info
+     → API information and statistics
+
+GET  /api/languages
+     → List all available languages
+     Example: /api/languages
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 CATEGORY ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/categories
+     → List all categories
+     Parameters:
+       - language={code}        (e.g., en, ar, bn, ru)
+     Example: /api/categories?language=en
+
+GET  /api/categories/list
+     → Alias for /api/categories
+
+GET  /api/categories/roots
+     → Get root/parent categories only
+     Parameters:
+       - language={code}
+     Example: /api/categories/roots?language=en
+
+GET  /api/categories/{id}
+     → Get specific category with details
+     Parameters:
+       - language={code}
+       - include_hadiths={true/false}
+       - limit={number}          (default: 10)
+     Example: /api/categories/3?language=en&include_hadiths=true&limit=5
+     
+     ✨ NEW: Now includes language-specific number localization!
+       - Bengali (bn): ৪৪৯৭ instead of 4497
+       - Arabic (ar): ٤٤٩٧ instead of 4497
+       - English (en): 4497 (Western numerals)
+
+GET  /api/categories/{id}/children
+     → Get subcategories of a category
+     Parameters:
+       - language={code}
+     Example: /api/categories/3/children?language=en
+
+GET  /api/categories/{id}/hadiths
+GET  /api/categories/{id}/hadeeths (alias)
+     → Get hadiths in a specific category
+     Parameters:
+       - language={code}
+       - limit={number}
+       - offset={number}
+     Example: /api/categories/3/hadiths?language=en&limit=20
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📖 BOOK ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/books
+     → List all books
+     Parameters:
+       - language={code}
+     Example: /api/books?language=en
+
+GET  /api/books/{book}
+     → Get specific book details
+     Parameters:
+       - language={code}
+     Example: /api/books/bukhari?language=en
+
+GET  /api/books/{book}/chapters
+     → Get all chapters in a book
+     Parameters:
+       - language={code}
+     Example: /api/books/bukhari/chapters?language=en
+
+GET  /api/books/{book}/chapters/{chapter}
+     → Get hadiths in a specific chapter
+     Parameters:
+       - language={code}
+       - limit={number}
+       - offset={number}
+     Example: /api/books/bukhari/chapters/1?language=en&limit=10
+
+GET  /api/books/{book}/chapters/{chapter}/hadiths/{hadith_number}
+GET  /api/books/{book}/chapters/{chapter}/hadeeths/{hadith_number} (alias)
+     → Get specific hadith by book, chapter, and hadith number
+     Parameters:
+       - language={code}
+     Example: /api/books/bukhari/chapters/1/hadiths/1?language=en
+
+GET  /api/books/{book}/chapters/{chapter}/hadiths/{hadith_number}/translations/{lang}
+GET  /api/books/{book}/chapters/{chapter}/hadeeths/{hadith_number}/translations/{lang}
+     → Get specific translation of a hadith
+     Example: /api/books/bukhari/chapters/1/hadiths/1/translations/en
+
+GET  /api/books/{book}/hadiths/{hadith_number}
+GET  /api/books/{book}/hadeeths/{hadith_number} (alias)
+     → Get specific hadith by book and hadith number (any chapter)
+     Parameters:
+       - language={code}
+     Example: /api/books/muslim/hadiths/92?language=en
+
+GET  /api/books/{book}/hadiths/{hadith_number}/translations/{lang}
+GET  /api/books/{book}/hadeeths/{hadith_number}/translations/{lang} (alias)
+     → Get specific translation of hadith by book and number
+     Example: /api/books/bukhari/hadiths/4497/translations/bn
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 SHORTCUT ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/{collection}/{chapter}
+     → Shortcut to get hadiths in a chapter (same as /api/books/{collection}/chapters/{chapter})
+     Parameters:
+       - language={code}        (default: en)
+       - limit={number}         (default: 20)
+       - offset={number}        (default: 0)
+     Example: /api/bukhari/1?language=bn&limit=10
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📑 CHAPTER ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/chapters
+     → List all chapters
+     Parameters:
+       - language={code}
+       - book_id={id}           (filter by book)
+     Example: /api/chapters?language=en
+
+GET  /api/chapters/{id}
+     → Get specific chapter details
+     Parameters:
+       - language={code}
+     Example: /api/chapters/1?language=en
+
+GET  /api/chapters/{id}/hadiths
+GET  /api/chapters/{id}/hadeeths (alias)
+     → Get hadiths in a chapter by chapter ID
+     Parameters:
+       - language={code}
+       - limit={number}
+       - offset={number}
+     Example: /api/chapters/1/hadiths?language=en
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📜 HADITH ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/hadiths
+GET  /api/hadeeths (alias)
+     → List/query hadiths
+     Parameters:
+       - language={code}
+       - book_id={id}
+       - chapter_id={id}
+       - category_id={id}
+       - grade={grade}
+       - limit={number}
+       - offset={number}
+     Example: /api/hadiths?language=en&grade=صحيح&limit=10
+
+GET  /api/hadeeths/list
+     → List hadiths (HadeethEnc compatible)
+     Parameters:
+       - language={code}
+       - limit={number}
+     Example: /api/hadeeths/list?language=en
+
+GET  /api/hadeeths/one
+     → Get one random or specific hadith (HadeethEnc compatible)
+     Parameters:
+       - language={code}
+       - id={hadith_id}
+     Example: /api/hadeeths/one?language=en&id=75963
+
+GET  /api/hadiths/{id}
+GET  /api/hadeeths/{id} (alias)
+     → Get specific hadith by ID
+     Parameters:
+       - language={code}
+     Example: /api/hadiths/75963?language=bn
+     
+     ✨ NEW: Returns localized numbers based on language!
+
+GET  /api/hadiths/{id}/translations/{lang}
+GET  /api/hadeeths/{id}/translations/{lang} (alias)
+     → Get specific translation of a hadith
+     Example: /api/hadiths/75963/translations/bn
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 SEARCH ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/search
+     → Search hadiths
+     Parameters:
+       - q={search_term}        (required)
+       - language={code}
+       - book_id={id}
+       - category_id={id}
+       - limit={number}
+       - offset={number}
+     Example: /api/search?q=prayer&language=en&limit=20
+
+GET  /api/search/{term}
+     → Search hadiths (path parameter)
+     Parameters:
+       - language={code}
+       - limit={number}
+     Example: /api/search/prayer?language=en
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎲 RANDOM ENDPOINT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/random
+     → Get a random hadith
+     Parameters:
+       - language={code}
+       - book_id={id}           (optional: filter by book)
+       - category_id={id}       (optional: filter by category)
+     Example: /api/random?language=en
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏷️  TOPIC ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /api/topics/{topic}/hadiths
+GET  /api/topics/{topic}/hadeeths (alias)
+     → Get hadiths by topic
+     Parameters:
+       - language={code}
+       - limit={number}
+     Example: /api/topics/faith/hadiths?language=en
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           SUPPORTED LANGUAGES                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Code │ Language   │ Number System      │ Example Numbers
+─────┼────────────┼────────────────────┼─────────────────
+ar   │ Arabic     │ ٠١٢٣٤٥٦٧٨٩         │ ٤٤٩٧, ٩٢
+bn   │ Bengali    │ ০১২৩৪৫৬৭৮৯         │ ৪৪৯৭, ৯২
+en   │ English    │ 0123456789         │ 4497, 92
+ru   │ Russian    │ 0123456789         │ 4497, 92
+fa   │ Persian    │ ۰۱۲۳۴۵۶۷۸۹         │ ۴۴۹۷, ۹۲
+ur   │ Urdu       │ ۰۱۲۳۴۵۶۷۸۹         │ ۴۴۹۷, ۹۲
+hi   │ Hindi      │ ०१२३४५६७८९         │ ४४९७, ९२
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           RESPONSE FORMAT                                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+All endpoints return JSON with this structure:
+
+{
+  "success": true,
+  "data": {
+    // Response data here
+  }
+}
+
+Or on error:
+
+{
+  "success": false,
+  "error": "Error message",
+  "message": "Detailed error description"
+}
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           COMMON PARAMETERS                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+language={code}        - Language code (en, ar, bn, ru, etc.)
+                         ✨ Numbers are automatically localized!
+
+limit={number}         - Number of results to return (default varies)
+offset={number}        - Pagination offset
+include_hadiths={bool} - Include hadith data in response (for categories)
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           EXAMPLE USAGE                                      ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+1. Get categories in Bengali with hadiths and localized numbers:
+   GET /api/categories/3?language=bn&include_hadiths=true&limit=1
+   → Returns: বুখারীঃ৪৪৯৭ ও মুসলিমঃ৯২
+
+2. Get categories in English with references:
+   GET /api/categories/3?language=en&include_hadiths=true&limit=1
+   → Returns: Sahih al-Bukhari (6/ 23) (4497)
+
+3. Get categories in Arabic with Arabic numerals:
+   GET /api/categories/3?language=ar&include_hadiths=true&limit=1
+   → Returns: صحيح البخاري (٦/ ٢٣) (٤٤٩٧)
+
+4. Search for hadiths about prayer:
+   GET /api/search?q=prayer&language=en&limit=10
+
+5. Get a random hadith:
+   GET /api/random?language=en
+
+6. Get specific book chapters:
+   GET /api/books/bukhari/chapters?language=en
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           NEW FEATURES                                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+✨ Language-wise Number Localization
+   - Automatic conversion of numbers to language-specific numerals
+   - Bengali: ৪৪৯৭ instead of 4497
+   - Arabic: ٤٤٩٧ instead of 4497
+   - Hindi: ४४९७ instead of 4497
+   - Persian/Urdu: ۴۴۹۷ instead of 4497
+
+✨ Reference Translation Support
+   - Hadith references now display in all languages
+   - Clean references for Bengali (embedded in translation)
+   - Arabic references for English/Russian (fallback for corrupted data)
+   - Numbers in references are localized per language
+
+✨ Smart Corruption Detection
+   - Automatically detects and filters out garbled reference data
+   - Falls back to clean Arabic references when needed
+   - Prevents duplication of references
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         DEVELOPMENT NOTES                                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Base URL (Development): http://127.0.0.1:8000/api
+Base URL (Production):  https://your-domain.com/api
+
+All responses use UTF-8 encoding with JSON_UNESCAPED_UNICODE flag.
+Number localization is applied automatically based on language parameter.

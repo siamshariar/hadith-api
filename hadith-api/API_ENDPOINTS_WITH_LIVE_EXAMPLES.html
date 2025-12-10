@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadith API - Complete Endpoints with Examples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .base-url {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .endpoint {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .endpoint:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .method {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+        
+        .path {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            color: #333;
+            display: inline-block;
+        }
+        
+        .description {
+            color: #666;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .params {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .params h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .param {
+            margin: 5px 0;
+            padding: 5px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+        
+        .param-name {
+            color: #e91e63;
+            font-weight: bold;
+        }
+        
+        .example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            position: relative;
+            overflow-x: auto;
+        }
+        
+        .example-title {
+            color: #50fa7b;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .example-url {
+            color: #8be9fd;
+            word-break: break-all;
+        }
+        
+        .try-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .try-button:hover {
+            background: #5568d3;
+            transform: scale(1.05);
+        }
+        
+        .response {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .response.show {
+            display: block;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        .badge.new {
+            background: #4CAF50;
+        }
+        
+        .language-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .language-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .language-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .language-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .language-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .features {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .features h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+        
+        .loading {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        .error {
+            color: #f44336;
+        }
+        
+        .success {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Hadith API Documentation</h1>
+            <p>Complete API Reference with Live Examples & Number Localization</p>
+            <div class="base-url">Base URL: http://127.0.0.1:8000/api</div>
+        </div>
+        
+        <div class="content">
+            <!-- Features Section -->
+            <div class="features">
+                <h3>✨ New Features</h3>
+                <ul>
+                    <li><strong>Language-wise Number Localization</strong> - Automatic conversion to Bengali (৪৪৯৭), Arabic (٤٤٩٧), Hindi (४४९७) numerals</li>
+                    <li><strong>Reference Translation Support</strong> - Hadith references display in all languages with proper number formatting</li>
+                    <li><strong>Smart Corruption Detection</strong> - Automatically filters garbled data and provides clean Arabic fallback</li>
+                    <li><strong>UTF-8 Unicode Support</strong> - Full support for all languages with proper character encoding</li>
+                </ul>
+            </div>
+
+            <!-- Supported Languages -->
+            <div class="section">
+                <h2 class="section-title">🌍 Supported Languages</h2>
+                <table class="language-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Language</th>
+                            <th>Number System</th>
+                            <th>Example (4497, 92)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ar</code></td>
+                            <td>Arabic</td>
+                            <td>٠١٢٣٤٥٦٧٨٩</td>
+                            <td>٤٤٩٧, ٩٢</td>
+                        </tr>
+                        <tr>
+                            <td><code>bn</code></td>
+                            <td>Bengali</td>
+                            <td>০১২৩৪৫৬৭৮৯</td>
+                            <td>৪৪৯৭, ৯২</td>
+                        </tr>
+                        <tr>
+                            <td><code>en</code></td>
+                            <td>English</td>
+                            <td>0123456789</td>
+                            <td>4497, 92</td>
+                        </tr>
+                        <tr>
+                            <td><code>ru</code></td>
+                            <td>Russian</td>
+                            <td>0123456789</td>
+                            <td>4497, 92</td>
+                        </tr>
+                        <tr>
+                            <td><code>fa</code></td>
+                            <td>Persian</td>
+                            <td>۰۱۲۳۴۵۶۷۸۹</td>
+                            <td>۴۴۹۷, ۹۲</td>
+                        </tr>
+                        <tr>
+                            <td><code>ur</code></td>
+                            <td>Urdu</td>
+                            <td>۰۱۲۳۴۵۶۷۸۹</td>
+                            <td>۴۴۹۷, ۹۲</td>
+                        </tr>
+                        <tr>
+                            <td><code>hi</code></td>
+                            <td>Hindi</td>
+                            <td>०१२३४५६७८९</td>
+                            <td>४४९७, ९२</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- General Endpoints -->
+            <div class="section">
+                <h2 class="section-title">📍 General / Info Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/</span>
+                    </div>
+                    <p class="description">API index and welcome message</p>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/', 'resp1')">Try it →</button>
+                    <div id="resp1" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/info</span>
+                    </div>
+                    <p class="description">Get API information and statistics</p>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/info</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/info', 'resp2')">Try it →</button>
+                    <div id="resp2" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/languages</span>
+                    </div>
+                    <p class="description">List all available languages for translations</p>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/languages</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/languages', 'resp3')">Try it →</button>
+                    <div id="resp3" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Category Endpoints -->
+            <div class="section">
+                <h2 class="section-title">📚 Category Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/categories</span>
+                    </div>
+                    <p class="description">List all categories in specified language</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code (en, ar, bn, ru, etc.)</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - English:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/categories?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/categories?language=en', 'resp4')">Try it →</button>
+                    <div id="resp4" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/categories/{id}</span>
+                        <span class="badge new">NEW FEATURE</span>
+                    </div>
+                    <p class="description">Get specific category with hadiths (includes number localization!)</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code (en, ar, bn, etc.)</div>
+                        <div class="param"><span class="param-name">include_hadiths</span> - true/false (include hadith data)</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of hadiths to return (default: 10)</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Bengali with localized numbers (৪৪৯৭, ৯২):</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/categories/3?language=bn&include_hadiths=true&limit=1</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/categories/3?language=bn&include_hadiths=true&limit=1', 'resp5')">Try Bengali →</button>
+                    <div id="resp5" class="response"></div>
+                    
+                    <div class="example" style="margin-top: 10px;">
+                        <div class="example-title">Example - English with Western numbers (4497, 92):</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/categories/3?language=en&include_hadiths=true&limit=1</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/categories/3?language=en&include_hadiths=true&limit=1', 'resp6')">Try English →</button>
+                    <div id="resp6" class="response"></div>
+                    
+                    <div class="example" style="margin-top: 10px;">
+                        <div class="example-title">Example - Arabic with Arabic numbers (٤٤٩٧, ٩٢):</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/categories/3?language=ar&include_hadiths=true&limit=1</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/categories/3?language=ar&include_hadiths=true&limit=1', 'resp7')">Try Arabic →</button>
+                    <div id="resp7" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/categories/roots</span>
+                    </div>
+                    <p class="description">Get only root/parent categories</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/categories/roots?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/categories/roots?language=en', 'resp8')">Try it →</button>
+                    <div id="resp8" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/categories/{id}/children</span>
+                    </div>
+                    <p class="description">Get subcategories of a specific category</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/categories/3/children?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/categories/3/children?language=en', 'resp9')">Try it →</button>
+                    <div id="resp9" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/categories/{id}/hadiths</span>
+                    </div>
+                    <p class="description">Get hadiths in a specific category</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of results (default: 10)</div>
+                        <div class="param"><span class="param-name">offset</span> - Pagination offset</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/categories/3/hadiths?language=en&limit=5</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/categories/3/hadiths?language=en&limit=5', 'resp10')">Try it →</button>
+                    <div id="resp10" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Book Endpoints -->
+            <div class="section">
+                <h2 class="section-title">📖 Book Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/books</span>
+                    </div>
+                    <p class="description">List all hadith books</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/books?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/books?language=en', 'resp11')">Try it →</button>
+                    <div id="resp11" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/books/{book}</span>
+                    </div>
+                    <p class="description">Get specific book details by code</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Get Sahih Bukhari:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/books/bukhari?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/books/bukhari?language=en', 'resp12')">Try it →</button>
+                    <div id="resp12" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/books/{book}/chapters</span>
+                    </div>
+                    <p class="description">Get all chapters in a book</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/books/bukhari/chapters?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/books/bukhari/chapters?language=en', 'resp13')">Try it →</button>
+                    <div id="resp13" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/books/{book}/chapters/{chapter}</span>
+                    </div>
+                    <p class="description">Get hadiths in a specific chapter</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of results</div>
+                        <div class="param"><span class="param-name">offset</span> - Pagination offset</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/books/bukhari/chapters/1?language=en&limit=3</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/books/bukhari/chapters/1?language=en&limit=3', 'resp14')">Try it →</button>
+                    <div id="resp14" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/books/{book}/hadiths/{number}</span>
+                    </div>
+                    <p class="description">Get specific hadith by book code and hadith number</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Get Bukhari Hadith #4497:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/books/bukhari/hadiths/4497?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/books/bukhari/hadiths/4497?language=en', 'resp15')">Try it →</button>
+                    <div id="resp15" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Hadith Endpoints -->
+            <div class="section">
+                <h2 class="section-title">📜 Hadith Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/hadiths</span>
+                    </div>
+                    <p class="description">Query and filter hadiths</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">book_id</span> - Filter by book ID</div>
+                        <div class="param"><span class="param-name">chapter_id</span> - Filter by chapter ID</div>
+                        <div class="param"><span class="param-name">category_id</span> - Filter by category ID</div>
+                        <div class="param"><span class="param-name">grade</span> - Filter by grade (صحيح, حسن, etc.)</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of results</div>
+                        <div class="param"><span class="param-name">offset</span> - Pagination offset</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Sahih hadiths:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/hadiths?language=en&grade=صحيح&limit=5</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/hadiths?language=en&grade=صحيح&limit=5', 'resp16')">Try it →</button>
+                    <div id="resp16" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/hadiths/{id}</span>
+                        <span class="badge new">LOCALIZED</span>
+                    </div>
+                    <p class="description">Get specific hadith by ID (with number localization)</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Bengali (৪৪৯৭):</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/hadiths/75963?language=bn</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/hadiths/75963?language=bn', 'resp17')">Try Bengali →</button>
+                    <div id="resp17" class="response"></div>
+                    
+                    <div class="example" style="margin-top: 10px;">
+                        <div class="example-title">Example - English (4497):</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/hadiths/75963?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/hadiths/75963?language=en', 'resp18')">Try English →</button>
+                    <div id="resp18" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/hadeeths/one</span>
+                    </div>
+                    <p class="description">Get one specific or random hadith (HadeethEnc compatible)</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">id</span> - Hadith ID (optional, random if not provided)</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Specific hadith:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/hadeeths/one?language=en&id=75963</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/hadeeths/one?language=en&id=75963', 'resp19')">Try it →</button>
+                    <div id="resp19" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/hadeeths/list</span>
+                    </div>
+                    <p class="description">List hadiths (HadeethEnc compatible endpoint)</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of results</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/hadeeths/list?language=en&limit=3</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/hadeeths/list?language=en&limit=3', 'resp20')">Try it →</button>
+                    <div id="resp20" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Search Endpoints -->
+            <div class="section">
+                <h2 class="section-title">🔍 Search Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/search</span>
+                    </div>
+                    <p class="description">Full-text search across hadiths</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">q</span> - Search query (required)</div>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">book_id</span> - Filter by book</div>
+                        <div class="param"><span class="param-name">category_id</span> - Filter by category</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of results</div>
+                        <div class="param"><span class="param-name">offset</span> - Pagination offset</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Search for "prayer":</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/search?q=prayer&language=en&limit=5</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/search?q=prayer&language=en&limit=5', 'resp21')">Try it →</button>
+                    <div id="resp21" class="response"></div>
+                    
+                    <div class="example" style="margin-top: 10px;">
+                        <div class="example-title">Example - Search in Bengali "আল্লাহ":</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/search?q=আল্লাহ&language=bn&limit=3</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/search?q=আল্লাহ&language=bn&limit=3', 'resp22')">Try it →</button>
+                    <div id="resp22" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/search/{term}</span>
+                    </div>
+                    <p class="description">Search with term in URL path</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of results</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/search/faith?language=en&limit=5</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/search/faith?language=en&limit=5', 'resp23')">Try it →</button>
+                    <div id="resp23" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Random Endpoint -->
+            <div class="section">
+                <h2 class="section-title">🎲 Random Endpoint</h2>
+                
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/random</span>
+                    </div>
+                    <p class="description">Get a random hadith (optionally filtered)</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">book_id</span> - Filter by book (optional)</div>
+                        <div class="param"><span class="param-name">category_id</span> - Filter by category (optional)</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example - Random hadith in English:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/random?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/random?language=en', 'resp24')">Try it →</button>
+                    <div id="resp24" class="response"></div>
+                    
+                    <div class="example" style="margin-top: 10px;">
+                        <div class="example-title">Example - Random hadith in Bengali:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/random?language=bn</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/random?language=bn', 'resp25')">Try it →</button>
+                    <div id="resp25" class="response"></div>
+                </div>
+            </div>
+
+            <!-- Chapters -->
+            <div class="section">
+                <h2 class="section-title">📑 Chapter Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/chapters</span>
+                    </div>
+                    <p class="description">List all chapters</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">book_id</span> - Filter by book (optional)</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/chapters?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/chapters?language=en', 'resp26')">Try it →</button>
+                    <div id="resp26" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/chapters/{id}</span>
+                    </div>
+                    <p class="description">Get specific chapter details</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/chapters/1?language=en</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/chapters/1?language=en', 'resp27')">Try it →</button>
+                    <div id="resp27" class="response"></div>
+                </div>
+
+                <div class="endpoint">
+                    <div>
+                        <span class="method">GET</span>
+                        <span class="path">/api/chapters/{id}/hadiths</span>
+                    </div>
+                    <p class="description">Get hadiths in a chapter by chapter ID</p>
+                    <div class="params">
+                        <h4>Parameters:</h4>
+                        <div class="param"><span class="param-name">language</span> - Language code</div>
+                        <div class="param"><span class="param-name">limit</span> - Number of results</div>
+                        <div class="param"><span class="param-name">offset</span> - Pagination offset</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-title">Example:</div>
+                        <div class="example-url">http://127.0.0.1:8000/api/chapters/1/hadiths?language=en&limit=3</div>
+                    </div>
+                    <button class="try-button" onclick="tryEndpoint('/api/chapters/1/hadiths?language=en&limit=3', 'resp28')">Try it →</button>
+                    <div id="resp28" class="response"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const BASE_URL = 'http://127.0.0.1:8000';
+
+        function tryEndpoint(endpoint, responseId) {
+            const responseDiv = document.getElementById(responseId);
+            responseDiv.className = 'response show';
+            responseDiv.innerHTML = '<span class="loading">⏳ Loading...</span>';
+
+            fetch(BASE_URL + endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    responseDiv.innerHTML = '<span class="success">✓ Success</span><br><br>' + 
+                        JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    responseDiv.innerHTML = '<span class="error">✗ Error: ' + error.message + '</span>';
+                });
+        }
+    </script>
+</body>
+</html>

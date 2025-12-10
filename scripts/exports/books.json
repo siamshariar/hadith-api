@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "code": "bukhari",
+    "name_en": "Sahih al-Bukhari",
+    "name_ar": null,
+    "total_hadith": 490,
+    "source": "fawaz",
+    "created_at": "2025-12-08T08:18:29",
+    "updated_at": "2025-12-08T12:43:06"
+  },
+  {
+    "id": 2,
+    "code": "muslim",
+    "name_en": "Sahih Muslim",
+    "name_ar": null,
+    "total_hadith": 406,
+    "source": "fawaz",
+    "created_at": "2025-12-08T08:27:49",
+    "updated_at": "2025-12-08T12:43:06"
+  },
+  {
+    "id": 3,
+    "code": "abudawud",
+    "name_en": "Sunan Abu Dawud",
+    "name_ar": null,
+    "total_hadith": 500,
+    "source": "fawaz",
+    "created_at": "2025-12-08T08:38:07",
+    "updated_at": "2025-12-08T12:43:06"
+  },
+  {
+    "id": 4,
+    "code": "tirmidhi",
+    "name_en": "Jami al-Tirmidhi",
+    "name_ar": null,
+    "total_hadith": 496,
+    "source": "fawaz",
+    "created_at": "2025-12-08T08:47:15",
+    "updated_at": "2025-12-08T12:43:06"
+  },
+  {
+    "id": 5,
+    "code": "nasai",
+    "name_en": "Sunan al-Nasa'i",
+    "name_ar": null,
+    "total_hadith": 494,
+    "source": "fawaz",
+    "created_at": "2025-12-08T08:56:17",
+    "updated_at": "2025-12-08T12:43:06"
+  },
+  {
+    "id": 6,
+    "code": "ibnmajah",
+    "name_en": "Sunan Ibn Majah",
+    "name_ar": null,
+    "total_hadith": 500,
+    "source": "fawaz",
+    "created_at": "2025-12-08T09:05:41",
+    "updated_at": "2025-12-08T12:43:06"
+  },
+  {
+    "id": 7,
+    "code": "malik",
+    "name_en": "Muwatta Malik",
+    "name_ar": null,
+    "total_hadith": 497,
+    "source": "fawaz",
+    "created_at": "2025-12-08T09:15:49",
+    "updated_at": "2025-12-08T12:43:06"
+  },
+  {
+    "id": 8,
+    "code": "hadeethenc",
+    "name_en": "HadeethEnc Collection",
+    "name_ar": null,
+    "total_hadith": 2132,
+    "source": "hadeethenc",
+    "created_at": "2025-12-08T09:28:25",
+    "updated_at": "2025-12-08T12:43:06"
+  }
+]

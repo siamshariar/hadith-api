@@ -1,0 +1,15 @@
+id,book_id,localization_id,localization_code,name,slug
+1,1,2,en,Sahih al-Bukhari,sahih-al-bukhari
+2,1,1,ar,صحيح البخاري,صحيح-البخاري
+3,2,2,en,Sahih Muslim,sahih-muslim
+4,2,1,ar,صحيح مسلم,صحيح-مسلم
+5,3,2,en,Sunan Abu Dawud,sunan-abu-dawud
+6,3,1,ar,سنن أبي داود,سنن-أبي-داود
+7,4,2,en,Jami al-Tirmidhi,jami-al-tirmidhi
+8,4,1,ar,جامع الترمذي,جامع-الترمذي
+9,5,2,en,Sunan Ibn Majah,sunan-ibn-majah
+10,5,1,ar,سنن ابن ماجه,سنن-ابن-ماجه
+11,6,2,en,Sunan an-Nasa'i,sunan-an-nasai
+12,6,1,ar,سنن النسائي,سنن-النسائي
+13,7,2,en,Riyad as-Salihin,riyad-as-salihin
+14,7,1,ar,رياض الصالحين,رياض-الصالحين

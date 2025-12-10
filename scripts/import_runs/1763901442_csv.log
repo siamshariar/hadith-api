@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "F:\backup-hadith-api\hadith-api\scripts\master_import_orchestrator.py", line 814, in main
+    import_csv_data()
+  File "F:\backup-hadith-api\hadith-api\scripts\master_import_orchestrator.py", line 83, in import_csv_data
+    cursor.execute("""
+  File "C:\Users\Green Way\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Green Way\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Green Way\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Green Way\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.DatabaseError: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+
+================================================================================
+🎯 MASTER HADITH IMPORT ORCHESTRATOR
+================================================================================
+This will import complete hadith data from all available sources
+Sources: CSV files, Fawaz API, HadeethEnc API, Bangla Hadith API
+Languages: All available translations (17+ languages)
+
+Estimated time: 4-8 hours depending on internet speed
+
+================================================================================
+🎯 STEP 1: IMPORTING CSV DATA
+================================================================================
+📚 Importing books from CSV...
+❌ Error importing CSV data: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+
+❌ Import failed: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction

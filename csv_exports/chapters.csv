@@ -1,0 +1,241 @@
+id,book_id,chapter_no,name_en,name_ar,total_hadith,slug
+1,1,1,Revelation,,50,revelation
+2,1,2,Belief,,50,belief
+3,1,3,Knowledge,,50,knowledge
+4,1,4,Ablution,,50,ablution
+5,1,5,Prayer,,50,prayer
+6,1,6,Funeral Prayer,,50,funeral-prayer
+7,1,7,Zakat,,50,zakat
+8,1,8,Fasting,,50,fasting
+9,1,9,Hajj,,50,hajj
+10,1,10,Marriage,,50,marriage
+11,1,11,Divorce,,50,divorce
+12,1,12,Business Transactions,,50,business-transactions
+13,1,13,Inheritance,,50,inheritance
+14,1,14,Gifts,,50,gifts
+15,1,15,Wills,,50,wills
+16,1,16,Vows,,50,vows
+17,1,17,Oaths,,50,oaths
+18,1,18,Food,,50,food
+19,1,19,Drink,,50,drink
+20,1,20,Clothing,,50,clothing
+21,1,21,Medicine,,50,medicine
+22,1,22,Jihad,,50,jihad
+23,1,23,Government,,50,government
+24,1,24,Judiciary,,50,judiciary
+25,2,1,Faith,,50,faith
+26,2,2,Purification,,50,purification
+27,2,3,Prayer,,50,prayer
+28,2,4,Zakat,,50,zakat
+29,2,5,Fasting,,50,fasting
+30,2,6,Hajj,,50,hajj
+31,2,7,Marriage,,50,marriage
+32,2,8,Divorce,,50,divorce
+33,2,9,Business,,50,business
+34,2,10,Inheritance,,50,inheritance
+35,2,11,Wills,,50,wills
+36,2,12,Vows,,50,vows
+37,2,13,Oaths,,50,oaths
+38,2,14,Food,,50,food
+39,2,15,Clothing,,50,clothing
+40,2,16,Good Manners,,50,good-manners
+41,3,1,The Book of Chapter 1,,50,the-book-of-chapter-1
+42,3,2,The Book of Chapter 2,,50,the-book-of-chapter-2
+43,3,3,The Book of Chapter 3,,50,the-book-of-chapter-3
+44,3,4,The Book of Chapter 4,,50,the-book-of-chapter-4
+45,3,5,The Book of Chapter 5,,50,the-book-of-chapter-5
+46,3,6,The Book of Chapter 6,,50,the-book-of-chapter-6
+47,3,7,The Book of Chapter 7,,50,the-book-of-chapter-7
+48,3,8,The Book of Chapter 8,,50,the-book-of-chapter-8
+49,3,9,The Book of Chapter 9,,50,the-book-of-chapter-9
+50,3,10,The Book of Chapter 10,,50,the-book-of-chapter-10
+51,3,11,The Book of Chapter 11,,50,the-book-of-chapter-11
+52,3,12,The Book of Chapter 12,,50,the-book-of-chapter-12
+53,3,13,The Book of Chapter 13,,50,the-book-of-chapter-13
+54,3,14,The Book of Chapter 14,,50,the-book-of-chapter-14
+55,3,15,The Book of Chapter 15,,50,the-book-of-chapter-15
+56,3,16,The Book of Chapter 16,,50,the-book-of-chapter-16
+57,3,17,The Book of Chapter 17,,50,the-book-of-chapter-17
+58,3,18,The Book of Chapter 18,,50,the-book-of-chapter-18
+59,3,19,The Book of Chapter 19,,50,the-book-of-chapter-19
+60,3,20,The Book of Chapter 20,,50,the-book-of-chapter-20
+61,3,21,The Book of Chapter 21,,50,the-book-of-chapter-21
+62,3,22,The Book of Chapter 22,,50,the-book-of-chapter-22
+63,3,23,The Book of Chapter 23,,50,the-book-of-chapter-23
+64,3,24,The Book of Chapter 24,,50,the-book-of-chapter-24
+65,3,25,The Book of Chapter 25,,50,the-book-of-chapter-25
+66,3,26,The Book of Chapter 26,,50,the-book-of-chapter-26
+67,3,27,The Book of Chapter 27,,50,the-book-of-chapter-27
+68,3,28,The Book of Chapter 28,,50,the-book-of-chapter-28
+69,3,29,The Book of Chapter 29,,50,the-book-of-chapter-29
+70,3,30,The Book of Chapter 30,,50,the-book-of-chapter-30
+71,3,31,The Book of Chapter 31,,50,the-book-of-chapter-31
+72,3,32,The Book of Chapter 32,,50,the-book-of-chapter-32
+73,3,33,The Book of Chapter 33,,50,the-book-of-chapter-33
+74,3,34,The Book of Chapter 34,,50,the-book-of-chapter-34
+75,3,35,The Book of Chapter 35,,50,the-book-of-chapter-35
+76,3,36,The Book of Chapter 36,,50,the-book-of-chapter-36
+77,3,37,The Book of Chapter 37,,50,the-book-of-chapter-37
+78,3,38,The Book of Chapter 38,,50,the-book-of-chapter-38
+79,3,39,The Book of Chapter 39,,50,the-book-of-chapter-39
+80,3,40,The Book of Chapter 40,,50,the-book-of-chapter-40
+81,3,41,The Book of Chapter 41,,50,the-book-of-chapter-41
+82,3,42,The Book of Chapter 42,,50,the-book-of-chapter-42
+83,3,43,The Book of Chapter 43,,50,the-book-of-chapter-43
+84,4,1,The Book of Chapter 1,,50,the-book-of-chapter-1
+85,4,2,The Book of Chapter 2,,50,the-book-of-chapter-2
+86,4,3,The Book of Chapter 3,,50,the-book-of-chapter-3
+87,4,4,The Book of Chapter 4,,50,the-book-of-chapter-4
+88,4,5,The Book of Chapter 5,,50,the-book-of-chapter-5
+89,4,6,The Book of Chapter 6,,50,the-book-of-chapter-6
+90,4,7,The Book of Chapter 7,,50,the-book-of-chapter-7
+91,4,8,The Book of Chapter 8,,50,the-book-of-chapter-8
+92,4,9,The Book of Chapter 9,,50,the-book-of-chapter-9
+93,4,10,The Book of Chapter 10,,50,the-book-of-chapter-10
+94,4,11,The Book of Chapter 11,,50,the-book-of-chapter-11
+95,4,12,The Book of Chapter 12,,50,the-book-of-chapter-12
+96,4,13,The Book of Chapter 13,,50,the-book-of-chapter-13
+97,4,14,The Book of Chapter 14,,50,the-book-of-chapter-14
+98,4,15,The Book of Chapter 15,,50,the-book-of-chapter-15
+99,4,16,The Book of Chapter 16,,50,the-book-of-chapter-16
+100,4,17,The Book of Chapter 17,,50,the-book-of-chapter-17
+101,4,18,The Book of Chapter 18,,50,the-book-of-chapter-18
+102,4,19,The Book of Chapter 19,,50,the-book-of-chapter-19
+103,4,20,The Book of Chapter 20,,50,the-book-of-chapter-20
+104,4,21,The Book of Chapter 21,,50,the-book-of-chapter-21
+105,4,22,The Book of Chapter 22,,50,the-book-of-chapter-22
+106,4,23,The Book of Chapter 23,,50,the-book-of-chapter-23
+107,4,24,The Book of Chapter 24,,50,the-book-of-chapter-24
+108,4,25,The Book of Chapter 25,,50,the-book-of-chapter-25
+109,4,26,The Book of Chapter 26,,50,the-book-of-chapter-26
+110,4,27,The Book of Chapter 27,,50,the-book-of-chapter-27
+111,4,28,The Book of Chapter 28,,50,the-book-of-chapter-28
+112,4,29,The Book of Chapter 29,,50,the-book-of-chapter-29
+113,4,30,The Book of Chapter 30,,50,the-book-of-chapter-30
+114,4,31,The Book of Chapter 31,,50,the-book-of-chapter-31
+115,4,32,The Book of Chapter 32,,50,the-book-of-chapter-32
+116,4,33,The Book of Chapter 33,,50,the-book-of-chapter-33
+117,4,34,The Book of Chapter 34,,50,the-book-of-chapter-34
+118,4,35,The Book of Chapter 35,,50,the-book-of-chapter-35
+119,4,36,The Book of Chapter 36,,50,the-book-of-chapter-36
+120,4,37,The Book of Chapter 37,,50,the-book-of-chapter-37
+121,4,38,The Book of Chapter 38,,50,the-book-of-chapter-38
+122,4,39,The Book of Chapter 39,,50,the-book-of-chapter-39
+123,4,40,The Book of Chapter 40,,50,the-book-of-chapter-40
+124,4,41,The Book of Chapter 41,,50,the-book-of-chapter-41
+125,4,42,The Book of Chapter 42,,50,the-book-of-chapter-42
+126,4,43,The Book of Chapter 43,,50,the-book-of-chapter-43
+127,4,44,The Book of Chapter 44,,50,the-book-of-chapter-44
+128,4,45,The Book of Chapter 45,,50,the-book-of-chapter-45
+129,4,46,The Book of Chapter 46,,50,the-book-of-chapter-46
+130,4,47,The Book of Chapter 47,,50,the-book-of-chapter-47
+131,4,48,The Book of Chapter 48,,50,the-book-of-chapter-48
+132,4,49,The Book of Chapter 49,,50,the-book-of-chapter-49
+133,5,1,The Book of Chapter 1,,50,the-book-of-chapter-1
+134,5,2,The Book of Chapter 2,,50,the-book-of-chapter-2
+135,5,3,The Book of Chapter 3,,50,the-book-of-chapter-3
+136,5,4,The Book of Chapter 4,,50,the-book-of-chapter-4
+137,5,5,The Book of Chapter 5,,50,the-book-of-chapter-5
+138,5,6,The Book of Chapter 6,,50,the-book-of-chapter-6
+139,5,7,The Book of Chapter 7,,50,the-book-of-chapter-7
+140,5,8,The Book of Chapter 8,,50,the-book-of-chapter-8
+141,5,9,The Book of Chapter 9,,50,the-book-of-chapter-9
+142,5,10,The Book of Chapter 10,,50,the-book-of-chapter-10
+143,5,11,The Book of Chapter 11,,50,the-book-of-chapter-11
+144,5,12,The Book of Chapter 12,,50,the-book-of-chapter-12
+145,5,13,The Book of Chapter 13,,50,the-book-of-chapter-13
+146,5,14,The Book of Chapter 14,,50,the-book-of-chapter-14
+147,5,15,The Book of Chapter 15,,50,the-book-of-chapter-15
+148,5,16,The Book of Chapter 16,,50,the-book-of-chapter-16
+149,5,17,The Book of Chapter 17,,50,the-book-of-chapter-17
+150,5,18,The Book of Chapter 18,,50,the-book-of-chapter-18
+151,5,19,The Book of Chapter 19,,50,the-book-of-chapter-19
+152,5,20,The Book of Chapter 20,,50,the-book-of-chapter-20
+153,5,21,The Book of Chapter 21,,50,the-book-of-chapter-21
+154,5,22,The Book of Chapter 22,,50,the-book-of-chapter-22
+155,5,23,The Book of Chapter 23,,50,the-book-of-chapter-23
+156,5,24,The Book of Chapter 24,,50,the-book-of-chapter-24
+157,5,25,The Book of Chapter 25,,50,the-book-of-chapter-25
+158,5,26,The Book of Chapter 26,,50,the-book-of-chapter-26
+159,5,27,The Book of Chapter 27,,50,the-book-of-chapter-27
+160,5,28,The Book of Chapter 28,,50,the-book-of-chapter-28
+161,5,29,The Book of Chapter 29,,50,the-book-of-chapter-29
+162,5,30,The Book of Chapter 30,,50,the-book-of-chapter-30
+163,5,31,The Book of Chapter 31,,50,the-book-of-chapter-31
+164,5,32,The Book of Chapter 32,,50,the-book-of-chapter-32
+165,5,33,The Book of Chapter 33,,50,the-book-of-chapter-33
+166,5,34,The Book of Chapter 34,,50,the-book-of-chapter-34
+167,5,35,The Book of Chapter 35,,50,the-book-of-chapter-35
+168,5,36,The Book of Chapter 36,,50,the-book-of-chapter-36
+169,5,37,The Book of Chapter 37,,50,the-book-of-chapter-37
+170,6,1,The Book of Chapter 1,,50,the-book-of-chapter-1
+171,6,2,The Book of Chapter 2,,50,the-book-of-chapter-2
+172,6,3,The Book of Chapter 3,,50,the-book-of-chapter-3
+173,6,4,The Book of Chapter 4,,50,the-book-of-chapter-4
+174,6,5,The Book of Chapter 5,,50,the-book-of-chapter-5
+175,6,6,The Book of Chapter 6,,50,the-book-of-chapter-6
+176,6,7,The Book of Chapter 7,,50,the-book-of-chapter-7
+177,6,8,The Book of Chapter 8,,50,the-book-of-chapter-8
+178,6,9,The Book of Chapter 9,,50,the-book-of-chapter-9
+179,6,10,The Book of Chapter 10,,50,the-book-of-chapter-10
+180,6,11,The Book of Chapter 11,,50,the-book-of-chapter-11
+181,6,12,The Book of Chapter 12,,50,the-book-of-chapter-12
+182,6,13,The Book of Chapter 13,,50,the-book-of-chapter-13
+183,6,14,The Book of Chapter 14,,50,the-book-of-chapter-14
+184,6,15,The Book of Chapter 15,,50,the-book-of-chapter-15
+185,6,16,The Book of Chapter 16,,50,the-book-of-chapter-16
+186,6,17,The Book of Chapter 17,,50,the-book-of-chapter-17
+187,6,18,The Book of Chapter 18,,50,the-book-of-chapter-18
+188,6,19,The Book of Chapter 19,,50,the-book-of-chapter-19
+189,6,20,The Book of Chapter 20,,50,the-book-of-chapter-20
+190,6,21,The Book of Chapter 21,,50,the-book-of-chapter-21
+191,6,22,The Book of Chapter 22,,50,the-book-of-chapter-22
+192,6,23,The Book of Chapter 23,,50,the-book-of-chapter-23
+193,6,24,The Book of Chapter 24,,50,the-book-of-chapter-24
+194,6,25,The Book of Chapter 25,,50,the-book-of-chapter-25
+195,6,26,The Book of Chapter 26,,50,the-book-of-chapter-26
+196,6,27,The Book of Chapter 27,,50,the-book-of-chapter-27
+197,6,28,The Book of Chapter 28,,50,the-book-of-chapter-28
+198,6,29,The Book of Chapter 29,,50,the-book-of-chapter-29
+199,6,30,The Book of Chapter 30,,50,the-book-of-chapter-30
+200,6,31,The Book of Chapter 31,,50,the-book-of-chapter-31
+201,6,32,The Book of Chapter 32,,50,the-book-of-chapter-32
+202,6,33,The Book of Chapter 33,,50,the-book-of-chapter-33
+203,6,34,The Book of Chapter 34,,50,the-book-of-chapter-34
+204,6,35,The Book of Chapter 35,,50,the-book-of-chapter-35
+205,6,36,The Book of Chapter 36,,50,the-book-of-chapter-36
+206,6,37,The Book of Chapter 37,,50,the-book-of-chapter-37
+207,6,38,The Book of Chapter 38,,50,the-book-of-chapter-38
+208,6,39,The Book of Chapter 39,,50,the-book-of-chapter-39
+209,6,40,The Book of Chapter 40,,50,the-book-of-chapter-40
+210,6,41,The Book of Chapter 41,,50,the-book-of-chapter-41
+211,6,42,The Book of Chapter 42,,50,the-book-of-chapter-42
+212,6,43,The Book of Chapter 43,,50,the-book-of-chapter-43
+213,6,44,The Book of Chapter 44,,50,the-book-of-chapter-44
+214,6,45,The Book of Chapter 45,,50,the-book-of-chapter-45
+215,6,46,The Book of Chapter 46,,50,the-book-of-chapter-46
+216,6,47,The Book of Chapter 47,,50,the-book-of-chapter-47
+217,6,48,The Book of Chapter 48,,50,the-book-of-chapter-48
+218,6,49,The Book of Chapter 49,,50,the-book-of-chapter-49
+219,6,50,The Book of Chapter 50,,50,the-book-of-chapter-50
+220,6,51,The Book of Chapter 51,,50,the-book-of-chapter-51
+221,7,1,The Book of Chapter 1,,50,the-book-of-chapter-1
+222,7,2,The Book of Chapter 2,,50,the-book-of-chapter-2
+223,7,3,The Book of Chapter 3,,50,the-book-of-chapter-3
+224,7,4,The Book of Chapter 4,,50,the-book-of-chapter-4
+225,7,5,The Book of Chapter 5,,50,the-book-of-chapter-5
+226,7,6,The Book of Chapter 6,,50,the-book-of-chapter-6
+227,7,7,The Book of Chapter 7,,50,the-book-of-chapter-7
+228,7,8,The Book of Chapter 8,,50,the-book-of-chapter-8
+229,7,9,The Book of Chapter 9,,50,the-book-of-chapter-9
+230,7,10,The Book of Chapter 10,,50,the-book-of-chapter-10
+231,7,11,The Book of Chapter 11,,50,the-book-of-chapter-11
+232,7,12,The Book of Chapter 12,,50,the-book-of-chapter-12
+233,7,13,The Book of Chapter 13,,50,the-book-of-chapter-13
+234,7,14,The Book of Chapter 14,,50,the-book-of-chapter-14
+235,7,15,The Book of Chapter 15,,50,the-book-of-chapter-15
+236,7,16,The Book of Chapter 16,,50,the-book-of-chapter-16
+237,7,17,The Book of Chapter 17,,50,the-book-of-chapter-17
+238,7,18,The Book of Chapter 18,,50,the-book-of-chapter-18
+239,7,19,The Book of Chapter 19,,50,the-book-of-chapter-19
+240,7,20,The Book of Chapter 20,,50,the-book-of-chapter-20

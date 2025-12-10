@@ -1,0 +1,6 @@
+language: vi
+total_checked: 927
+found: 0
+remaining: 927
+found_path: F:\backup-hadith-api\hadith-api\scripts\targeted_results\found_vi.jsonl
+remaining_path: F:\backup-hadith-api\hadith-api\scripts\targeted_results\remaining_vi.csv

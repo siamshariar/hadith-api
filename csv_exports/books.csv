@@ -1,0 +1,8 @@
+id,code,name_en,name_ar,total_hadith,slug
+1,bukhari,Sahih al-Bukhari,صحيح البخاري,7563,sahih-al-bukhari
+2,muslim,Sahih Muslim,صحيح مسلم,7563,sahih-muslim
+3,abudawud,Sunan Abu Dawud,سنن أبي داود,5274,sunan-abu-dawud
+4,tirmidhi,Jami al-Tirmidhi,جامع الترمذي,3956,jami-al-tirmidhi
+5,ibnmajah,Sunan Ibn Majah,سنن ابن ماجه,4341,sunan-ibn-majah
+6,nasai,Sunan an-Nasa'i,سنن النسائي,5762,sunan-an-nasai
+7,riyadussalihin,Riyad as-Salihin,رياض الصالحين,1896,riyad-as-salihin

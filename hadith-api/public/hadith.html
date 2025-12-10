@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadith Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+        }
+        
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .hadith-meta-bar {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .meta-badge {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        
+        .grade-sahih {
+            background: #28a745;
+            color: white;
+        }
+        
+        .grade-hasan {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .arabic-text {
+            font-size: 1.8em;
+            line-height: 2.5;
+            text-align: right;
+            direction: rtl;
+            color: #2c3e50;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+        }
+        
+        .translation-text {
+            font-size: 1.2em;
+            line-height: 2;
+            color: #495057;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .explanation-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #495057;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .language-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .language-tab {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .language-tab:hover {
+            background: #e9ecef;
+        }
+        
+        .language-tab.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1.1em;
+            color: #495057;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📜 Hadith Details</h1>
+            <p id="hadithNumber"></p>
+            <a href="javascript:history.back()" class="back-button">← Back</a>
+            <a href="index.html" class="back-button">🏠 Home</a>
+        </header>
+        
+        <div class="content">
+            <div id="hadithContent" class="loading">Loading hadith...</div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://127.0.0.1:8000/api';
+        const urlParams = new URLSearchParams(window.location.search);
+        const hadithId = urlParams.get('id');
+        let currentLang = urlParams.get('lang') || 'en';
+        
+        const LANGUAGES = [
+            {code: "en", name: "English"},
+            {code: "ar", name: "العربية"},
+            {code: "bn", name: "বাংলা"},
+            {code: "ur", name: "اردو"},
+            {code: "hi", name: "हिन्दी"},
+            {code: "tr", name: "Türkçe"},
+            {code: "fr", name: "Français"},
+            {code: "es", name: "Español"},
+            {code: "id", name: "Indonesia"},
+            {code: "fa", name: "فارسی"},
+            {code: "ru", name: "Русский"},
+            {code: "zh", name: "中文"},
+            {code: "bs", name: "Bosanski"},
+            {code: "tl", name: "Tagalog"},
+            {code: "vi", name: "Tiếng Việt"},
+            {code: "si", name: "සිංහල"},
+            {code: "ug", name: "ئۇيغۇرچە"}
+        ];
+        
+        let hadithData = null;
+        
+        // Load hadith details
+        async function loadHadith() {
+            const container = document.getElementById('hadithContent');
+            container.innerHTML = '<div class="loading">Loading hadith...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/hadiths/${hadithId}?lang=${currentLang}`);
+                const data = await response.json();
+                
+                hadithData = data.hadith || data.data || data;
+                renderHadith();
+            } catch (error) {
+                console.error('Error loading hadith:', error);
+                container.innerHTML = '<div class="loading">Error loading hadith</div>';
+            }
+        }
+        
+        // Render hadith content
+        function renderHadith() {
+            if (!hadithData) return;
+            
+            const container = document.getElementById('hadithContent');
+            
+            // Update header
+            document.getElementById('hadithNumber').textContent = 
+                `Hadith #${hadithData.hadith_number || hadithData.id}`;
+            
+            let html = '';
+            
+            // Meta information bar
+            html += '<div class="hadith-meta-bar">';
+            if (hadithData.grade) {
+                const gradeClass = hadithData.grade.toLowerCase().includes('sahih') ? 'grade-sahih' : 'grade-hasan';
+                html += `<span class="meta-badge ${gradeClass}">${hadithData.grade}</span>`;
+            }
+            if (hadithData.book_name) {
+                html += `<span class="meta-badge" style="background: #17a2b8; color: white;">${hadithData.book_name}</span>`;
+            }
+            if (hadithData.chapter_name) {
+                html += `<span class="meta-badge" style="background: #6c757d; color: white;">${hadithData.chapter_name}</span>`;
+            }
+            html += '</div>';
+            
+            // Arabic text
+            if (hadithData.arabic_text || hadithData.hadeeth) {
+                html += `
+                    <div class="section">
+                        <div class="section-title">📖 Arabic Text</div>
+                        <div class="arabic-text">${hadithData.arabic_text || hadithData.hadeeth}</div>
+                    </div>
+                `;
+            }
+            
+            // Translation with language tabs
+            html += `
+                <div class="section">
+                    <div class="section-title">🌐 Translation</div>
+                    <div class="language-tabs">
+                        ${LANGUAGES.map(lang => `
+                            <div class="language-tab ${lang.code === currentLang ? 'active' : ''}"
+                                 onclick="changeLanguage('${lang.code}')">
+                                ${lang.name}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="translation-text">${hadithData.text || hadithData.translation || 'Translation not available'}</div>
+                </div>
+            `;
+            
+            // Explanation
+            if (hadithData.explanation) {
+                html += `
+                    <div class="section">
+                        <div class="section-title">💡 Explanation</div>
+                        <div class="explanation-text">${hadithData.explanation}</div>
+                    </div>
+                `;
+            }
+            
+            // Hint
+            if (hadithData.hint) {
+                html += `
+                    <div class="section">
+                        <div class="section-title">✨ Hint</div>
+                        <div class="explanation-text">${hadithData.hint}</div>
+                    </div>
+                `;
+            }
+            
+            // Word meanings
+            if (hadithData.word_meanings || hadithData.words_meanings) {
+                html += `
+                    <div class="section">
+                        <div class="section-title">📚 Word Meanings</div>
+                        <div class="explanation-text">${hadithData.word_meanings || hadithData.words_meanings}</div>
+                    </div>
+                `;
+            }
+            
+            // Additional information
+            html += '<div class="section"><div class="section-title">ℹ️ Additional Information</div><div class="info-grid">';
+            
+            if (hadithData.attribution) {
+                html += `
+                    <div class="info-card">
+                        <div class="info-label">Attribution</div>
+                        <div class="info-value">${hadithData.attribution}</div>
+                    </div>
+                `;
+            }
+            
+            if (hadithData.references || hadithData.reference) {
+                html += `
+                    <div class="info-card">
+                        <div class="info-label">Reference</div>
+                        <div class="info-value">${hadithData.references || hadithData.reference}</div>
+                    </div>
+                `;
+            }
+            
+            html += '</div></div>';
+            
+            container.innerHTML = html;
+        }
+        
+        // Change language
+        async function changeLanguage(lang) {
+            currentLang = lang;
+            
+            try {
+                const response = await fetch(`${API_BASE}/hadiths/${hadithId}/translations/${lang}`);
+                const data = await response.json();
+                
+                if (data.translation || data.data) {
+                    const translation = data.translation || data.data;
+                    hadithData = {...hadithData, ...translation};
+                    renderHadith();
+                }
+            } catch (error) {
+                console.error('Error loading translation:', error);
+                alert(`Translation not available in ${lang}`);
+            }
+        }
+        
+        // Initialize
+        window.onload = function() {
+            loadHadith();
+        };
+    </script>
+</body>
+</html>

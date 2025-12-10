@@ -1,0 +1,4145 @@
+[
+  {
+    "id": 1,
+    "parent_id": null,
+    "name_en": "The Noble Qur'an and Qur'anic Sciences",
+    "name_ar": null,
+    "total_hadith": 81,
+    "slug": "the-noble-qur'an-and-qur'anic-sciences",
+    "children": [
+      {
+        "id": 8,
+        "parent_id": 1,
+        "name_en": "Revelation and Collection of the Qur'an",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "revelation-and-collection-of-the-qur'an",
+        "children": [
+          {
+            "id": 13,
+            "parent_id": 8,
+            "name_en": "Meanings and Attributes of the Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "meanings-and-attributes-of-the-qur'an",
+            "children": []
+          },
+          {
+            "id": 14,
+            "parent_id": 8,
+            "name_en": "Occasions of Revelation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "occasions-of-revelation",
+            "children": []
+          },
+          {
+            "id": 16,
+            "parent_id": 8,
+            "name_en": "Abrogating and Abrogated Verses",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "abrogating-and-abrogated-verses",
+            "children": []
+          },
+          {
+            "id": 17,
+            "parent_id": 8,
+            "name_en": "Collecting the Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "collecting-the-qur'an",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "parent_id": 1,
+        "name_en": "Modes of Qur'anic Recitation and Tajweed",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "modes-of-qur'anic-recitation-and-tajweed",
+        "children": [
+          {
+            "id": 18,
+            "parent_id": 9,
+            "name_en": "Seven Modes of the Qur'anic Revelation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "seven-modes-of-the-qur'anic-revelation",
+            "children": []
+          },
+          {
+            "id": 20,
+            "parent_id": 9,
+            "name_en": "Science of Tajweed",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "science-of-tajweed",
+            "children": []
+          },
+          {
+            "id": 21,
+            "parent_id": 9,
+            "name_en": "Stops and Starts",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "stops-and-starts",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "parent_id": 1,
+        "name_en": "Qur'anic Exegesis",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "qur'anic-exegesis",
+        "children": [
+          {
+            "id": 24,
+            "parent_id": 10,
+            "name_en": "Rules and Principles of Exegesis",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rules-and-principles-of-exegesis",
+            "children": []
+          },
+          {
+            "id": 738,
+            "parent_id": 10,
+            "name_en": "Interpretation of verses",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "interpretation-of-verses",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "parent_id": 1,
+        "name_en": "General Qur'anic Topics",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "general-qur'anic-topics",
+        "children": [
+          {
+            "id": 29,
+            "parent_id": 11,
+            "name_en": "Rulings of the Qur'an and Codices",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-the-qur'an-and-codices",
+            "children": []
+          },
+          {
+            "id": 31,
+            "parent_id": 11,
+            "name_en": "Manners of Reading and Memorizing the Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-reading-and-memorizing-the-qur'an",
+            "children": []
+          },
+          {
+            "id": 32,
+            "parent_id": 11,
+            "name_en": "Refuting Allegations against the Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "refuting-allegations-against-the-qur'an",
+            "children": []
+          },
+          {
+            "id": 38,
+            "parent_id": 11,
+            "name_en": "Inference from the Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "inference-from-the-qur'an",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "parent_id": 1,
+        "name_en": "Excellence of the Qur'an",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "excellence-of-the-qur'an",
+        "children": [
+          {
+            "id": 39,
+            "parent_id": 12,
+            "name_en": "Merit of Taking Care of the Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merit-of-taking-care-of-the-qur'an",
+            "children": []
+          },
+          {
+            "id": 40,
+            "parent_id": 12,
+            "name_en": "Virtues of Surahs and Verses",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "virtues-of-surahs-and-verses",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "parent_id": null,
+    "name_en": "The Hadith and Hadith Sciences",
+    "name_ar": null,
+    "total_hadith": 9,
+    "slug": "the-hadith-and-hadith-sciences",
+    "children": [
+      {
+        "id": 44,
+        "parent_id": 2,
+        "name_en": "General Sunnah Topics",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "general-sunnah-topics",
+        "children": [
+          {
+            "id": 56,
+            "parent_id": 44,
+            "name_en": "Significance and Status of the Sunnah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "significance-and-status-of-the-sunnah",
+            "children": []
+          },
+          {
+            "id": 57,
+            "parent_id": 44,
+            "name_en": "Writing the Sunnah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "writing-the-sunnah",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "parent_id": null,
+    "name_en": "The Creed",
+    "name_ar": null,
+    "total_hadith": 455,
+    "slug": "the-creed",
+    "children": [
+      {
+        "id": 59,
+        "parent_id": 3,
+        "name_en": "Belief in Allah the Mighty and Majestic",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "belief-in-allah-the-mighty-and-majestic",
+        "children": [
+          {
+            "id": 72,
+            "parent_id": 59,
+            "name_en": "Oneness of Allah's Lordship",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "oneness-of-allah's-lordship",
+            "children": []
+          },
+          {
+            "id": 73,
+            "parent_id": 59,
+            "name_en": "Oneness of Allah's Worship",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "oneness-of-allah's-worship",
+            "children": []
+          },
+          {
+            "id": 74,
+            "parent_id": 59,
+            "name_en": "Oneness of Allah's Names and Attributes",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "oneness-of-allah's-names-and-attributes",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "parent_id": 3,
+        "name_en": "Belief in the Angels",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "belief-in-the-angels",
+        "children": [
+          {
+            "id": 75,
+            "parent_id": 60,
+            "name_en": "The Angels",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-angels",
+            "children": []
+          },
+          {
+            "id": 76,
+            "parent_id": 60,
+            "name_en": "The Jinn",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-jinn",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "parent_id": 3,
+        "name_en": "Belief in the Revealed Books",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "belief-in-the-revealed-books",
+        "children": [
+          {
+            "id": 77,
+            "parent_id": 61,
+            "name_en": "Pre-Islamic Scriptures",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "pre-islamic-scriptures",
+            "children": []
+          },
+          {
+            "id": 78,
+            "parent_id": 61,
+            "name_en": "The Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-qur'an",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "parent_id": 3,
+        "name_en": "Belief in the Messengers",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "belief-in-the-messengers",
+        "children": [
+          {
+            "id": 79,
+            "parent_id": 62,
+            "name_en": "Prophethood",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophethood",
+            "children": []
+          },
+          {
+            "id": 80,
+            "parent_id": 62,
+            "name_en": "Pre-Islamic Prophets and Messengers, peace be upon them",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "pre-islamic-prophets-and-messengers-peace-be-upon-them",
+            "children": []
+          },
+          {
+            "id": 81,
+            "parent_id": 62,
+            "name_en": "Our Prophet Muhammad, may Allah's peace and blessings be upon him",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "our-prophet-muhammad-may-allah's-peace-and-blessings-be-upon-him",
+            "children": []
+          },
+          {
+            "id": 82,
+            "parent_id": 62,
+            "name_en": "Miracles of the Pious Allies of Allah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "miracles-of-the-pious-allies-of-allah",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "parent_id": 3,
+        "name_en": "Belief in the Last Day",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "belief-in-the-last-day",
+        "children": [
+          {
+            "id": 83,
+            "parent_id": 63,
+            "name_en": "The Barzakh Life (After death Period)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-barzakh-life-after-death-period",
+            "children": []
+          },
+          {
+            "id": 84,
+            "parent_id": 63,
+            "name_en": "Portents of the Hour",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "portents-of-the-hour",
+            "children": []
+          },
+          {
+            "id": 85,
+            "parent_id": 63,
+            "name_en": "The Hereafter Life",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-hereafter-life",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "parent_id": 3,
+        "name_en": "Belief in the Divine Decree and Fate",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "belief-in-the-divine-decree-and-fate",
+        "children": [
+          {
+            "id": 86,
+            "parent_id": 64,
+            "name_en": "Levels of Divine Decree and Fate",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "levels-of-divine-decree-and-fate",
+            "children": []
+          },
+          {
+            "id": 87,
+            "parent_id": 64,
+            "name_en": "Issues of Divine Decree and Fate",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "issues-of-divine-decree-and-fate",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "parent_id": 3,
+        "name_en": "Names and Rulings",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "names-and-rulings",
+        "children": [
+          {
+            "id": 88,
+            "parent_id": 65,
+            "name_en": "Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "islam",
+            "children": []
+          },
+          {
+            "id": 89,
+            "parent_id": 65,
+            "name_en": "Nullifiers of Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "nullifiers-of-islam",
+            "children": []
+          },
+          {
+            "id": 90,
+            "parent_id": 65,
+            "name_en": "Issues of Pre-Islamic Era",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "issues-of-pre-islamic-era",
+            "children": []
+          },
+          {
+            "id": 92,
+            "parent_id": 65,
+            "name_en": "Increase and Decrease of Faith",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "increase-and-decrease-of-faith",
+            "children": []
+          },
+          {
+            "id": 94,
+            "parent_id": 65,
+            "name_en": "Branches of Faith",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "branches-of-faith",
+            "children": []
+          },
+          {
+            "id": 96,
+            "parent_id": 65,
+            "name_en": "Disbelief",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "disbelief",
+            "children": []
+          },
+          {
+            "id": 97,
+            "parent_id": 65,
+            "name_en": "Polytheism",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "polytheism",
+            "children": []
+          },
+          {
+            "id": 98,
+            "parent_id": 65,
+            "name_en": "Hypocrisy",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "hypocrisy",
+            "children": []
+          },
+          {
+            "id": 99,
+            "parent_id": 65,
+            "name_en": "Immorality",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "immorality",
+            "children": []
+          },
+          {
+            "id": 100,
+            "parent_id": 65,
+            "name_en": "Religious Innovation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "religious-innovation",
+            "children": [
+              {
+                "id": 418,
+                "parent_id": 100,
+                "name_en": "Ahl-us-Sunnah's (Sunni) Stance on Religious Innovators",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ahl-us-sunnah's-sunni-stance-on-religious-innovators",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "parent_id": 3,
+        "name_en": "The Companions",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "the-companions",
+        "children": [
+          {
+            "id": 101,
+            "parent_id": 66,
+            "name_en": "Merit of the Companions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merit-of-the-companions",
+            "children": []
+          },
+          {
+            "id": 102,
+            "parent_id": 66,
+            "name_en": "Belief in the the Companions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "belief-in-the-the-companions",
+            "children": []
+          },
+          {
+            "id": 103,
+            "parent_id": 66,
+            "name_en": "Degrees of the Companions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "degrees-of-the-companions",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "parent_id": 3,
+        "name_en": "The Prophet's Family",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "the-prophet's-family",
+        "children": [
+          {
+            "id": 105,
+            "parent_id": 67,
+            "name_en": "Merit of the Prophet's Family",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merit-of-the-prophet's-family",
+            "children": []
+          },
+          {
+            "id": 106,
+            "parent_id": 67,
+            "name_en": "Merit of the Mothers of the Believers",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merit-of-the-mothers-of-the-believers",
+            "children": []
+          },
+          {
+            "id": 107,
+            "parent_id": 67,
+            "name_en": "Belief in the Prophet's Family",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "belief-in-the-prophet's-family",
+            "children": []
+          },
+          {
+            "id": 108,
+            "parent_id": 67,
+            "name_en": "Rights of the Prophet's Family",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rights-of-the-prophet's-family",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "parent_id": 3,
+        "name_en": "Allegiance and Dissociation",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "allegiance-and-dissociation",
+        "children": [
+          {
+            "id": 109,
+            "parent_id": 68,
+            "name_en": "Rulings of Allegiance and Dissociation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-allegiance-and-dissociation",
+            "children": []
+          },
+          {
+            "id": 110,
+            "parent_id": 68,
+            "name_en": "Forbidden Emulation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "forbidden-emulation",
+            "children": []
+          },
+          {
+            "id": 111,
+            "parent_id": 68,
+            "name_en": "Emigration and its Rulings",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "emigration-and-its-rulings",
+            "children": []
+          },
+          {
+            "id": 112,
+            "parent_id": 68,
+            "name_en": "Desertion and its Conditions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "desertion-and-its-conditions",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "parent_id": 3,
+        "name_en": "People of the Sunnah and the Community",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "people-of-the-sunnah-and-the-community",
+        "children": [
+          {
+            "id": 113,
+            "parent_id": 69,
+            "name_en": "Characteristics of the People of the Sunnah and the Community",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "characteristics-of-the-people-of-the-sunnah-and-the-community",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "parent_id": 3,
+        "name_en": "Sects and Schools",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "sects-and-schools",
+        "children": [
+          {
+            "id": 119,
+            "parent_id": 71,
+            "name_en": "Old Sects and Schools",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "old-sects-and-schools",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "parent_id": null,
+    "name_en": "Jurisprudence and Juristic Principles",
+    "name_ar": null,
+    "total_hadith": 1141,
+    "slug": "jurisprudence-and-juristic-principles",
+    "children": [
+      {
+        "id": 121,
+        "parent_id": 4,
+        "name_en": "Jurisprudence of Acts of Worship",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "jurisprudence-of-acts-of-worship",
+        "children": [
+          {
+            "id": 133,
+            "parent_id": 121,
+            "name_en": "Purification",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "purification",
+            "children": [
+              {
+                "id": 431,
+                "parent_id": 133,
+                "name_en": "Rulings of Water",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-water",
+                "children": []
+              },
+              {
+                "id": 432,
+                "parent_id": 133,
+                "name_en": "Removing Impurities",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "removing-impurities",
+                "children": []
+              },
+              {
+                "id": 434,
+                "parent_id": 133,
+                "name_en": "Utensils",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "utensils",
+                "children": []
+              },
+              {
+                "id": 435,
+                "parent_id": 133,
+                "name_en": "Toilet Manners",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "toilet-manners",
+                "children": []
+              },
+              {
+                "id": 436,
+                "parent_id": 133,
+                "name_en": "Natural Cleanliness Practices",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "natural-cleanliness-practices",
+                "children": []
+              },
+              {
+                "id": 437,
+                "parent_id": 133,
+                "name_en": "Ablution",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ablution",
+                "children": [
+                  {
+                    "id": 441,
+                    "parent_id": 437,
+                    "name_en": "Excellence of Ablution",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "excellence-of-ablution",
+                    "children": []
+                  },
+                  {
+                    "id": 442,
+                    "parent_id": 437,
+                    "name_en": "Pillars of Ablution",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "pillars-of-ablution",
+                    "children": []
+                  },
+                  {
+                    "id": 443,
+                    "parent_id": 437,
+                    "name_en": "Recommended Acts and Manners of Ablution",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "recommended-acts-and-manners-of-ablution",
+                    "children": []
+                  },
+                  {
+                    "id": 444,
+                    "parent_id": 437,
+                    "name_en": "Method of Ablution",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "method-of-ablution",
+                    "children": []
+                  },
+                  {
+                    "id": 445,
+                    "parent_id": 437,
+                    "name_en": "Nullifiers of Ablution",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "nullifiers-of-ablution",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": 438,
+                "parent_id": 133,
+                "name_en": "Ritual Bath",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ritual-bath",
+                "children": [
+                  {
+                    "id": 447,
+                    "parent_id": 438,
+                    "name_en": "Rulings of the Ritual Bath",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "rulings-of-the-ritual-bath",
+                    "children": []
+                  },
+                  {
+                    "id": 448,
+                    "parent_id": 438,
+                    "name_en": "Causes of Obligatory Ritual Bath",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "causes-of-obligatory-ritual-bath",
+                    "children": []
+                  },
+                  {
+                    "id": 450,
+                    "parent_id": 438,
+                    "name_en": "Recommended Manners of the Ritual Bath",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "recommended-manners-of-the-ritual-bath",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": 439,
+                "parent_id": 133,
+                "name_en": "Dry Ablution",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "dry-ablution",
+                "children": []
+              },
+              {
+                "id": 440,
+                "parent_id": 133,
+                "name_en": "Menses, Postpartum Bleeding, Extra-Menses Bleeding",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "menses-postpartum-bleeding-extra-menses-bleeding",
+                "children": []
+              },
+              {
+                "id": 727,
+                "parent_id": 133,
+                "name_en": "Wiping Over Leather Socks and the like",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "wiping-over-leather-socks-and-the-like",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 134,
+            "parent_id": 121,
+            "name_en": "Prayer",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prayer",
+            "children": [
+              {
+                "id": 456,
+                "parent_id": 134,
+                "name_en": "Obligation of Prayer and Ruling on Its Abandoner",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "obligation-of-prayer-and-ruling-on-its-abandoner",
+                "children": []
+              },
+              {
+                "id": 457,
+                "parent_id": 134,
+                "name_en": "Virtue of Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "virtue-of-prayer",
+                "children": []
+              },
+              {
+                "id": 458,
+                "parent_id": 134,
+                "name_en": "The Azan and Iqaamah",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "the-azan-and-iqaamah",
+                "children": []
+              },
+              {
+                "id": 459,
+                "parent_id": 134,
+                "name_en": "Times Not to Pray",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "times-not-to-pray",
+                "children": []
+              },
+              {
+                "id": 460,
+                "parent_id": 134,
+                "name_en": "Conditions of Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "conditions-of-prayer",
+                "children": []
+              },
+              {
+                "id": 461,
+                "parent_id": 134,
+                "name_en": "Pillars of Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "pillars-of-prayer",
+                "children": []
+              },
+              {
+                "id": 462,
+                "parent_id": 134,
+                "name_en": "Obligatory Acts of Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "obligatory-acts-of-prayer",
+                "children": []
+              },
+              {
+                "id": 463,
+                "parent_id": 134,
+                "name_en": "Recommended Acts of Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "recommended-acts-of-prayer",
+                "children": []
+              },
+              {
+                "id": 464,
+                "parent_id": 134,
+                "name_en": "Method of Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "method-of-prayer",
+                "children": []
+              },
+              {
+                "id": 465,
+                "parent_id": 134,
+                "name_en": "Dhikr (Invocation) during Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "dhikr-invocation-during-prayer",
+                "children": []
+              },
+              {
+                "id": 466,
+                "parent_id": 134,
+                "name_en": "Nullifiers of Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "nullifiers-of-prayer",
+                "children": []
+              },
+              {
+                "id": 467,
+                "parent_id": 134,
+                "name_en": "Mistakes during Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "mistakes-during-prayer",
+                "children": []
+              },
+              {
+                "id": 468,
+                "parent_id": 134,
+                "name_en": "Prostration of Forgetfulness, Recitation, Gratitude",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prostration-of-forgetfulness-recitation-gratitude",
+                "children": []
+              },
+              {
+                "id": 469,
+                "parent_id": 134,
+                "name_en": "Virtue and Rulings of Congregational Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "virtue-and-rulings-of-congregational-prayer",
+                "children": []
+              },
+              {
+                "id": 470,
+                "parent_id": 134,
+                "name_en": "Rulings of the Imam and Followers in Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-the-imam-and-followers-in-prayer",
+                "children": []
+              },
+              {
+                "id": 471,
+                "parent_id": 134,
+                "name_en": "Prayer of the People with Excuses",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prayer-of-the-people-with-excuses",
+                "children": []
+              },
+              {
+                "id": 472,
+                "parent_id": 134,
+                "name_en": "Jumu‘ah (Friday) Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "jumu‘ah-friday-prayer",
+                "children": [
+                  {
+                    "id": 477,
+                    "parent_id": 472,
+                    "name_en": "Virtue of Friday",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "virtue-of-friday",
+                    "children": []
+                  },
+                  {
+                    "id": 478,
+                    "parent_id": 472,
+                    "name_en": "Merit of Jumu‘ah Prayer",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "merit-of-jumu‘ah-prayer",
+                    "children": []
+                  },
+                  {
+                    "id": 480,
+                    "parent_id": 472,
+                    "name_en": "Rulings of Jumu‘ah Prayer",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "rulings-of-jumu‘ah-prayer",
+                    "children": []
+                  },
+                  {
+                    "id": 481,
+                    "parent_id": 472,
+                    "name_en": "Rulings of Jumu‘ah Sermon",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "rulings-of-jumu‘ah-sermon",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": 473,
+                "parent_id": 134,
+                "name_en": "Voluntary Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "voluntary-prayer",
+                "children": [
+                  {
+                    "id": 482,
+                    "parent_id": 473,
+                    "name_en": "Virtue of Voluntary Prayer",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "virtue-of-voluntary-prayer",
+                    "children": []
+                  },
+                  {
+                    "id": 483,
+                    "parent_id": 473,
+                    "name_en": "Regular Sunnah (Recommended) Prayers",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "regular-sunnah-recommended-prayers",
+                    "children": []
+                  },
+                  {
+                    "id": 484,
+                    "parent_id": 473,
+                    "name_en": "Voluntary Night Prayer (Qiyaam)",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "voluntary-night-prayer-qiyaam",
+                    "children": []
+                  },
+                  {
+                    "id": 486,
+                    "parent_id": 473,
+                    "name_en": "Prayer of the Two Eids",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prayer-of-the-two-eids",
+                    "children": []
+                  },
+                  {
+                    "id": 489,
+                    "parent_id": 473,
+                    "name_en": "Forenoon Prayer",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "forenoon-prayer",
+                    "children": []
+                  },
+                  {
+                    "id": 490,
+                    "parent_id": 473,
+                    "name_en": "Guidance-Seeking Prayer",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "guidance-seeking-prayer",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": 476,
+                "parent_id": 134,
+                "name_en": "Prayer of Fear",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prayer-of-fear",
+                "children": []
+              },
+              {
+                "id": 487,
+                "parent_id": 134,
+                "name_en": "Prayer of the Solar and Lunar Eclipse",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prayer-of-the-solar-and-lunar-eclipse",
+                "children": []
+              },
+              {
+                "id": 488,
+                "parent_id": 134,
+                "name_en": "Rain-Seeking Prayer",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rain-seeking-prayer",
+                "children": []
+              },
+              {
+                "id": 725,
+                "parent_id": 134,
+                "name_en": "The rulings of mosques",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "the-rulings-of-mosques",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 135,
+            "parent_id": 121,
+            "name_en": "Funerals",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "funerals",
+            "children": [
+              {
+                "id": 492,
+                "parent_id": 135,
+                "name_en": "Death and Its Rulings",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "death-and-its-rulings",
+                "children": []
+              },
+              {
+                "id": 493,
+                "parent_id": 135,
+                "name_en": "Washing the Dead",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "washing-the-dead",
+                "children": []
+              },
+              {
+                "id": 495,
+                "parent_id": 135,
+                "name_en": "Method of Praying over the Dead",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "method-of-praying-over-the-dead",
+                "children": []
+              },
+              {
+                "id": 496,
+                "parent_id": 135,
+                "name_en": "Carrying and Burying the Dead",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "carrying-and-burying-the-dead",
+                "children": []
+              },
+              {
+                "id": 497,
+                "parent_id": 135,
+                "name_en": "Consolation",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "consolation",
+                "children": []
+              },
+              {
+                "id": 498,
+                "parent_id": 135,
+                "name_en": "Visiting the Graves",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "visiting-the-graves",
+                "children": []
+              },
+              {
+                "id": 499,
+                "parent_id": 135,
+                "name_en": "Doing Good Deeds on behalf of the Deceased and Gifting them the Reward",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "doing-good-deeds-on-behalf-of-the-deceased-and-gifting-them-the-reward",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 136,
+            "parent_id": 121,
+            "name_en": "Zakah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "zakah",
+            "children": [
+              {
+                "id": 500,
+                "parent_id": 136,
+                "name_en": "Obligation of Zakah and Ruling of Its Abandoning",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "obligation-of-zakah-and-ruling-of-its-abandoning",
+                "children": []
+              },
+              {
+                "id": 503,
+                "parent_id": 136,
+                "name_en": "Rulings and Issues of Zakah",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-and-issues-of-zakah",
+                "children": []
+              },
+              {
+                "id": 504,
+                "parent_id": 136,
+                "name_en": "Zakah of Gold and Silver",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "zakah-of-gold-and-silver",
+                "children": []
+              },
+              {
+                "id": 505,
+                "parent_id": 136,
+                "name_en": "Zakah of Livestock",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "zakah-of-livestock",
+                "children": []
+              },
+              {
+                "id": 506,
+                "parent_id": 136,
+                "name_en": "Zakah of Land Produce",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "zakah-of-land-produce",
+                "children": []
+              },
+              {
+                "id": 509,
+                "parent_id": 136,
+                "name_en": "Zakat-ul-Fitr (Minor-Eid Charity)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "zakat-ul-fitr-minor-eid-charity",
+                "children": []
+              },
+              {
+                "id": 510,
+                "parent_id": 136,
+                "name_en": "Channels of Zakah (People Who Receive Zakah)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "channels-of-zakah-people-who-receive-zakah",
+                "children": []
+              },
+              {
+                "id": 511,
+                "parent_id": 136,
+                "name_en": "Voluntary Charity",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "voluntary-charity",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 137,
+            "parent_id": 121,
+            "name_en": "Fasting",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "fasting",
+            "children": [
+              {
+                "id": 512,
+                "parent_id": 137,
+                "name_en": "Obligation of Fasting and Ruling of Its Abandoning",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "obligation-of-fasting-and-ruling-of-its-abandoning",
+                "children": []
+              },
+              {
+                "id": 513,
+                "parent_id": 137,
+                "name_en": "Virtue of Fasting",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "virtue-of-fasting",
+                "children": []
+              },
+              {
+                "id": 514,
+                "parent_id": 137,
+                "name_en": "Recommended Acts of Fasting",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "recommended-acts-of-fasting",
+                "children": []
+              },
+              {
+                "id": 515,
+                "parent_id": 137,
+                "name_en": "Sighting the Crescent",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "sighting-the-crescent",
+                "children": []
+              },
+              {
+                "id": 516,
+                "parent_id": 137,
+                "name_en": "Fasting on the Day of Doubt",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "fasting-on-the-day-of-doubt",
+                "children": []
+              },
+              {
+                "id": 517,
+                "parent_id": 137,
+                "name_en": "Fasting Missed Days of Ramadaan",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "fasting-missed-days-of-ramadaan",
+                "children": []
+              },
+              {
+                "id": 518,
+                "parent_id": 137,
+                "name_en": "Fasting of People with Excuses",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "fasting-of-people-with-excuses",
+                "children": []
+              },
+              {
+                "id": 519,
+                "parent_id": 137,
+                "name_en": "Nullifiers of Fasting",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "nullifiers-of-fasting",
+                "children": []
+              },
+              {
+                "id": 520,
+                "parent_id": 137,
+                "name_en": "Fasting Obligations",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "fasting-obligations",
+                "children": []
+              },
+              {
+                "id": 521,
+                "parent_id": 137,
+                "name_en": "What is Permissible for the Fasting Person",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "what-is-permissible-for-the-fasting-person",
+                "children": []
+              },
+              {
+                "id": 522,
+                "parent_id": 137,
+                "name_en": "Fasting Prohibitions",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "fasting-prohibitions",
+                "children": []
+              },
+              {
+                "id": 523,
+                "parent_id": 137,
+                "name_en": "What is Disliked for the Fasting Person",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "what-is-disliked-for-the-fasting-person",
+                "children": []
+              },
+              {
+                "id": 524,
+                "parent_id": 137,
+                "name_en": "Voluntary Fasting",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "voluntary-fasting",
+                "children": []
+              },
+              {
+                "id": 525,
+                "parent_id": 137,
+                "name_en": "Seclusion for Worship in Ramadaan (I‘tikaaf)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "seclusion-for-worship-in-ramadaan-i‘tikaaf",
+                "children": []
+              },
+              {
+                "id": 526,
+                "parent_id": 137,
+                "name_en": "Last Ten Days of Ramadaan",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "last-ten-days-of-ramadaan",
+                "children": []
+              },
+              {
+                "id": 726,
+                "parent_id": 137,
+                "name_en": "Ramadan",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ramadan",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 138,
+            "parent_id": 121,
+            "name_en": "Hajj and ‘Umrah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "hajj-and-‘umrah",
+            "children": [
+              {
+                "id": 531,
+                "parent_id": 138,
+                "name_en": "Obligation of Hajj and ‘Umrah and Ruling of Its Abandoner",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "obligation-of-hajj-and-‘umrah-and-ruling-of-its-abandoner",
+                "children": []
+              },
+              {
+                "id": 532,
+                "parent_id": 138,
+                "name_en": "Virtue of Hajj and Umrah",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "virtue-of-hajj-and-umrah",
+                "children": []
+              },
+              {
+                "id": 533,
+                "parent_id": 138,
+                "name_en": "First Ten Days of Dhul Hijjah (Twelfth Lunar Month)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "first-ten-days-of-dhul-hijjah-twelfth-lunar-month",
+                "children": []
+              },
+              {
+                "id": 534,
+                "parent_id": 138,
+                "name_en": "Rulings of Al-Masjid Al-Haraam, the Prophet's Mosque, and the Aqsa Mosque",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-al-masjid-al-haraam-the-prophet's-mosque-and-the-aqsa-mosque",
+                "children": []
+              },
+              {
+                "id": 536,
+                "parent_id": 138,
+                "name_en": "Rulings of Ihraam (the Ritual State of Consecration)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-ihraam-the-ritual-state-of-consecration",
+                "children": []
+              },
+              {
+                "id": 537,
+                "parent_id": 138,
+                "name_en": "Prohibitions of Ihraam",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prohibitions-of-ihraam",
+                "children": []
+              },
+              {
+                "id": 538,
+                "parent_id": 138,
+                "name_en": "Ransom and Hunting Expiation",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ransom-and-hunting-expiation",
+                "children": []
+              },
+              {
+                "id": 539,
+                "parent_id": 138,
+                "name_en": "Types of Rituals (Pilgrimage)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "types-of-rituals-pilgrimage",
+                "children": []
+              },
+              {
+                "id": 542,
+                "parent_id": 138,
+                "name_en": "Obligations of ‘Umrah",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "obligations-of-‘umrah",
+                "children": []
+              },
+              {
+                "id": 544,
+                "parent_id": 138,
+                "name_en": "How to Make Hajj (Pilgrimage)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "how-to-make-hajj-pilgrimage",
+                "children": []
+              },
+              {
+                "id": 545,
+                "parent_id": 138,
+                "name_en": "Pillars of Hajj (Pilgrimage)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "pillars-of-hajj-pilgrimage",
+                "children": []
+              },
+              {
+                "id": 546,
+                "parent_id": 138,
+                "name_en": "Obligations of Hajj (Pilgrimage)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "obligations-of-hajj-pilgrimage",
+                "children": []
+              },
+              {
+                "id": 549,
+                "parent_id": 138,
+                "name_en": "Rulings of the Prophet's Mosque",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-the-prophet's-mosque",
+                "children": []
+              },
+              {
+                "id": 550,
+                "parent_id": 138,
+                "name_en": "Sacrificial Animals and Expiations",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "sacrificial-animals-and-expiations",
+                "children": []
+              },
+              {
+                "id": 551,
+                "parent_id": 138,
+                "name_en": "Sacrifice",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "sacrifice",
+                "children": []
+              },
+              {
+                "id": 554,
+                "parent_id": 138,
+                "name_en": "Rulings and Issues of Hajj and ‘Umrah",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-and-issues-of-hajj-and-‘umrah",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 139,
+            "parent_id": 121,
+            "name_en": "Jihad",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "jihad",
+            "children": [
+              {
+                "id": 555,
+                "parent_id": 139,
+                "name_en": "Ruling of Jihad",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ruling-of-jihad",
+                "children": []
+              },
+              {
+                "id": 556,
+                "parent_id": 139,
+                "name_en": "Excellence of Jihad",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "excellence-of-jihad",
+                "children": []
+              },
+              {
+                "id": 557,
+                "parent_id": 139,
+                "name_en": "Categories of Jihad",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "categories-of-jihad",
+                "children": []
+              },
+              {
+                "id": 558,
+                "parent_id": 139,
+                "name_en": "Rulings and Issues of Jihad",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-and-issues-of-jihad",
+                "children": []
+              },
+              {
+                "id": 559,
+                "parent_id": 139,
+                "name_en": "Manners of Jihad",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "manners-of-jihad",
+                "children": []
+              },
+              {
+                "id": 560,
+                "parent_id": 139,
+                "name_en": "Rulings of Non-Muslims Living in Muslim Country",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-non-muslims-living-in-muslim-country",
+                "children": []
+              },
+              {
+                "id": 561,
+                "parent_id": 139,
+                "name_en": "Rulings of Truce and Security",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-truce-and-security",
+                "children": []
+              },
+              {
+                "id": 562,
+                "parent_id": 139,
+                "name_en": "Rulings of Terrorism, Assassinations, and Explosions",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-terrorism-assassinations-and-explosions",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 122,
+        "parent_id": 4,
+        "name_en": "Jurisprudence of Transactions",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "jurisprudence-of-transactions",
+        "children": [
+          {
+            "id": 140,
+            "parent_id": 122,
+            "name_en": "Sales",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "sales",
+            "children": [
+              {
+                "id": 141,
+                "parent_id": 140,
+                "name_en": "Conditions of Sale",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "conditions-of-sale",
+                "children": []
+              },
+              {
+                "id": 142,
+                "parent_id": 140,
+                "name_en": "Sale-Related Stipulations",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "sale-related-stipulations",
+                "children": []
+              },
+              {
+                "id": 143,
+                "parent_id": 140,
+                "name_en": "Selling Assets and Fruits",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "selling-assets-and-fruits",
+                "children": []
+              },
+              {
+                "id": 564,
+                "parent_id": 140,
+                "name_en": "Forbidden Sales",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "forbidden-sales",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 144,
+            "parent_id": 122,
+            "name_en": "Advance Payment",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "advance-payment",
+            "children": []
+          },
+          {
+            "id": 145,
+            "parent_id": 122,
+            "name_en": "Usury",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "usury",
+            "children": []
+          },
+          {
+            "id": 146,
+            "parent_id": 122,
+            "name_en": "Loan",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "loan",
+            "children": []
+          },
+          {
+            "id": 147,
+            "parent_id": 122,
+            "name_en": "Mortgage",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "mortgage",
+            "children": []
+          },
+          {
+            "id": 148,
+            "parent_id": 122,
+            "name_en": "Collateral and Surety",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "collateral-and-surety",
+            "children": []
+          },
+          {
+            "id": 150,
+            "parent_id": 122,
+            "name_en": "Conciliation and Neighborhood Rulings",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "conciliation-and-neighborhood-rulings",
+            "children": []
+          },
+          {
+            "id": 151,
+            "parent_id": 122,
+            "name_en": "Interdiction",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "interdiction",
+            "children": []
+          },
+          {
+            "id": 153,
+            "parent_id": 122,
+            "name_en": "Partnership",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "partnership",
+            "children": []
+          },
+          {
+            "id": 154,
+            "parent_id": 122,
+            "name_en": "Sharecropping",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "sharecropping",
+            "children": []
+          },
+          {
+            "id": 155,
+            "parent_id": 122,
+            "name_en": "Leasing",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "leasing",
+            "children": []
+          },
+          {
+            "id": 156,
+            "parent_id": 122,
+            "name_en": "Racing and Gambling",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "racing-and-gambling",
+            "children": []
+          },
+          {
+            "id": 158,
+            "parent_id": 122,
+            "name_en": "Usurpation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "usurpation",
+            "children": []
+          },
+          {
+            "id": 159,
+            "parent_id": 122,
+            "name_en": "Preemption",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "preemption",
+            "children": []
+          },
+          {
+            "id": 163,
+            "parent_id": 122,
+            "name_en": "Found Item and Foundling",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "found-item-and-foundling",
+            "children": []
+          },
+          {
+            "id": 164,
+            "parent_id": 122,
+            "name_en": "Endowment",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "endowment",
+            "children": []
+          },
+          {
+            "id": 165,
+            "parent_id": 122,
+            "name_en": "Gift",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "gift",
+            "children": []
+          },
+          {
+            "id": 166,
+            "parent_id": 122,
+            "name_en": "Bequest",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "bequest",
+            "children": []
+          },
+          {
+            "id": 167,
+            "parent_id": 122,
+            "name_en": "Manumission",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manumission",
+            "children": []
+          },
+          {
+            "id": 169,
+            "parent_id": 122,
+            "name_en": "Oaths and Vows",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "oaths-and-vows",
+            "children": [
+              {
+                "id": 566,
+                "parent_id": 169,
+                "name_en": "Oaths",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "oaths",
+                "children": []
+              },
+              {
+                "id": 567,
+                "parent_id": 169,
+                "name_en": "Vows",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "vows",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 123,
+        "parent_id": 4,
+        "name_en": "Religious Obligations",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "religious-obligations",
+        "children": [
+          {
+            "id": 173,
+            "parent_id": 123,
+            "name_en": "Conditions of Inheritance",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "conditions-of-inheritance",
+            "children": []
+          },
+          {
+            "id": 174,
+            "parent_id": 123,
+            "name_en": "Impediments of Inheritance",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "impediments-of-inheritance",
+            "children": []
+          },
+          {
+            "id": 176,
+            "parent_id": 123,
+            "name_en": "Agnates",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "agnates",
+            "children": []
+          },
+          {
+            "id": 182,
+            "parent_id": 123,
+            "name_en": "Inheritance Shares of Blood Relatives",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "inheritance-shares-of-blood-relatives",
+            "children": []
+          },
+          {
+            "id": 183,
+            "parent_id": 123,
+            "name_en": "Inheritance Shares of Embryos",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "inheritance-shares-of-embryos",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "parent_id": 4,
+        "name_en": "Family Jurisprudence",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "family-jurisprudence",
+        "children": [
+          {
+            "id": 191,
+            "parent_id": 124,
+            "name_en": "Marriage",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "marriage",
+            "children": [
+              {
+                "id": 570,
+                "parent_id": 191,
+                "name_en": "Excellence of Marriage",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "excellence-of-marriage",
+                "children": []
+              },
+              {
+                "id": 571,
+                "parent_id": 191,
+                "name_en": "Manners of Marriage",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "manners-of-marriage",
+                "children": []
+              },
+              {
+                "id": 572,
+                "parent_id": 191,
+                "name_en": "Rulings and Conditions of Marriage",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-and-conditions-of-marriage",
+                "children": []
+              },
+              {
+                "id": 573,
+                "parent_id": 191,
+                "name_en": "Women Unlawful to Marry",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "women-unlawful-to-marry",
+                "children": []
+              },
+              {
+                "id": 574,
+                "parent_id": 191,
+                "name_en": "Conditions of Marriage",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "conditions-of-marriage",
+                "children": []
+              },
+              {
+                "id": 576,
+                "parent_id": 191,
+                "name_en": "Marrying the Disbelievers",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "marrying-the-disbelievers",
+                "children": []
+              },
+              {
+                "id": 577,
+                "parent_id": 191,
+                "name_en": "Forbidden Marriages",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "forbidden-marriages",
+                "children": []
+              },
+              {
+                "id": 579,
+                "parent_id": 191,
+                "name_en": "Dowry",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "dowry",
+                "children": []
+              },
+              {
+                "id": 580,
+                "parent_id": 191,
+                "name_en": "Wedding Banquet",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "wedding-banquet",
+                "children": []
+              },
+              {
+                "id": 581,
+                "parent_id": 191,
+                "name_en": "Marital Relations",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "marital-relations",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 192,
+            "parent_id": 124,
+            "name_en": "Divorce",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "divorce",
+            "children": [
+              {
+                "id": 584,
+                "parent_id": 192,
+                "name_en": "Words of Divorce",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "words-of-divorce",
+                "children": []
+              },
+              {
+                "id": 585,
+                "parent_id": 192,
+                "name_en": "Sunnah Divorce and Innovative Divorce",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "sunnah-divorce-and-innovative-divorce",
+                "children": []
+              },
+              {
+                "id": 586,
+                "parent_id": 192,
+                "name_en": "Revocable and Irrevocable Divorce",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "revocable-and-irrevocable-divorce",
+                "children": []
+              },
+              {
+                "id": 587,
+                "parent_id": 192,
+                "name_en": "Rulings and Issues of Divorce",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-and-issues-of-divorce",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 193,
+            "parent_id": 124,
+            "name_en": "Remarriage with One's Divorcee",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "remarriage-with-one's-divorcee",
+            "children": []
+          },
+          {
+            "id": 194,
+            "parent_id": 124,
+            "name_en": "Wife-Initiated Divorce",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "wife-initiated-divorce",
+            "children": []
+          },
+          {
+            "id": 195,
+            "parent_id": 124,
+            "name_en": "Oath to Abstain from Intercourse with One's Wife",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "oath-to-abstain-from-intercourse-with-one's-wife",
+            "children": []
+          },
+          {
+            "id": 196,
+            "parent_id": 124,
+            "name_en": "Zihaar (Likening one's wife to an unmarrriagble woman)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "zihaar-likening-one's-wife-to-an-unmarrriagble-woman",
+            "children": []
+          },
+          {
+            "id": 197,
+            "parent_id": 124,
+            "name_en": "Oath of Condemnation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "oath-of-condemnation",
+            "children": []
+          },
+          {
+            "id": 198,
+            "parent_id": 124,
+            "name_en": "Waiting Period",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "waiting-period",
+            "children": [
+              {
+                "id": 588,
+                "parent_id": 198,
+                "name_en": "Rulings of the Waiting Period",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-the-waiting-period",
+                "children": []
+              },
+              {
+                "id": 590,
+                "parent_id": 198,
+                "name_en": "The Divorced Woman's Waiting Period",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "the-divorced-woman's-waiting-period",
+                "children": []
+              },
+              {
+                "id": 591,
+                "parent_id": 198,
+                "name_en": "Waiting Period of the Lost Husband's Wife",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "waiting-period-of-the-lost-husband's-wife",
+                "children": []
+              },
+              {
+                "id": 593,
+                "parent_id": 198,
+                "name_en": "Ascertaining Non-Pregnancy",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ascertaining-non-pregnancy",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 199,
+            "parent_id": 124,
+            "name_en": "Breastfeeding",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "breastfeeding",
+            "children": [
+              {
+                "id": 594,
+                "parent_id": 199,
+                "name_en": "Ruling of Breastfeeding",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "ruling-of-breastfeeding",
+                "children": []
+              },
+              {
+                "id": 596,
+                "parent_id": 199,
+                "name_en": "Conditions of Breastfeeding",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "conditions-of-breastfeeding",
+                "children": []
+              },
+              {
+                "id": 597,
+                "parent_id": 199,
+                "name_en": "Consequences of Breastfeeding",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "consequences-of-breastfeeding",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 200,
+            "parent_id": 124,
+            "name_en": "Custody",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "custody",
+            "children": []
+          },
+          {
+            "id": 201,
+            "parent_id": 124,
+            "name_en": "Expenses",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "expenses",
+            "children": []
+          },
+          {
+            "id": 202,
+            "parent_id": 124,
+            "name_en": "Clothing and Adornment",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "clothing-and-adornment",
+            "children": []
+          },
+          {
+            "id": 204,
+            "parent_id": 124,
+            "name_en": "Muslim Society",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "muslim-society",
+            "children": []
+          },
+          {
+            "id": 205,
+            "parent_id": 124,
+            "name_en": "Rulings of Women",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-women",
+            "children": [
+              {
+                "id": 601,
+                "parent_id": 205,
+                "name_en": "Jurisprudence for Muslim Women",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "jurisprudence-for-muslim-women",
+                "children": []
+              },
+              {
+                "id": 604,
+                "parent_id": 205,
+                "name_en": "Intermixing",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "intermixing",
+                "children": []
+              },
+              {
+                "id": 605,
+                "parent_id": 205,
+                "name_en": "Polygamy",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "polygamy",
+                "children": []
+              },
+              {
+                "id": 607,
+                "parent_id": 205,
+                "name_en": "Men-Women Relationships",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "men-women-relationships",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 206,
+            "parent_id": 124,
+            "name_en": "Rulings of Newborns",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-newborns",
+            "children": [
+              {
+                "id": 608,
+                "parent_id": 206,
+                "name_en": "Naming the Newborn",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "naming-the-newborn",
+                "children": []
+              },
+              {
+                "id": 609,
+                "parent_id": 206,
+                "name_en": "Sacrificing for the Newborn",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "sacrificing-for-the-newborn",
+                "children": []
+              },
+              {
+                "id": 610,
+                "parent_id": 206,
+                "name_en": "Providing for Children",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "providing-for-children",
+                "children": []
+              },
+              {
+                "id": 611,
+                "parent_id": 206,
+                "name_en": "Raising Children",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "raising-children",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 125,
+        "parent_id": 4,
+        "name_en": "Spiritual and Physical Therapy",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "spiritual-and-physical-therapy",
+        "children": [
+          {
+            "id": 207,
+            "parent_id": 125,
+            "name_en": "Prophetic Medicine",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophetic-medicine",
+            "children": []
+          },
+          {
+            "id": 208,
+            "parent_id": 125,
+            "name_en": "Rulings of Medication",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-medication",
+            "children": []
+          },
+          {
+            "id": 211,
+            "parent_id": 125,
+            "name_en": "Ruqyah (Healing and Protective Supplications)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "ruqyah-healing-and-protective-supplications",
+            "children": [
+              {
+                "id": 612,
+                "parent_id": 211,
+                "name_en": "Rulings of Ruqyah (protective and healing supplications)",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-of-ruqyah-protective-and-healing-supplications",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 126,
+        "parent_id": 4,
+        "name_en": "Foods and Drinks",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "foods-and-drinks",
+        "children": [
+          {
+            "id": 212,
+            "parent_id": 126,
+            "name_en": "Rulings of Foods and Drinks",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-foods-and-drinks",
+            "children": []
+          },
+          {
+            "id": 213,
+            "parent_id": 126,
+            "name_en": "Lawful and Unlawful Animals and Birds",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "lawful-and-unlawful-animals-and-birds",
+            "children": []
+          },
+          {
+            "id": 215,
+            "parent_id": 126,
+            "name_en": "Slaughtering",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "slaughtering",
+            "children": []
+          },
+          {
+            "id": 216,
+            "parent_id": 126,
+            "name_en": "Hunting",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "hunting",
+            "children": []
+          },
+          {
+            "id": 217,
+            "parent_id": 126,
+            "name_en": "Rulings of Animals Slaughtered by the Disbelievers",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-animals-slaughtered-by-the-disbelievers",
+            "children": []
+          },
+          {
+            "id": 218,
+            "parent_id": 126,
+            "name_en": "Forbidden Drinks",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "forbidden-drinks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 127,
+        "parent_id": 4,
+        "name_en": "Crimes",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "crimes",
+        "children": [
+          {
+            "id": 219,
+            "parent_id": 127,
+            "name_en": "Retribution",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "retribution",
+            "children": []
+          },
+          {
+            "id": 220,
+            "parent_id": 127,
+            "name_en": "Blood Money",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "blood-money",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 128,
+        "parent_id": 4,
+        "name_en": "Prescribed Punishments",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "prescribed-punishments",
+        "children": [
+          {
+            "id": 221,
+            "parent_id": 128,
+            "name_en": "Rulings of Prescribed Punishments",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-prescribed-punishments",
+            "children": []
+          },
+          {
+            "id": 223,
+            "parent_id": 128,
+            "name_en": "Conditions of implementing Prescribed Punishments",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "conditions-of-implementing-prescribed-punishments",
+            "children": []
+          },
+          {
+            "id": 224,
+            "parent_id": 128,
+            "name_en": "Prescribed Punishment for Adultery",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prescribed-punishment-for-adultery",
+            "children": []
+          },
+          {
+            "id": 225,
+            "parent_id": 128,
+            "name_en": "Prescribed Punishment for Calumny",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prescribed-punishment-for-calumny",
+            "children": []
+          },
+          {
+            "id": 226,
+            "parent_id": 128,
+            "name_en": "Prescribed Punishment for Drinking Alcohol",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prescribed-punishment-for-drinking-alcohol",
+            "children": []
+          },
+          {
+            "id": 227,
+            "parent_id": 128,
+            "name_en": "Prescribed Punishment for Theft",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prescribed-punishment-for-theft",
+            "children": []
+          },
+          {
+            "id": 228,
+            "parent_id": 128,
+            "name_en": "Prescribed Punishment for Highway Robbery",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prescribed-punishment-for-highway-robbery",
+            "children": []
+          },
+          {
+            "id": 230,
+            "parent_id": 128,
+            "name_en": "Prescribed Punishment for Apostasy",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prescribed-punishment-for-apostasy",
+            "children": []
+          },
+          {
+            "id": 231,
+            "parent_id": 128,
+            "name_en": "Rulings of Discretionary Punishments",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-discretionary-punishments",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 129,
+        "parent_id": 4,
+        "name_en": "Judiciary",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "judiciary",
+        "children": [
+          {
+            "id": 232,
+            "parent_id": 129,
+            "name_en": "Judiciary: Its Ruling, Merit, and Significance",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "judiciary-its-ruling-merit-and-significance",
+            "children": []
+          },
+          {
+            "id": 233,
+            "parent_id": 129,
+            "name_en": "Manners of Judges",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-judges",
+            "children": []
+          },
+          {
+            "id": 235,
+            "parent_id": 129,
+            "name_en": "Claims and Proofs",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "claims-and-proofs",
+            "children": []
+          },
+          {
+            "id": 236,
+            "parent_id": 129,
+            "name_en": "Testimonies",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "testimonies",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 132,
+        "parent_id": 4,
+        "name_en": "Principles of Islamic Jurisprudence",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "principles-of-islamic-jurisprudence",
+        "children": [
+          {
+            "id": 249,
+            "parent_id": 132,
+            "name_en": "Shariah Ruling",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "shariah-ruling",
+            "children": []
+          },
+          {
+            "id": 250,
+            "parent_id": 132,
+            "name_en": "Juristic and Usooli (Juristic Priciples) Rules",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "juristic-and-usooli-juristic-priciples-rules",
+            "children": []
+          },
+          {
+            "id": 251,
+            "parent_id": 132,
+            "name_en": "Religious Assignment and its Conditions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "religious-assignment-and-its-conditions",
+            "children": []
+          },
+          {
+            "id": 253,
+            "parent_id": 132,
+            "name_en": "The Book (the Qur'an)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-book-the-qur'an",
+            "children": []
+          },
+          {
+            "id": 254,
+            "parent_id": 132,
+            "name_en": "The Sunnah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-sunnah",
+            "children": []
+          },
+          {
+            "id": 258,
+            "parent_id": 132,
+            "name_en": "Abrogation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "abrogation",
+            "children": []
+          },
+          {
+            "id": 259,
+            "parent_id": 132,
+            "name_en": "Significations and Inference",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "significations-and-inference",
+            "children": []
+          },
+          {
+            "id": 260,
+            "parent_id": 132,
+            "name_en": "Personal Reasoning and Imitation",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "personal-reasoning-and-imitation",
+            "children": []
+          },
+          {
+            "id": 261,
+            "parent_id": 132,
+            "name_en": "Divergence and Preponderance",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "divergence-and-preponderance",
+            "children": []
+          },
+          {
+            "id": 262,
+            "parent_id": 132,
+            "name_en": "Shariah Objectives",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "shariah-objectives",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "parent_id": null,
+    "name_en": "Virtues and Manners",
+    "name_ar": null,
+    "total_hadith": 738,
+    "slug": "virtues-and-manners",
+    "children": [
+      {
+        "id": 265,
+        "parent_id": 5,
+        "name_en": "Virtues",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "virtues",
+        "children": [
+          {
+            "id": 270,
+            "parent_id": 265,
+            "name_en": "Excellence of Knowledge",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "excellence-of-knowledge",
+            "children": [
+              {
+                "id": 629,
+                "parent_id": 270,
+                "name_en": "Merit and Significance of Knowledge",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "merit-and-significance-of-knowledge",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 271,
+            "parent_id": 265,
+            "name_en": "Excellence of Monotheism",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "excellence-of-monotheism",
+            "children": []
+          },
+          {
+            "id": 272,
+            "parent_id": 265,
+            "name_en": "Merits of the Noble Qur'an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-the-noble-qur'an",
+            "children": []
+          },
+          {
+            "id": 273,
+            "parent_id": 265,
+            "name_en": "Merits of Being Dutiful to One's Parents",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-being-dutiful-to-one's-parents",
+            "children": []
+          },
+          {
+            "id": 274,
+            "parent_id": 265,
+            "name_en": "Merits of Maintaining Kinship Ties",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-maintaining-kinship-ties",
+            "children": []
+          },
+          {
+            "id": 275,
+            "parent_id": 265,
+            "name_en": "Merits of Prophet's Family",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-prophet's-family",
+            "children": []
+          },
+          {
+            "id": 276,
+            "parent_id": 265,
+            "name_en": "Merits of the Companions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-the-companions",
+            "children": [
+              {
+                "id": 631,
+                "parent_id": 276,
+                "name_en": "Merits of the Rightly Guided Caliphs",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "merits-of-the-rightly-guided-caliphs",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 277,
+            "parent_id": 265,
+            "name_en": "Merits of Good Deeds",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-good-deeds",
+            "children": []
+          },
+          {
+            "id": 278,
+            "parent_id": 265,
+            "name_en": "Merits of Remembering Allah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-remembering-allah",
+            "children": []
+          },
+          {
+            "id": 279,
+            "parent_id": 265,
+            "name_en": "Merits of Supplication",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-supplication",
+            "children": []
+          },
+          {
+            "id": 280,
+            "parent_id": 265,
+            "name_en": "Merits of Heart Acts",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-heart-acts",
+            "children": []
+          },
+          {
+            "id": 281,
+            "parent_id": 265,
+            "name_en": "Merits of Organs' Acts",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "merits-of-organs'-acts",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 266,
+        "parent_id": 5,
+        "name_en": "Jurisprudence of Ethics",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "jurisprudence-of-ethics",
+        "children": [
+          {
+            "id": 282,
+            "parent_id": 266,
+            "name_en": "Praiseworthy Morals",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "praiseworthy-morals",
+            "children": []
+          },
+          {
+            "id": 283,
+            "parent_id": 266,
+            "name_en": "Blameworthy Morals",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "blameworthy-morals",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 267,
+        "parent_id": 5,
+        "name_en": "Shariah-approved Manners",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "shariah-approved-manners",
+        "children": [
+          {
+            "id": 284,
+            "parent_id": 267,
+            "name_en": "Manners of Scholars and Learners",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-scholars-and-learners",
+            "children": []
+          },
+          {
+            "id": 285,
+            "parent_id": 267,
+            "name_en": "Etiquettes of Reciting the Noble Qur’an",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "etiquettes-of-reciting-the-noble-qur’an",
+            "children": []
+          },
+          {
+            "id": 286,
+            "parent_id": 267,
+            "name_en": "Manners of Greeting and Seeking Permission",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-greeting-and-seeking-permission",
+            "children": []
+          },
+          {
+            "id": 287,
+            "parent_id": 267,
+            "name_en": "Manners of Speaking and Keeping Silent",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-speaking-and-keeping-silent",
+            "children": [
+              {
+                "id": 636,
+                "parent_id": 287,
+                "name_en": "Forbidden Utterances and Tongue Evils",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "forbidden-utterances-and-tongue-evils",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 288,
+            "parent_id": 267,
+            "name_en": "Manners of Divergence",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-divergence",
+            "children": []
+          },
+          {
+            "id": 289,
+            "parent_id": 267,
+            "name_en": "Manners of Debate",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-debate",
+            "children": []
+          },
+          {
+            "id": 290,
+            "parent_id": 267,
+            "name_en": "Manners of Eating and Drinking",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-eating-and-drinking",
+            "children": []
+          },
+          {
+            "id": 291,
+            "parent_id": 267,
+            "name_en": "Manners of the Road and the Market",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-the-road-and-the-market",
+            "children": []
+          },
+          {
+            "id": 292,
+            "parent_id": 267,
+            "name_en": "Manners and Rulings of Travel",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-and-rulings-of-travel",
+            "children": []
+          },
+          {
+            "id": 293,
+            "parent_id": 267,
+            "name_en": "Manners of Sleeping and Waking Up",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-sleeping-and-waking-up",
+            "children": []
+          },
+          {
+            "id": 294,
+            "parent_id": 267,
+            "name_en": "Manners of Visions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-visions",
+            "children": []
+          },
+          {
+            "id": 295,
+            "parent_id": 267,
+            "name_en": "Manners of Visiting and Seeking Permission",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-visiting-and-seeking-permission",
+            "children": []
+          },
+          {
+            "id": 296,
+            "parent_id": 267,
+            "name_en": "Manners of Sneezing and Yawning",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-sneezing-and-yawning",
+            "children": []
+          },
+          {
+            "id": 297,
+            "parent_id": 267,
+            "name_en": "Manners of Visiting the Sick",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-visiting-the-sick",
+            "children": []
+          },
+          {
+            "id": 298,
+            "parent_id": 267,
+            "name_en": "Manners of Dressing",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-dressing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 268,
+        "parent_id": 5,
+        "name_en": "Jurisprudence of Supplications and Remembrance of Allah",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "jurisprudence-of-supplications-and-remembrance-of-allah",
+        "children": [
+          {
+            "id": 299,
+            "parent_id": 268,
+            "name_en": "Prophetic Guidance on Remembering Allah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophetic-guidance-on-remembering-allah",
+            "children": []
+          },
+          {
+            "id": 300,
+            "parent_id": 268,
+            "name_en": "Benefits of Remembering Allah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "benefits-of-remembering-allah",
+            "children": []
+          },
+          {
+            "id": 301,
+            "parent_id": 268,
+            "name_en": "Morning and Evening Dhikr",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "morning-and-evening-dhikr",
+            "children": []
+          },
+          {
+            "id": 302,
+            "parent_id": 268,
+            "name_en": "Timeless Dhikr",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "timeless-dhikr",
+            "children": []
+          },
+          {
+            "id": 303,
+            "parent_id": 268,
+            "name_en": "Dhikr on Entering and Leaving the House",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "dhikr-on-entering-and-leaving-the-house",
+            "children": []
+          },
+          {
+            "id": 305,
+            "parent_id": 268,
+            "name_en": "Dhikr on Entering and Leaving the Bathroom",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "dhikr-on-entering-and-leaving-the-bathroom",
+            "children": []
+          },
+          {
+            "id": 306,
+            "parent_id": 268,
+            "name_en": "Dhikr on Entering and Leaving the Mosque",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "dhikr-on-entering-and-leaving-the-mosque",
+            "children": []
+          },
+          {
+            "id": 307,
+            "parent_id": 268,
+            "name_en": "Hard Times Dhikr",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "hard-times-dhikr",
+            "children": []
+          },
+          {
+            "id": 308,
+            "parent_id": 268,
+            "name_en": "Dhikr on Special Occasions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "dhikr-on-special-occasions",
+            "children": []
+          },
+          {
+            "id": 309,
+            "parent_id": 268,
+            "name_en": "Rulings of Supplication",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-of-supplication",
+            "children": []
+          },
+          {
+            "id": 310,
+            "parent_id": 268,
+            "name_en": "Types of Supplication",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "types-of-supplication",
+            "children": []
+          },
+          {
+            "id": 311,
+            "parent_id": 268,
+            "name_en": "Manners of Supplication",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-supplication",
+            "children": []
+          },
+          {
+            "id": 312,
+            "parent_id": 268,
+            "name_en": "Causes for Answering or not Answering Supplications",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "causes-for-answering-or-not-answering-supplications",
+            "children": []
+          },
+          {
+            "id": 313,
+            "parent_id": 268,
+            "name_en": "Reported Supplications",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "reported-supplications",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 269,
+        "parent_id": 5,
+        "name_en": "Heart-Softeners and Sermons",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "heart-softeners-and-sermons",
+        "children": [
+          {
+            "id": 314,
+            "parent_id": 269,
+            "name_en": "Acts of Heart",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "acts-of-heart",
+            "children": []
+          },
+          {
+            "id": 315,
+            "parent_id": 269,
+            "name_en": "Heart Diseases",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "heart-diseases",
+            "children": []
+          },
+          {
+            "id": 316,
+            "parent_id": 269,
+            "name_en": "Asceticism and Piety",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "asceticism-and-piety",
+            "children": []
+          },
+          {
+            "id": 317,
+            "parent_id": 269,
+            "name_en": "States of the Righteous Believers",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "states-of-the-righteous-believers",
+            "children": []
+          },
+          {
+            "id": 318,
+            "parent_id": 269,
+            "name_en": "Condemning Sins",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "condemning-sins",
+            "children": []
+          },
+          {
+            "id": 319,
+            "parent_id": 269,
+            "name_en": "Condemning Love of the World",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "condemning-love-of-the-world",
+            "children": []
+          },
+          {
+            "id": 320,
+            "parent_id": 269,
+            "name_en": "Condemning Whims and Desires",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "condemning-whims-and-desires",
+            "children": []
+          },
+          {
+            "id": 321,
+            "parent_id": 269,
+            "name_en": "Repentance",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "repentance",
+            "children": []
+          },
+          {
+            "id": 322,
+            "parent_id": 269,
+            "name_en": "Purification of Souls",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "purification-of-souls",
+            "children": []
+          },
+          {
+            "id": 323,
+            "parent_id": 269,
+            "name_en": "Terrors of the Graves",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "terrors-of-the-graves",
+            "children": []
+          },
+          {
+            "id": 324,
+            "parent_id": 269,
+            "name_en": "Descriptions of Paradise and Hell",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "descriptions-of-paradise-and-hell",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "parent_id": null,
+    "name_en": "Da‘wah and Hisbah",
+    "name_ar": null,
+    "total_hadith": 0,
+    "slug": "da‘wah-and-hisbah",
+    "children": [
+      {
+        "id": 325,
+        "parent_id": 6,
+        "name_en": "Calling to Allah (Da‘wah)",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "calling-to-allah-da‘wah",
+        "children": [
+          {
+            "id": 329,
+            "parent_id": 325,
+            "name_en": "Ruling of Calling to Allah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "ruling-of-calling-to-allah",
+            "children": []
+          },
+          {
+            "id": 331,
+            "parent_id": 325,
+            "name_en": "Manners of Calling to Allah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-calling-to-allah",
+            "children": []
+          },
+          {
+            "id": 334,
+            "parent_id": 325,
+            "name_en": "Backgrounds and Duties of the Callers to Allah",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "backgrounds-and-duties-of-the-callers-to-allah",
+            "children": []
+          },
+          {
+            "id": 338,
+            "parent_id": 325,
+            "name_en": "Excellence and Merits of Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "excellence-and-merits-of-islam",
+            "children": []
+          },
+          {
+            "id": 339,
+            "parent_id": 325,
+            "name_en": "Universality of Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "universality-of-islam",
+            "children": []
+          },
+          {
+            "id": 340,
+            "parent_id": 325,
+            "name_en": "Human Rights in Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "human-rights-in-islam",
+            "children": []
+          },
+          {
+            "id": 341,
+            "parent_id": 325,
+            "name_en": "Animal Rights in Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "animal-rights-in-islam",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 326,
+        "parent_id": 6,
+        "name_en": "Enjoining Good and Forbidding Evil",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "enjoining-good-and-forbidding-evil",
+        "children": [
+          {
+            "id": 344,
+            "parent_id": 326,
+            "name_en": "Ruling of Enjoining Good and Forbidding Evil",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "ruling-of-enjoining-good-and-forbidding-evil",
+            "children": []
+          },
+          {
+            "id": 345,
+            "parent_id": 326,
+            "name_en": "Excellence of Enjoining Good and Forbidding Evil",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "excellence-of-enjoining-good-and-forbidding-evil",
+            "children": []
+          },
+          {
+            "id": 346,
+            "parent_id": 326,
+            "name_en": "Manners of Enjoining Good and Forbidding Evil",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "manners-of-enjoining-good-and-forbidding-evil",
+            "children": []
+          },
+          {
+            "id": 347,
+            "parent_id": 326,
+            "name_en": "Principles of Enjoining Good and Forbidding Evil",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "principles-of-enjoining-good-and-forbidding-evil",
+            "children": []
+          },
+          {
+            "id": 348,
+            "parent_id": 326,
+            "name_en": "Requirements of Enjoining Good and Forbidding Evil",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "requirements-of-enjoining-good-and-forbidding-evil",
+            "children": []
+          },
+          {
+            "id": 349,
+            "parent_id": 326,
+            "name_en": "Rulings and Issues of Enjoining Good and Forbidding Evil",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rulings-and-issues-of-enjoining-good-and-forbidding-evil",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 327,
+        "parent_id": 6,
+        "name_en": "Shariah-approved Politics",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "shariah-approved-politics",
+        "children": [
+          {
+            "id": 350,
+            "parent_id": 327,
+            "name_en": "Ways of Electing the Supreme Muslim Imam (Ruler)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "ways-of-electing-the-supreme-muslim-imam-ruler",
+            "children": []
+          },
+          {
+            "id": 351,
+            "parent_id": 327,
+            "name_en": "Requirements of the Supreme Imamate (Leadership)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "requirements-of-the-supreme-imamate-leadership",
+            "children": []
+          },
+          {
+            "id": 352,
+            "parent_id": 327,
+            "name_en": "Duties of the Imam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "duties-of-the-imam",
+            "children": []
+          },
+          {
+            "id": 353,
+            "parent_id": 327,
+            "name_en": "Imam's Rights over the Subjects",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "imam's-rights-over-the-subjects",
+            "children": []
+          },
+          {
+            "id": 354,
+            "parent_id": 327,
+            "name_en": "Rebelling against the Muslim Ruler",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "rebelling-against-the-muslim-ruler",
+            "children": []
+          },
+          {
+            "id": 355,
+            "parent_id": 327,
+            "name_en": "International Relations in Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "international-relations-in-islam",
+            "children": []
+          },
+          {
+            "id": 356,
+            "parent_id": 327,
+            "name_en": "Consultation System in Islam",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "consultation-system-in-islam",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 328,
+        "parent_id": 6,
+        "name_en": "Islamic Culture",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "islamic-culture",
+        "children": [
+          {
+            "id": 365,
+            "parent_id": 328,
+            "name_en": "Islamic Civilization",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "islamic-civilization",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "parent_id": null,
+    "name_en": "Seerah and History",
+    "name_ar": null,
+    "total_hadith": 0,
+    "slug": "seerah-and-history",
+    "children": [
+      {
+        "id": 367,
+        "parent_id": 7,
+        "name_en": "Prophet's Biography",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "prophet's-biography",
+        "children": [
+          {
+            "id": 389,
+            "parent_id": 367,
+            "name_en": "Prophet's Lineage",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-lineage",
+            "children": []
+          },
+          {
+            "id": 392,
+            "parent_id": 367,
+            "name_en": "Prophet's Wives and Family Issues",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-wives-and-family-issues",
+            "children": []
+          },
+          {
+            "id": 393,
+            "parent_id": 367,
+            "name_en": "Prophet's Children",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-children",
+            "children": []
+          },
+          {
+            "id": 397,
+            "parent_id": 367,
+            "name_en": "Prophet's Servants",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-servants",
+            "children": []
+          },
+          {
+            "id": 398,
+            "parent_id": 367,
+            "name_en": "Prophet's Life before Mission",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-life-before-mission",
+            "children": []
+          },
+          {
+            "id": 399,
+            "parent_id": 367,
+            "name_en": "Prophet's Mission",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-mission",
+            "children": []
+          },
+          {
+            "id": 400,
+            "parent_id": 367,
+            "name_en": "The Makkan Period",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-makkan-period",
+            "children": []
+          },
+          {
+            "id": 401,
+            "parent_id": 367,
+            "name_en": "The Emigration (Hijrah)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-emigration-hijrah",
+            "children": []
+          },
+          {
+            "id": 402,
+            "parent_id": 367,
+            "name_en": "The Madinan Period",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "the-madinan-period",
+            "children": []
+          },
+          {
+            "id": 403,
+            "parent_id": 367,
+            "name_en": "Prophet's Battles and Expeditions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-battles-and-expeditions",
+            "children": []
+          },
+          {
+            "id": 404,
+            "parent_id": 367,
+            "name_en": "Prophet's Correspondences",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-correspondences",
+            "children": []
+          },
+          {
+            "id": 405,
+            "parent_id": 367,
+            "name_en": "Prophet's Death",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophet's-death",
+            "children": []
+          },
+          {
+            "id": 406,
+            "parent_id": 367,
+            "name_en": "Muhammadan Qualities",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "muhammadan-qualities",
+            "children": [
+              {
+                "id": 639,
+                "parent_id": 406,
+                "name_en": "Physical Attributes",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "physical-attributes",
+                "children": []
+              },
+              {
+                "id": 640,
+                "parent_id": 406,
+                "name_en": "Prophet's Dress Code",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prophet's-dress-code",
+                "children": []
+              },
+              {
+                "id": 641,
+                "parent_id": 406,
+                "name_en": "Prophet's Furniture, Stuff, and Arms",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prophet's-furniture-stuff-and-arms",
+                "children": []
+              },
+              {
+                "id": 642,
+                "parent_id": 406,
+                "name_en": "Prophet's Food and Drink",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prophet's-food-and-drink",
+                "children": []
+              },
+              {
+                "id": 645,
+                "parent_id": 406,
+                "name_en": "Prophet's Travel",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prophet's-travel",
+                "children": []
+              },
+              {
+                "id": 646,
+                "parent_id": 406,
+                "name_en": "Moral Attributes",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "moral-attributes",
+                "children": [
+                  {
+                    "id": 648,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Generosity",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-generosity",
+                    "children": []
+                  },
+                  {
+                    "id": 649,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Modesty",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-modesty",
+                    "children": []
+                  },
+                  {
+                    "id": 650,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Humility",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-humility",
+                    "children": []
+                  },
+                  {
+                    "id": 651,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Courage",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-courage",
+                    "children": []
+                  },
+                  {
+                    "id": 652,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Gentleness",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-gentleness",
+                    "children": []
+                  },
+                  {
+                    "id": 653,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Forgiveness",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-forgiveness",
+                    "children": []
+                  },
+                  {
+                    "id": 654,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Mercy",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-mercy",
+                    "children": []
+                  },
+                  {
+                    "id": 655,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Speech",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-speech",
+                    "children": []
+                  },
+                  {
+                    "id": 656,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Laughing",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-laughing",
+                    "children": []
+                  },
+                  {
+                    "id": 657,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Crying",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-crying",
+                    "children": []
+                  },
+                  {
+                    "id": 659,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Compassion",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-compassion",
+                    "children": []
+                  },
+                  {
+                    "id": 660,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Asceticism",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-asceticism",
+                    "children": []
+                  },
+                  {
+                    "id": 661,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Justice",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-justice",
+                    "children": []
+                  },
+                  {
+                    "id": 662,
+                    "parent_id": 646,
+                    "name_en": "Prophet's Forbearance",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-forbearance",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": 647,
+                "parent_id": 406,
+                "name_en": "Prophet's Guidance",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "prophet's-guidance",
+                "children": [
+                  {
+                    "id": 666,
+                    "parent_id": 647,
+                    "name_en": "Prophet's Guidance on Public Speaking",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-guidance-on-public-speaking",
+                    "children": []
+                  },
+                  {
+                    "id": 667,
+                    "parent_id": 647,
+                    "name_en": "Prophet's Guidance on Purification",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-guidance-on-purification",
+                    "children": []
+                  },
+                  {
+                    "id": 668,
+                    "parent_id": 647,
+                    "name_en": "Prophet's Guidance on Prayer",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-guidance-on-prayer",
+                    "children": []
+                  },
+                  {
+                    "id": 669,
+                    "parent_id": 647,
+                    "name_en": "Prophet's Guidance on Fasting",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-guidance-on-fasting",
+                    "children": []
+                  },
+                  {
+                    "id": 671,
+                    "parent_id": 647,
+                    "name_en": "Prophet's Guidance on Funerals",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-guidance-on-funerals",
+                    "children": []
+                  },
+                  {
+                    "id": 678,
+                    "parent_id": 647,
+                    "name_en": "Prophet's Guidance on Marriage and Treating One's Wife",
+                    "name_ar": null,
+                    "total_hadith": 0,
+                    "slug": "prophet's-guidance-on-marriage-and-treating-one's-wife",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 735,
+            "parent_id": 367,
+            "name_en": "Prophetic characteristics",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "prophetic-characteristics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 368,
+        "parent_id": 7,
+        "name_en": "History",
+        "name_ar": null,
+        "total_hadith": 0,
+        "slug": "history",
+        "children": [
+          {
+            "id": 407,
+            "parent_id": 368,
+            "name_en": "Stories and Conditions of Pre-Islamic Nations",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "stories-and-conditions-of-pre-islamic-nations",
+            "children": []
+          },
+          {
+            "id": 408,
+            "parent_id": 368,
+            "name_en": "History of Makkah, Madinah, and the Aqsa (Jerusalem)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "history-of-makkah-madinah-and-the-aqsa-jerusalem",
+            "children": []
+          },
+          {
+            "id": 409,
+            "parent_id": 368,
+            "name_en": "Wars and Battles",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "wars-and-battles",
+            "children": [
+              {
+                "id": 679,
+                "parent_id": 409,
+                "name_en": "The Battle of Yamaamah",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "the-battle-of-yamaamah",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 413,
+            "parent_id": 368,
+            "name_en": "Biographies (of Famous Figures)",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "biographies-of-famous-figures",
+            "children": []
+          },
+          {
+            "id": 414,
+            "parent_id": 368,
+            "name_en": "Countries and Figures",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "countries-and-figures",
+            "children": []
+          },
+          {
+            "id": 415,
+            "parent_id": 368,
+            "name_en": "Periodical Occasions",
+            "name_ar": null,
+            "total_hadith": 0,
+            "slug": "periodical-occasions",
+            "children": [
+              {
+                "id": 721,
+                "parent_id": 415,
+                "name_en": "Rulings and Manners of Eid",
+                "name_ar": null,
+                "total_hadith": 0,
+                "slug": "rulings-and-manners-of-eid",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

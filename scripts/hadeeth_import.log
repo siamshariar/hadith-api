@@ -1,0 +1,159 @@
+2025-12-01 13:50:18,253 - INFO - package: mysql.connector.plugins
+2025-12-01 13:50:18,253 - INFO - plugin_name: caching_sha2_password
+2025-12-01 13:50:18,253 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-12-01 13:50:18,287 - INFO - Database connection established successfully
+2025-12-01 13:50:55,582 - INFO - Starting HadeethEnc data import
+2025-12-01 13:50:55,582 - INFO - Step 1: Processing languages
+2025-12-01 13:50:57,447 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/languages
+2025-12-01 13:50:59,029 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/languages
+2025-12-01 13:51:01,613 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/languages
+2025-12-01 13:51:01,613 - ERROR - Failed to fetch https://hadeethenc.com/languages/ after 3 attempts
+2025-12-01 13:51:01,613 - WARNING - Could not fetch languages from API, using default list
+2025-12-01 13:51:01,613 - INFO - Step 2: Importing categories
+2025-12-01 13:51:01,613 - INFO - Importing categories for language: ar
+2025-12-01 13:51:02,193 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:03,777 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:06,598 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:06,600 - ERROR - Failed to fetch https://hadeethenc.com/categories/roots/ after 3 attempts
+2025-12-01 13:51:06,600 - WARNING - No categories found for language ar
+2025-12-01 13:51:07,601 - INFO - Importing categories for language: en
+2025-12-01 13:51:08,169 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:09,743 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:12,303 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:12,303 - ERROR - Failed to fetch https://hadeethenc.com/categories/roots/ after 3 attempts
+2025-12-01 13:51:12,303 - WARNING - No categories found for language en
+2025-12-01 13:51:13,304 - INFO - Importing categories for language: bn
+2025-12-01 13:51:13,873 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:15,453 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:18,035 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/categories/roots
+2025-12-01 13:51:18,035 - ERROR - Failed to fetch https://hadeethenc.com/categories/roots/ after 3 attempts
+2025-12-01 13:51:18,035 - WARNING - No categories found for language bn
+2025-12-01 13:51:19,040 - INFO - Step 3: Getting all categories from database
+2025-12-01 13:51:19,064 - INFO - Step 4: Importing hadiths
+2025-12-01 13:51:19,092 - INFO - Importing hadiths for category 1 in ar
+2025-12-01 13:51:19,663 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:21,248 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:23,815 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:23,816 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:51:23,816 - INFO - Imported 0 hadiths for category 1
+2025-12-01 13:51:24,318 - INFO - Importing hadiths for category 1 in en
+2025-12-01 13:51:24,905 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:26,505 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:29,101 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:29,102 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:51:29,102 - INFO - Imported 0 hadiths for category 1
+2025-12-01 13:51:30,606 - INFO - Importing hadiths for category 2 in ar
+2025-12-01 13:51:31,172 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:32,736 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:35,318 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:35,319 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:51:35,319 - INFO - Imported 0 hadiths for category 2
+2025-12-01 13:51:35,819 - INFO - Importing hadiths for category 2 in en
+2025-12-01 13:51:36,385 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:38,755 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:41,324 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:41,324 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:51:41,324 - INFO - Imported 0 hadiths for category 2
+2025-12-01 13:51:42,827 - INFO - Importing hadiths for category 3 in ar
+2025-12-01 13:51:43,387 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:44,955 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:47,522 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:47,522 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:51:47,528 - INFO - Imported 0 hadiths for category 3
+2025-12-01 13:51:48,029 - INFO - Importing hadiths for category 3 in en
+2025-12-01 13:51:48,591 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:50,175 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:52,782 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:52,782 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:51:52,782 - INFO - Imported 0 hadiths for category 3
+2025-12-01 13:51:54,292 - INFO - Importing hadiths for category 4 in ar
+2025-12-01 13:51:54,863 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:56,433 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:59,264 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:51:59,264 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:51:59,264 - INFO - Imported 0 hadiths for category 4
+2025-12-01 13:51:59,774 - INFO - Importing hadiths for category 4 in en
+2025-12-01 13:52:00,508 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:02,381 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:04,950 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:04,951 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:04,952 - INFO - Imported 0 hadiths for category 4
+2025-12-01 13:52:06,453 - INFO - Importing hadiths for category 5 in ar
+2025-12-01 13:52:07,072 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:08,654 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:11,215 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:11,215 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:11,215 - INFO - Imported 0 hadiths for category 5
+2025-12-01 13:52:11,719 - INFO - Importing hadiths for category 5 in en
+2025-12-01 13:52:12,304 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:13,874 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:16,438 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:16,439 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:16,439 - INFO - Imported 0 hadiths for category 5
+2025-12-01 13:52:17,941 - INFO - Importing hadiths for category 6 in ar
+2025-12-01 13:52:18,504 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:20,078 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:22,644 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:22,644 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:22,644 - INFO - Imported 0 hadiths for category 6
+2025-12-01 13:52:23,150 - INFO - Importing hadiths for category 6 in en
+2025-12-01 13:52:23,708 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:25,272 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:27,837 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:27,842 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:27,842 - INFO - Imported 0 hadiths for category 6
+2025-12-01 13:52:29,343 - INFO - Importing hadiths for category 7 in ar
+2025-12-01 13:52:29,920 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:31,495 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:34,065 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:34,066 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:34,066 - INFO - Imported 0 hadiths for category 7
+2025-12-01 13:52:34,567 - INFO - Importing hadiths for category 7 in en
+2025-12-01 13:52:35,134 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:36,703 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:39,313 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:39,313 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:39,313 - INFO - Imported 0 hadiths for category 7
+2025-12-01 13:52:40,816 - INFO - Importing hadiths for category 8 in ar
+2025-12-01 13:52:41,389 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:42,949 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:45,531 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:45,531 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:45,532 - INFO - Imported 0 hadiths for category 8
+2025-12-01 13:52:46,033 - INFO - Importing hadiths for category 8 in en
+2025-12-01 13:52:46,599 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:48,167 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:50,739 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:50,739 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:50,739 - INFO - Imported 0 hadiths for category 8
+2025-12-01 13:52:52,242 - INFO - Importing hadiths for category 9 in ar
+2025-12-01 13:52:52,813 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:54,385 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:56,989 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:52:56,989 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:52:56,989 - INFO - Imported 0 hadiths for category 9
+2025-12-01 13:52:57,490 - INFO - Importing hadiths for category 9 in en
+2025-12-01 13:52:58,277 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:00,015 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:02,610 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:02,613 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:53:02,613 - INFO - Imported 0 hadiths for category 9
+2025-12-01 13:53:04,116 - INFO - Importing hadiths for category 10 in ar
+2025-12-01 13:53:04,686 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:06,668 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:09,252 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:09,252 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:53:09,252 - INFO - Imported 0 hadiths for category 10
+2025-12-01 13:53:09,759 - INFO - Importing hadiths for category 10 in en
+2025-12-01 13:53:10,424 - WARNING - API request failed (attempt 1/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:12,131 - WARNING - API request failed (attempt 2/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:14,819 - WARNING - API request failed (attempt 3/3): 404 Client Error: Not Found for url: https://hadeethenc.com/en/hadeeths/list
+2025-12-01 13:53:14,820 - ERROR - Failed to fetch https://hadeethenc.com/hadeeths/list/ after 3 attempts
+2025-12-01 13:53:14,820 - INFO - Imported 0 hadiths for category 10
+2025-12-01 13:53:16,323 - INFO - Step 5: Importing books and chapters
+2025-12-01 13:53:16,334 - ERROR - Error creating default book: 1054 (42S22): Unknown column 'sort_order' in 'field list'
+2025-12-01 13:53:16,342 - INFO - Import completed in 0:02:20.753375
+2025-12-01 13:53:16,342 - INFO - Total hadiths imported: 2587
+2025-12-01 13:53:16,342 - INFO - Total categories imported: 521
+2025-12-01 13:53:16,342 - INFO - Database connection closed
+2025-12-01 13:53:16,349 - INFO - Database connection closed

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadith 1590 API Fetch Examples</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .language {
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .result {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .endpoint {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .method {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .url {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Hadith 1590 - API Fetch Examples</h1>
+        <p style="text-align: center; color: #7f8c8d;">Complete examples for fetching hadith data programmatically</p>
+
+        <div class="endpoint">
+            <span class="method">GET</span> <span class="url">/api/hadiths/1590</span><br>
+            <strong>Description:</strong> Get complete hadith data for ID 1590
+        </div>
+
+        <h2>📝 cURL Examples</h2>
+
+        <h3>Fetch Hadith Data</h3>
+        <div class="code-block">
+<div class="language">Bash</div>
+curl -X GET "http://127.0.0.1:8000/api/hadiths/1590" \
+  -H "Accept: application/json"
+        </div>
+
+        <h3>Fetch English Translation</h3>
+        <div class="code-block">
+<div class="language">Bash</div>
+curl -X GET "http://127.0.0.1:8000/api/hadiths/1590/translations/en" \
+  -H "Accept: application/json"
+        </div>
+
+        <h3>Fetch Bengali Translation</h3>
+        <div class="code-block">
+<div class="language">Bash</div>
+curl -X GET "http://127.0.0.1:8000/api/hadiths/1590/translations/bn" \
+  -H "Accept: application/json"
+        </div>
+
+        <h2>🐍 Python Examples</h2>
+
+        <h3>Fetch Hadith Data</h3>
+        <div class="code-block">
+<div class="language">Python</div>
+import requests
+
+# Fetch hadith data
+response = requests.get('http://127.0.0.1:8000/api/hadiths/1590')
+data = response.json()
+
+print(f"Hadith ID: {data['data']['id']}")
+print(f"Book: {data['data']['book']['name_en']}")
+print(f"Chapter: {data['data']['chapter']['name_en']}")
+print(f"Hadith Number: {data['data']['hadith_number']}")
+print(f"Arabic Text: {data['data']['arabic_text'][:100]}...")
+        </div>
+
+        <h3>Fetch Translation</h3>
+        <div class="code-block">
+<div class="language">Python</div>
+import requests
+
+# Fetch English translation
+response = requests.get('http://127.0.0.1:8000/api/hadiths/1590/translations/en')
+data = response.json()
+
+print(f"Translation: {data['data']['translation']['translation_text']}")
+        </div>
+
+        <h2>📱 JavaScript Examples</h2>
+
+        <h3>Fetch with Fetch API</h3>
+        <div class="code-block">
+<div class="language">JavaScript</div>
+// Fetch hadith data
+fetch('http://127.0.0.1:8000/api/hadiths/1590')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Hadith:', data.data);
+    console.log('Book:', data.data.book.name_en);
+    console.log('Arabic Text:', data.data.arabic_text);
+  })
+  .catch(error => console.error('Error:', error));
+
+// Fetch translation
+fetch('http://127.0.0.1:8000/api/hadiths/1590/translations/en')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Translation:', data.data.translation.translation_text);
+  })
+  .catch(error => console.error('Error:', error));
+        </div>
+
+        <h2>⚡ PHP Examples</h2>
+
+        <h3>Fetch Hadith Data</h3>
+        <div class="code-block">
+<div class="language">PHP</div>
+&lt;?php
+// Fetch hadith data
+$url = 'http://127.0.0.1:8000/api/hadiths/1590';
+$response = file_get_contents($url);
+$data = json_decode($response, true);
+
+echo "Hadith ID: " . $data['data']['id'] . "\n";
+echo "Book: " . $data['data']['book']['name_en'] . "\n";
+echo "Chapter: " . $data['data']['chapter']['name_en'] . "\n";
+echo "Hadith Number: " . $data['data']['hadith_number'] . "\n";
+echo "Arabic Text: " . substr($data['data']['arabic_text'], 0, 100) . "...\n";
+?&gt;
+        </div>
+
+        <h2>📊 Sample Response Data</h2>
+
+        <h3>Hadith Data Response</h3>
+        <div class="result">
+{
+  "success": true,
+  "data": {
+    "id": 1590,
+    "book_id": 1,
+    "chapter_id": 77,
+    "hadith_number": 1,
+    "arabic_text": "حَدَّثَنَا الْحُمَيْدِيُّ عَبْدُ اللَّهِ بْنُ الزُّبَيْرِ...",
+    "grade": "Sahih",
+    "book": {
+      "id": 1,
+      "code": "bukhari",
+      "name_en": "Sahih al-Bukhari",
+      "name_ar": "صحيح البخاري",
+      "slug": "sahih-al-bukhari"
+    },
+    "chapter": {
+      "id": 77,
+      "chapter_no": 77,
+      "name_en": "Clothing",
+      "name_ar": "اللباس"
+    }
+  }
+}
+        </div>
+
+        <h3>Translation Response</h3>
+        <div class="result">
+{
+  "success": true,
+  "data": {
+    "hadith": {
+      "id": 1590,
+      "book_id": 1,
+      "chapter_id": 77,
+      "hadith_number": 1,
+      "arabic_text": "حَدَّثَنَا الْحُمَيْدِيُّ...",
+      "grade": "Sahih",
+      "book": {
+        "id": 1,
+        "code": "bukhari",
+        "name_en": "Sahih al-Bukhari"
+      }
+    },
+    "translation": {
+      "id": 1590,
+      "hadith_id": 1590,
+      "localization_code": "en",
+      "translation_text": "Narrated 'Umar bin Al-Khattab: I heard Allah's Messenger..."
+    }
+  }
+}
+        </div>
+
+        <h2>🔗 Quick Test Links</h2>
+        <div style="text-align: center; margin: 20px 0;">
+            <a href="http://127.0.0.1:8000/api/hadiths/1590" target="_blank" style="background: #3498db; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin: 0 10px;">📖 View Hadith Data</a>
+            <a href="http://127.0.0.1:8000/api/hadiths/1590/translations/en" target="_blank" style="background: #27ae60; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin: 0 10px;">🌍 English Translation</a>
+            <a href="http://127.0.0.1:8000/api/hadiths/1590/translations/bn" target="_blank" style="background: #f39c12; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin: 0 10px;">🇧🇩 Bengali Translation</a>
+        </div>
+    </div>
+</body>
+</html>
