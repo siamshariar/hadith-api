@@ -587,56 +587,48 @@ public function getChapter($id): JsonResponse
     /**
      * Get hadiths for chapter by ID
      */
-    public function chapterHadithsById($chapterId): JsonResponse
-    {
-        try {
-            $chapter = Chapter::with(['book:id,code,name_en,name_ar'])->find($chapterId);
-            
-            if (!$chapter) {
-                return $this->notFoundResponse('Chapter not found');
-            }
+public function chapterHadithsById($chapterId): JsonResponse
+{
+    try {
+        $chapter = Chapter::find($chapterId);
 
-            $request = request();
-            $language = $request->query('language', 'en');
-            $perPage = (int) $request->query('per_page', 20);
-            $page = (int) $request->query('page', 1);
+        if (!$chapter) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Chapter not found',
+                'message' => "Chapter with ID '{$chapterId}' not found"
+            ], 404);
+        }
 
-            $hadiths = Hadith::where('chapter_id', $chapterId)
-                ->select('id', 'book_id', 'chapter_id', 'hadith_number', 'arabic_text', 'grade')
-                ->orderBy('hadith_number')
-                ->paginate($perPage, ['*'], 'page', $page);
+        $hadiths = Hadith::where('chapter_id', $chapter->id)
+            ->with(['book:id,code,name_en,name_ar', 'chapter:id,chapter_no,name_en,name_ar'])
+            ->paginate(20);
 
-            $formattedHadiths = $hadiths->map(function($hadith) use ($language) {
-                return [
-                    'id' => (string) $hadith->id,
-                    'hadith_number' => $hadith->hadith_number,
-                    'arabic_text' => $hadith->arabic_text,
-                    'grade' => $hadith->grade
-                ];
-            });
-
-            return $this->successResponse($formattedHadiths, [
+        return response()->json([
+            'success' => true,
+            'data' => $hadiths->items(),
+            'meta' => [
                 'chapter' => [
                     'id' => $chapter->id,
                     'chapter_no' => $chapter->chapter_no,
-                    'name' => $language === 'ar' && $chapter->name_ar ? $chapter->name_ar : $chapter->name_en,
-                    'book' => [
-                        'id' => $chapter->book->id,
-                        'code' => $chapter->book->code,
-                        'name' => $language === 'ar' && $chapter->book->name_ar ? $chapter->book->name_ar : $chapter->book->name_en
-                    ]
+                    'name_en' => $chapter->name_en,
+                    'name_ar' => $chapter->name_ar,
+                    'book_id' => $chapter->book_id
                 ],
                 'total' => $hadiths->total(),
                 'per_page' => $hadiths->perPage(),
                 'current_page' => $hadiths->currentPage(),
                 'last_page' => $hadiths->lastPage()
-            ]);
-
-        } catch (\Exception $e) {
-            Log::error("Chapter hadiths by ID error: {$chapterId}", ['error' => $e->getMessage()]);
-            return $this->errorResponse('Failed to fetch chapter hadiths', $e->getMessage());
-        }
+            ]
+        ], 200, [], JSON_UNESCAPED_UNICODE);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'error' => 'Failed to fetch chapter hadiths',
+            'message' => $e->getMessage()
+        ], 500);
     }
+}
 
     /**
      * Get hadith by ID
