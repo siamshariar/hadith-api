@@ -90,27 +90,6 @@ class HadithController extends Controller
         }
     }
 
-    // Helper method to find chapter
-    private function findChapter($bookId, $chapterIdentifier): ?Chapter
-    {
-        try {
-            // Check if identifier is numeric (chapter_no)
-            if (is_numeric($chapterIdentifier)) {
-                return Chapter::where('book_id', $bookId)
-                    ->where('chapter_no', $chapterIdentifier)
-                    ->first();
-            } else {
-                return Chapter::where('book_id', $bookId)
-                    ->where('name_en', 'LIKE', "%{$chapterIdentifier}%")
-                    ->orWhere('name_ar', 'LIKE', "%{$chapterIdentifier}%")
-                    ->first();
-            }
-        } catch (\Exception $e) {
-            Log::error("Error finding chapter: {$chapterIdentifier}", ['error' => $e->getMessage()]);
-            return null;
-        }
-    }
-
     // Helper method to localize numbers
     private function localizeNumbers($text, $languageCode): string
     {
@@ -136,6 +115,27 @@ class HadithController extends Controller
         }
 
         return $result;
+    }
+
+    // Helper method to find chapter
+    private function findChapter($bookId, $chapterIdentifier): ?Chapter
+    {
+        try {
+            // Check if identifier is numeric (chapter_no)
+            if (is_numeric($chapterIdentifier)) {
+                return Chapter::where('book_id', $bookId)
+                    ->where('chapter_no', $chapterIdentifier)
+                    ->first();
+            } else {
+                return Chapter::where('book_id', $bookId)
+                    ->where('name_en', 'LIKE', "%{$chapterIdentifier}%")
+                    ->orWhere('name_ar', 'LIKE', "%{$chapterIdentifier}%")
+                    ->first();
+            }
+        } catch (\Exception $e) {
+            Log::error("Error finding chapter: {$chapterIdentifier}", ['error' => $e->getMessage()]);
+            return null;
+        }
     }
 
     /**
@@ -504,22 +504,18 @@ class HadithController extends Controller
         try {
             $language = $request->query('language', 'en');
             $perPage = (int) $request->query('per_page', 20);
-            $page = (int) $request->query('page', 1);
 
-            $chapters = Chapter::select('id', 'book_id', 'chapter_no', 'name_en', 'name_ar', 'total_hadith')
-                ->with(['book:id,code,name_en,name_ar'])
+            $chapters = Chapter::with(['book:id,code,name_en,name_ar'])
                 ->orderBy('book_id')
                 ->orderBy('chapter_no')
-                ->paginate($perPage, ['*'], 'page', $page);
+                ->paginate($perPage);
 
-            $formattedChapters = $chapters->map(function($chapter) use ($language) {
+            $formattedChapters = $chapters->getCollection()->map(function($chapter) use ($language) {
                 return [
                     'id' => (string) $chapter->id,
                     'book_id' => (string) $chapter->book_id,
                     'chapter_no' => (string) $chapter->chapter_no,
                     'name' => $language === 'ar' && $chapter->name_ar ? $chapter->name_ar : $chapter->name_en,
-                    'name_en' => $chapter->name_en,
-                    'name_ar' => $chapter->name_ar,
                     'total_hadith' => (string) $chapter->total_hadith,
                     'book' => [
                         'id' => $chapter->book->id,
@@ -545,90 +541,97 @@ class HadithController extends Controller
     /**
      * Get chapter details
      */
-public function getChapter($id): JsonResponse
-{
-    try {
-        $chapter = Chapter::with(['book:id,code,name_en,name_ar'])->find($id);
+    public function getChapter($chapter): JsonResponse
+    {
+        try {
+            $chapterModel = Chapter::with(['book:id,code,name_en,name_ar'])->find($chapter);
 
-        if (!$chapter) {
-            return response()->json([
-                'success' => false,
-                'error' => 'Chapter not found',
-                'message' => "Chapter with ID '{$id}' not found"
-            ], 404);
+            if (!$chapterModel) {
+                return $this->notFoundResponse('Chapter not found');
+            }
+
+            $language = request()->query('language', 'en');
+
+            $chapterData = [
+                'id' => (string) $chapterModel->id,
+                'book_id' => (string) $chapterModel->book_id,
+                'chapter_no' => (string) $chapterModel->chapter_no,
+                'name' => $language === 'ar' && $chapterModel->name_ar ? $chapterModel->name_ar : $chapterModel->name_en,
+                'total_hadith' => (string) $chapterModel->total_hadith,
+                'book' => [
+                    'id' => $chapterModel->book->id,
+                    'code' => $chapterModel->book->code,
+                    'name' => $language === 'ar' && $chapterModel->book->name_ar ? $chapterModel->book->name_ar : $chapterModel->book->name_en
+                ]
+            ];
+
+            return $this->successResponse($chapterData);
+
+        } catch (\Exception $e) {
+            Log::error("Get chapter error: {$chapter}", ['error' => $e->getMessage()]);
+            return $this->errorResponse('Failed to fetch chapter', $e->getMessage());
         }
-
-        return response()->json([
-            'success' => true,
-            'data' => [
-                'id' => (string) $chapter->id,
-                'book_id' => (string) $chapter->book_id,
-                'chapter_no' => (string) $chapter->chapter_no,
-                'name_en' => $chapter->name_en,
-                'name_ar' => $chapter->name_ar,
-                'total_hadith' => (string) $chapter->total_hadith,
-                'book' => $chapter->book ? [
-                    'id' => $chapter->book->id,
-                    'code' => $chapter->book->code,
-                    'name_en' => $chapter->book->name_en,
-                    'name_ar' => $chapter->book->name_ar
-                ] : null
-            ]
-        ], 200, [], JSON_UNESCAPED_UNICODE);
-    } catch (\Exception $e) {
-        return response()->json([
-            'success' => false,
-            'error' => 'Failed to fetch chapter',
-            'message' => $e->getMessage()
-        ], 500);
     }
-}
 
     /**
      * Get hadiths for chapter by ID
      */
-public function chapterHadithsById($chapterId): JsonResponse
-{
-    try {
-        $chapter = Chapter::find($chapterId);
+    public function chapterHadithsById($chapterId): JsonResponse
+    {
+        try {
+            $chapter = Chapter::with(['book:id,code,name_en,name_ar'])->find($chapterId);
 
-        if (!$chapter) {
-            return response()->json([
-                'success' => false,
-                'error' => 'Chapter not found',
-                'message' => "Chapter with ID '{$chapterId}' not found"
-            ], 404);
-        }
+            if (!$chapter) {
+                return $this->notFoundResponse('Chapter not found');
+            }
 
-        $hadiths = Hadith::where('chapter_id', $chapter->id)
-            ->with(['book:id,code,name_en,name_ar', 'chapter:id,chapter_no,name_en,name_ar'])
-            ->paginate(20);
+            $request = request();
+            $language = $request->query('language', 'en');
+            $perPage = (int) $request->query('per_page', 20);
 
-        return response()->json([
-            'success' => true,
-            'data' => $hadiths->items(),
-            'meta' => [
+            $hadiths = Hadith::where('chapter_id', $chapterId)
+                ->with(['translations' => function($query) use ($language) {
+                    $query->where('localization_code', $language);
+                }])
+                ->orderBy('hadith_number')
+                ->paginate($perPage);
+
+            $formattedHadiths = $hadiths->getCollection()->map(function($hadith) use ($language) {
+                $translation = $hadith->translations->first();
+                return [
+                    'id' => (string) $hadith->id,
+                    'hadith_number' => $hadith->hadith_number,
+                    'arabic_text' => $hadith->arabic_text,
+                    'grade' => $hadith->grade,
+                    'translation' => $translation ? [
+                        'language' => $translation->localization_code,
+                        'text' => $this->localizeNumbers($translation->translation_text, $language)
+                    ] : null
+                ];
+            });
+
+            return $this->successResponse($formattedHadiths, [
                 'chapter' => [
                     'id' => $chapter->id,
                     'chapter_no' => $chapter->chapter_no,
-                    'name_en' => $chapter->name_en,
-                    'name_ar' => $chapter->name_ar,
-                    'book_id' => $chapter->book_id
+                    'name' => $language === 'ar' && $chapter->name_ar ? $chapter->name_ar : $chapter->name_en,
+                    'book' => [
+                        'id' => $chapter->book->id,
+                        'code' => $chapter->book->code,
+                        'name' => $language === 'ar' && $chapter->book->name_ar ? $chapter->book->name_ar : $chapter->book->name_en
+                    ]
                 ],
                 'total' => $hadiths->total(),
                 'per_page' => $hadiths->perPage(),
                 'current_page' => $hadiths->currentPage(),
                 'last_page' => $hadiths->lastPage()
-            ]
-        ], 200, [], JSON_UNESCAPED_UNICODE);
-    } catch (\Exception $e) {
-        return response()->json([
-            'success' => false,
-            'error' => 'Failed to fetch chapter hadiths',
-            'message' => $e->getMessage()
-        ], 500);
+            ]);
+
+        } catch (\Exception $e) {
+            Log::error("Chapter hadiths by ID error: {$chapterId}", ['error' => $e->getMessage()]);
+            return $this->errorResponse('Failed to fetch chapter hadiths', $e->getMessage());
+        }
     }
-}
 
     /**
      * Get hadith by ID
