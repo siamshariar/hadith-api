@@ -338,10 +338,7 @@ class HadithController extends Controller
             ->orderBy('hadith_number')
             ->paginate($perPage, ['*'], 'page', $page);
 
-        $formattedHadiths = $hadiths->map(function($hadith) use ($language) {
-            $translation = $hadith->translations->where('localization_code', $language)->first()
-                ?: $hadith->translations->where('localization_code', 'en')->first();
-
+        $formattedHadiths = $hadiths->map(function($hadith) {
             return [
                 'id' => (string) $hadith->id,
                 'hadith_number' => $hadith->hadith_number,
@@ -351,19 +348,21 @@ class HadithController extends Controller
                 'book' => $hadith->book ? [
                     'id' => $hadith->book->id,
                     'code' => $hadith->book->code,
-                    'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                    'name' => $hadith->book->name_en
                 ] : null,
                 'chapter' => $hadith->chapter ? [
                     'id' => $hadith->chapter->id,
                     'chapter_no' => $hadith->chapter->chapter_no,
-                    'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
+                    'name' => $hadith->chapter->name_en
                 ] : null,
-                'translation' => $translation ? [
-                    'language' => $translation->localization_code,
-                    'text' => $this->localizeNumbers($translation->translation_text, $language),
-                    'explanation' => $this->localizeNumbers($translation->explanation, $language),
-                    'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
-                ] : null
+                'translations' => $hadith->translations->map(function($translation) {
+                    return [
+                        'language' => $translation->localization_code,
+                        'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                        'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                        'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                    ];
+                })
             ];
         });
 
@@ -569,10 +568,6 @@ class HadithController extends Controller
             return $this->notFoundResponse('Hadith not found');
         }
 
-        $language = request()->query('language', 'en');
-        $translation = $hadith->translations->where('localization_code', $language)->first()
-            ?: $hadith->translations->where('localization_code', 'en')->first();
-
         $hadithData = [
             'id' => (string) $hadith->id,
             'hadith_number' => $hadith->hadith_number,
@@ -582,19 +577,21 @@ class HadithController extends Controller
             'book' => $hadith->book ? [
                 'id' => $hadith->book->id,
                 'code' => $hadith->book->code,
-                'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                'name' => $hadith->book->name_en
             ] : null,
             'chapter' => $hadith->chapter ? [
                 'id' => $hadith->chapter->id,
                 'chapter_no' => $hadith->chapter->chapter_no,
-                'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
+                'name' => $hadith->chapter->name_en
             ] : null,
-            'translation' => $translation ? [
-                'language' => $translation->localization_code,
-                'text' => $this->localizeNumbers($translation->translation_text, $language),
-                'explanation' => $this->localizeNumbers($translation->explanation, $language),
-                'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
-            ] : null
+            'translations' => $hadith->translations->map(function($translation) {
+                return [
+                    'language' => $translation->localization_code,
+                    'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                    'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                    'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                ];
+            })
         ];
 
         return $this->successResponse($hadithData);
@@ -605,40 +602,7 @@ class HadithController extends Controller
      */
     public function getHadithTranslationById($id, $lang): JsonResponse
     {
-        $hadith = Hadith::with(['book:id,code,name_en,name_ar', 'translations'])->find($id);
-
-        if (!$hadith) {
-            return $this->notFoundResponse('Hadith not found');
-        }
-
-        $translation = $hadith->translations->where('localization_code', $lang)->first();
-
-        if (!$translation) {
-            return $this->notFoundResponse("Translation not found for language '{$lang}'");
-        }
-
-        $translationData = [
-            'hadith' => [
-                'id' => (string) $hadith->id,
-                'hadith_number' => $hadith->hadith_number,
-                'arabic_text' => $hadith->arabic_text,
-                'grade' => $hadith->grade,
-                'book' => $hadith->book ? [
-                    'id' => $hadith->book->id,
-                    'code' => $hadith->book->code,
-                    'name' => $lang === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
-                ] : null
-            ],
-            'translation' => [
-                'id' => $translation->id,
-                'language' => $translation->localization_code,
-                'text' => $this->localizeNumbers($translation->translation_text, $lang),
-                'explanation' => $this->localizeNumbers($translation->explanation, $lang),
-                'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
-            ]
-        ];
-
-        return $this->successResponse($translationData);
+        return redirect()->route('getHadithById', ['id' => $id], 301);
     }
 
     /**
@@ -656,14 +620,13 @@ class HadithController extends Controller
             ->where('hadith_number', $hadith_number)
             ->with([
                 'book:id,code,name_en,name_ar',
-                'chapter:id,chapter_no,name_en,name_ar'
+                'chapter:id,chapter_no,name_en,name_ar',
+                'translations'
             ])->first();
 
         if (!$hadith) {
             return $this->notFoundResponse('Hadith not found');
         }
-
-        $language = request()->query('language', 'en');
 
         $hadithData = [
             'id' => (string) $hadith->id,
@@ -674,13 +637,21 @@ class HadithController extends Controller
             'book' => $hadith->book ? [
                 'id' => $hadith->book->id,
                 'code' => $hadith->book->code,
-                'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                'name' => $hadith->book->name_en
             ] : null,
             'chapter' => $hadith->chapter ? [
                 'id' => $hadith->chapter->id,
                 'chapter_no' => $hadith->chapter->chapter_no,
-                'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
-            ] : null
+                'name' => $hadith->chapter->name_en
+            ] : null,
+            'translations' => $hadith->translations->map(function($translation) {
+                return [
+                    'language' => $translation->localization_code,
+                    'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                    'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                    'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                ];
+            })
         ];
 
         return $this->successResponse($hadithData);
@@ -707,14 +678,13 @@ class HadithController extends Controller
             ->where('hadith_number', $hadith_number)
             ->with([
                 'book:id,code,name_en,name_ar',
-                'chapter:id,chapter_no,name_en,name_ar'
+                'chapter:id,chapter_no,name_en,name_ar',
+                'translations'
             ])->first();
 
         if (!$hadith) {
             return $this->notFoundResponse('Hadith not found');
         }
-
-        $language = request()->query('language', 'en');
 
         $hadithData = [
             'id' => (string) $hadith->id,
@@ -725,13 +695,21 @@ class HadithController extends Controller
             'book' => $hadith->book ? [
                 'id' => $hadith->book->id,
                 'code' => $hadith->book->code,
-                'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                'name' => $hadith->book->name_en
             ] : null,
             'chapter' => $hadith->chapter ? [
                 'id' => $hadith->chapter->id,
                 'chapter_no' => $hadith->chapter->chapter_no,
-                'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
-            ] : null
+                'name' => $hadith->chapter->name_en
+            ] : null,
+            'translations' => $hadith->translations->map(function($translation) {
+                return [
+                    'language' => $translation->localization_code,
+                    'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                    'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                    'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                ];
+            })
         ];
 
         return $this->successResponse($hadithData);
@@ -742,47 +720,7 @@ class HadithController extends Controller
      */
     public function getHadithTranslation($book, $hadith_number, $lang): JsonResponse
     {
-        $bookModel = $this->findBook($book);
-
-        if (!$bookModel) {
-            return $this->notFoundResponse('Book not found');
-        }
-
-        $hadith = Hadith::where('book_id', $bookModel->id)
-            ->where('hadith_number', $hadith_number)
-            ->with(['book:id,code,name_en,name_ar', 'translations'])->first();
-
-        if (!$hadith) {
-            return $this->notFoundResponse('Hadith not found');
-        }
-
-        $translation = $hadith->translations->where('localization_code', $lang)->first();
-
-        if (!$translation) {
-            return $this->notFoundResponse("Translation not found for language '{$lang}'");
-        }
-
-        $translationData = [
-            'hadith' => [
-                'id' => (string) $hadith->id,
-                'hadith_number' => $hadith->hadith_number,
-                'arabic_text' => $hadith->arabic_text,
-                'grade' => $hadith->grade,
-                'book' => [
-                    'id' => $hadith->book->id,
-                    'code' => $hadith->book->code,
-                    'name' => $lang === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
-                ]
-            ],
-            'translation' => [
-                'language' => $translation->localization_code,
-                'text' => $this->localizeNumbers($translation->translation_text, $lang),
-                'explanation' => $this->localizeNumbers($translation->explanation, $lang),
-                'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
-            ]
-        ];
-
-        return $this->successResponse($translationData);
+        return redirect()->route('getHadith', ['book' => $book, 'hadith_number' => $hadith_number], 301);
     }
 
     /**
@@ -790,53 +728,7 @@ class HadithController extends Controller
      */
     public function getHadithTranslationByBookChapterAndNumber($book, $chapter, $hadith_number, $lang): JsonResponse
     {
-        $bookModel = $this->findBook($book);
-
-        if (!$bookModel) {
-            return $this->notFoundResponse('Book not found');
-        }
-
-        $chapterModel = $this->findChapter($bookModel->id, $chapter);
-        if (!$chapterModel) {
-            return $this->notFoundResponse('Chapter not found');
-        }
-
-        $hadith = Hadith::where('book_id', $bookModel->id)
-            ->where('chapter_id', $chapterModel->id)
-            ->where('hadith_number', $hadith_number)
-            ->with(['book:id,code,name_en,name_ar', 'translations'])->first();
-
-        if (!$hadith) {
-            return $this->notFoundResponse('Hadith not found');
-        }
-
-        $translation = $hadith->translations->where('localization_code', $lang)->first();
-
-        if (!$translation) {
-            return $this->notFoundResponse("Translation not found for language '{$lang}'");
-        }
-
-        $translationData = [
-            'hadith' => [
-                'id' => (string) $hadith->id,
-                'hadith_number' => $hadith->hadith_number,
-                'arabic_text' => $hadith->arabic_text,
-                'grade' => $hadith->grade,
-                'book' => [
-                    'id' => $hadith->book->id,
-                    'code' => $hadith->book->code,
-                    'name' => $lang === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
-                ]
-            ],
-            'translation' => [
-                'language' => $translation->localization_code,
-                'text' => $this->localizeNumbers($translation->translation_text, $lang),
-                'explanation' => $this->localizeNumbers($translation->explanation, $lang),
-                'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
-            ]
-        ];
-
-        return $this->successResponse($translationData);
+        return redirect()->route('getHadithByBookChapterAndNumber', ['book' => $book, 'chapter' => $chapter, 'hadith_number' => $hadith_number], 301);
     }
 
     /**
@@ -861,10 +753,7 @@ class HadithController extends Controller
             ->with(['book:id,code,name_en,name_ar', 'chapter:id,chapter_no,name_en,name_ar', 'translations'])
             ->paginate($perPage, ['*'], 'page', $page);
 
-        $formattedHadiths = $hadiths->map(function($hadith) use ($language) {
-            $translation = $hadith->translations->where('localization_code', $language)->first()
-                ?: $hadith->translations->where('localization_code', 'en')->first();
-
+        $formattedHadiths = $hadiths->map(function($hadith) {
             return [
                 'id' => (string) $hadith->id,
                 'hadith_number' => $hadith->hadith_number,
@@ -873,17 +762,21 @@ class HadithController extends Controller
                 'book' => $hadith->book ? [
                     'id' => $hadith->book->id,
                     'code' => $hadith->book->code,
-                    'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                    'name' => $hadith->book->name_en
                 ] : null,
                 'chapter' => $hadith->chapter ? [
                     'id' => $hadith->chapter->id,
                     'chapter_no' => $hadith->chapter->chapter_no,
-                    'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
+                    'name' => $hadith->chapter->name_en
                 ] : null,
-                'translation' => $translation ? [
-                    'language' => $translation->localization_code,
-                    'text' => $this->localizeNumbers($translation->translation_text, $language)
-                ] : null
+                'translations' => $hadith->translations->map(function($translation) {
+                    return [
+                        'language' => $translation->localization_code,
+                        'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                        'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                        'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                    ];
+                })
             ];
         });
 
@@ -942,8 +835,6 @@ class HadithController extends Controller
      */
     public function random(): JsonResponse
     {
-        $language = request()->query('language', 'en');
-
         $hadith = Hadith::with([
             'book:id,code,name_en,name_ar',
             'chapter:id,chapter_no,name_en,name_ar',
@@ -954,9 +845,6 @@ class HadithController extends Controller
             return $this->notFoundResponse('No hadiths found');
         }
 
-        $translation = $hadith->translations->where('localization_code', $language)->first()
-            ?: $hadith->translations->where('localization_code', 'en')->first();
-
         $hadithData = [
             'id' => (string) $hadith->id,
             'hadith_number' => $hadith->hadith_number,
@@ -965,17 +853,21 @@ class HadithController extends Controller
             'book' => $hadith->book ? [
                 'id' => $hadith->book->id,
                 'code' => $hadith->book->code,
-                'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                'name' => $hadith->book->name_en
             ] : null,
             'chapter' => $hadith->chapter ? [
                 'id' => $hadith->chapter->id,
                 'chapter_no' => $hadith->chapter->chapter_no,
-                'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
+                'name' => $hadith->chapter->name_en
             ] : null,
-            'translation' => $translation ? [
-                'language' => $translation->localization_code,
-                'text' => $this->localizeNumbers($translation->translation_text, $language)
-            ] : null
+            'translations' => $hadith->translations->map(function($translation) {
+                return [
+                    'language' => $translation->localization_code,
+                    'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                    'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                    'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                ];
+            })
         ];
 
         return $this->successResponse($hadithData);
@@ -1053,10 +945,7 @@ class HadithController extends Controller
                 ->limit($limit)
                 ->get();
 
-            $categoryData['hadiths'] = $hadiths->map(function($hadith) use ($language) {
-                $translation = $hadith->translations->where('localization_code', $language)->first()
-                    ?: $hadith->translations->where('localization_code', 'en')->first();
-
+            $categoryData['hadiths'] = $hadiths->map(function($hadith) {
                 return [
                     'id' => (string) $hadith->id,
                     'hadith_number' => $hadith->hadith_number,
@@ -1065,17 +954,21 @@ class HadithController extends Controller
                     'book' => $hadith->book ? [
                         'id' => $hadith->book->id,
                         'code' => $hadith->book->code,
-                        'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en,
+                        'name' => $hadith->book->name_en,
                     ] : null,
                     'chapter' => $hadith->chapter ? [
                         'id' => $hadith->chapter->id,
                         'chapter_no' => $hadith->chapter->chapter_no,
-                        'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en,
+                        'name' => $hadith->chapter->name_en,
                     ] : null,
-                    'translation' => $translation ? [
-                        'language' => $translation->localization_code,
-                        'text' => $this->localizeNumbers($translation->translation_text, $language),
-                    ] : null,
+                    'translations' => $hadith->translations->map(function($translation) {
+                        return [
+                            'language' => $translation->localization_code,
+                            'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                            'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                            'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                        ];
+                    })
                 ];
             });
         }
@@ -1136,10 +1029,7 @@ class HadithController extends Controller
             ->with(['book:id,code,name_en,name_ar', 'chapter:id,chapter_no,name_en,name_ar', 'translations'])
             ->paginate($perPage, ['*'], 'page', $page);
 
-        $formattedHadiths = $hadiths->map(function($hadith) use ($language) {
-            $translation = $hadith->translations->where('localization_code', $language)->first()
-                ?: $hadith->translations->where('localization_code', 'en')->first();
-
+        $formattedHadiths = $hadiths->map(function($hadith) {
             return [
                 'id' => (string) $hadith->id,
                 'hadith_number' => $hadith->hadith_number,
@@ -1148,17 +1038,21 @@ class HadithController extends Controller
                 'book' => $hadith->book ? [
                     'id' => $hadith->book->id,
                     'code' => $hadith->book->code,
-                    'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                    'name' => $hadith->book->name_en
                 ] : null,
                 'chapter' => $hadith->chapter ? [
                     'id' => $hadith->chapter->id,
                     'chapter_no' => $hadith->chapter->chapter_no,
-                    'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
+                    'name' => $hadith->chapter->name_en
                 ] : null,
-                'translation' => $translation ? [
-                    'language' => $translation->localization_code,
-                    'text' => $this->localizeNumbers($translation->translation_text, $language)
-                ] : null
+                'translations' => $hadith->translations->map(function($translation) {
+                    return [
+                        'language' => $translation->localization_code,
+                        'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                        'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                        'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                    ];
+                })
             ];
         });
 
@@ -1352,10 +1246,10 @@ class HadithController extends Controller
 
         $hadiths = Hadith::whereIn('chapter_id', $chapters)
             ->select('id', 'book_id', 'chapter_id', 'hadith_number', 'arabic_text', 'grade')
-            ->with(['book:id,code,name_en,name_ar', 'chapter:id,chapter_no,name_en,name_ar'])
+            ->with(['book:id,code,name_en,name_ar', 'chapter:id,chapter_no,name_en,name_ar', 'translations'])
             ->paginate($perPage, ['*'], 'page', $page);
 
-        $formattedHadiths = $hadiths->map(function($hadith) use ($language) {
+        $formattedHadiths = $hadiths->map(function($hadith) {
             return [
                 'id' => (string) $hadith->id,
                 'hadith_number' => $hadith->hadith_number,
@@ -1364,13 +1258,21 @@ class HadithController extends Controller
                 'book' => $hadith->book ? [
                     'id' => $hadith->book->id,
                     'code' => $hadith->book->code,
-                    'name' => $language === 'ar' && $hadith->book->name_ar ? $hadith->book->name_ar : $hadith->book->name_en
+                    'name' => $hadith->book->name_en
                 ] : null,
                 'chapter' => $hadith->chapter ? [
                     'id' => $hadith->chapter->id,
                     'chapter_no' => $hadith->chapter->chapter_no,
-                    'name' => $language === 'ar' && $hadith->chapter->name_ar ? $hadith->chapter->name_ar : $hadith->chapter->name_en
-                ] : null
+                    'name' => $hadith->chapter->name_en
+                ] : null,
+                'translations' => $hadith->translations->map(function($translation) {
+                    return [
+                        'language' => $translation->localization_code,
+                        'text' => $this->localizeNumbers($translation->translation_text, $translation->localization_code),
+                        'explanation' => $this->localizeNumbers($translation->explanation, $translation->localization_code),
+                        'hints' => $translation->hints ? (is_string($translation->hints) ? json_decode($translation->hints, true) : $translation->hints) : []
+                    ];
+                })
             ];
         });
 
