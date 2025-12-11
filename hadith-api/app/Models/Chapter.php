@@ -4,19 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
 class Chapter extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $fillable = [
         'book_id',
         'chapter_no',
         'name_en',
         'name_ar',
-        'total_hadith',
-        'slug'
+        'total_hadith'
     ];
 
     public function book()
