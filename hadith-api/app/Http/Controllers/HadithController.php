@@ -786,13 +786,13 @@ class HadithController extends Controller
 
             // Get translations for the requested language
             $translations = $hadith->translations->filter(function($translation) use ($language) {
-                return $translation->localization_code === $language;
+                return $translation->language_code === $language;
             })->values();
 
             // Fallback to English if no translation in requested language
             if ($translations->isEmpty() && $language !== 'en') {
                 $translations = $hadith->translations->filter(function($translation) {
-                    return $translation->localization_code === 'en';
+                    return $translation->language_code === 'en';
                 })->values();
             }
 
@@ -815,7 +815,7 @@ class HadithController extends Controller
                 'translations' => $translations->map(function($translation) use ($language) {
                     return [
                         'id' => (string) $translation->id,
-                        'language' => $translation->localization_code,
+                        'language' => $translation->language_code,
                         'text' => $this->localizeNumbers($translation->translation_text, $language),
                         'explanation' => $this->localizeNumbers($translation->explanation, $language),
                         'hints' => $translation->hints
@@ -885,14 +885,14 @@ class HadithController extends Controller
             // Find the translation for requested language
             $translation = \DB::table('hadith_translations')
                 ->where('hadith_id', $hadith->id)
-                ->where('localization_code', $lang)
+                ->where('language_code', $lang)
                 ->first();
 
             // Fallback to English if requested translation not found
             if (!$translation && $lang !== 'en') {
                 $translation = \DB::table('hadith_translations')
                     ->where('hadith_id', $hadith->id)
-                    ->where('localization_code', 'en')
+                    ->where('language_code', 'en')
                     ->first();
 
                 if ($translation) {
@@ -928,7 +928,7 @@ class HadithController extends Controller
                     'translation' => [
                         'id' => $translation->id,
                         'hadith_id' => $translation->hadith_id,
-                        'language' => $translation->localization_code,
+                        'language' => $translation->language_code,
                         'text' => $this->localizeNumbers($translation->translation_text, $lang),
                         'explanation' => $this->localizeNumbers($translation->explanation, $lang),
                         'hints' => $translation->hints
