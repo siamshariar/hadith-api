@@ -741,105 +741,102 @@ class HadithController extends Controller
         }
     }
 
-    /**
-     * API - Get hadith by book and number
-     */
-    public function getHadith($book, $hadith_number, $chapter = null): JsonResponse
-    {
-        try {
-            // Find the book using helper method
-            $bookModel = $this->findBook($book);
-            
-            if (!$bookModel) {
-                throw new \Exception('Book not found');
+public function getHadith($book, $hadith_number, $chapter = null): JsonResponse
+{
+    try {
+        $bookModel = $this->findBook($book);
+
+        if (!$bookModel) {
+            throw new \Exception('Book not found');
+        }
+
+        $query = Hadith::where('book_id', $bookModel->id)
+            ->where('hadith_number', $hadith_number);
+
+        if ($chapter) {
+            $chapterModel = Chapter::where('book_id', $bookModel->id)
+                ->where('chapter_no', $chapter)
+                ->first();
+
+            if ($chapterModel) {
+                $query->where('chapter_id', $chapterModel->id);
             }
+        }
 
-            // Find the hadith
-            $query = Hadith::where('book_id', $bookModel->id)
-                ->where('hadith_number', $hadith_number);
+        // FIX: Proper eager loading with translations
+        $hadith = $query->with([
+            'book:id,code,name_en,name_ar',
+            'chapter:id,chapter_no,name_en,name_ar',
+            'translations'  // This should load ALL translations
+        ])->first();
 
-            if ($chapter) {
-                $chapterModel = Chapter::where('book_id', $bookModel->id)
-                    ->where('chapter_no', $chapter)
-                    ->first();
-                
-                if ($chapterModel) {
-                    $query->where('chapter_id', $chapterModel->id);
-                }
-            }
-
-            $hadith = $query->with([
-                'book:id,code,name_en,name_ar',
-                'chapter:id,chapter_no,name_en,name_ar',
-                'translations'  // ADD THIS LINE to load translations
-            ])->first();
-
-            if (!$hadith) {
-                return response()->json([
-                    'success' => false,
-                    'error' => 'Hadith not found',
-                    'message' => "Hadith number '{$hadith_number}' not found in book '{$book}'"
-                ], 404);
-            }
-
-            $language = request()->query('language', 'en');
-
-            // Get translations for the requested language
-            $translations = $hadith->translations->filter(function($translation) use ($language) {
-                return $translation->language_code === $language;
-            })->values();
-
-            // Fallback to English if no translation in requested language
-            if ($translations->isEmpty() && $language !== 'en') {
-                $translations = $hadith->translations->filter(function($translation) {
-                    return $translation->language_code === 'en';
-                })->values();
-            }
-
-            $hadithData = [
-                'id' => (string) $hadith->id,
-                'hadith_number' => $hadith->hadith_number,
-                'arabic_text' => $hadith->arabic_text,
-                'grade' => $hadith->grade,
-                'references' => $hadith->references,
-                'book' => [
-                    'id' => $hadith->book->id,
-                    'code' => $hadith->book->code,
-                    'name' => $language === 'ar' ? $hadith->book->name_ar : $hadith->book->name_en
-                ],
-                'chapter' => [
-                    'id' => $hadith->chapter->id,
-                    'chapter_no' => $hadith->chapter->chapter_no,
-                    'name' => $language === 'ar' ? $hadith->chapter->name_ar : $hadith->chapter->name_en
-                ],
-                'translations' => $translations->map(function($translation) use ($language) {
-                    return [
-                        'id' => (string) $translation->id,
-                        'language' => $translation->language_code,
-                        'text' => $this->localizeNumbers($translation->translation_text, $language),
-                        'explanation' => $this->localizeNumbers($translation->explanation, $language),
-                        'hints' => $translation->hints
-                    ];
-                })
-            ];
-
-            return response()->json([
-                'success' => true,
-                'data' => $hadithData,
-                'meta' => [
-                    'language' => $language,
-                    'translation_found' => !$translations->isEmpty()
-                ]
-            ], 200, [], JSON_UNESCAPED_UNICODE);
-
-        } catch (\Exception $e) {
+        if (!$hadith) {
             return response()->json([
                 'success' => false,
                 'error' => 'Hadith not found',
-                'message' => $e->getMessage()
+                'message' => "Hadith number '{$hadith_number}' not found in book '{$book}'"
             ], 404);
         }
+
+        $language = request()->query('language', 'en');
+
+        // Get translations for requested language
+        $filteredTranslations = $hadith->translations->filter(function($translation) use ($language) {
+            return $translation->language_code === $language;
+        });
+
+        // Fallback to English if no translation in requested language
+        if ($filteredTranslations->isEmpty() && $language !== 'en') {
+            $filteredTranslations = $hadith->translations->filter(function($translation) {
+                return $translation->language_code === 'en';
+            });
+        }
+
+        $hadithData = [
+            'id' => (string) $hadith->id,
+            'hadith_number' => $hadith->hadith_number,
+            'arabic_text' => $hadith->arabic_text,
+            'grade' => $hadith->grade,
+            'references' => $hadith->references,
+            'book' => [
+                'id' => $hadith->book->id,
+                'code' => $hadith->book->code,
+                'name' => $language === 'ar' ? $hadith->book->name_ar : $hadith->book->name_en
+            ],
+            'chapter' => [
+                'id' => $hadith->chapter->id,
+                'chapter_no' => $hadith->chapter->chapter_no,
+                'name' => $language === 'ar' ? $hadith->chapter->name_ar : $hadith->chapter->name_en
+            ],
+            'translations' => $filteredTranslations->map(function($translation) use ($language) {
+                return [
+                    'id' => (string) $translation->id,
+                    'language' => $translation->language_code,
+                    'text' => $this->localizeNumbers($translation->translation_text, $language),
+                    'explanation' => $this->localizeNumbers($translation->explanation, $language),
+                    'hints' => $translation->hints
+                ];
+            })->values()->toArray()  // Convert to array
+        ];
+
+        return response()->json([
+            'success' => true,
+            'data' => $hadithData,
+            'meta' => [
+                'language' => $language,
+                'translation_found' => !$filteredTranslations->isEmpty(),
+                'total_translations_loaded' => $hadith->translations->count()
+            ]
+        ], 200, [], JSON_UNESCAPED_UNICODE);
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'error' => 'Failed to fetch hadith',
+            'message' => $e->getMessage()
+        ], 500);
     }
+}
 
     /**
      * API - Get hadith translation
