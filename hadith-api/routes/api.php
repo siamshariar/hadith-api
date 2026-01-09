@@ -32,14 +32,14 @@ Route::get('/categories/{category}', [HadithController::class, 'getCategory']);
 
 // Books - specific paths before variable paths
 Route::get('/books', [HadithController::class, 'books']);
-Route::get('/books/{book}/chapters/{chapter}/hadiths/{hadith_number}/translations/{lang}', [HadithController::class, 'getHadithTranslation']);
+Route::get('/books/{book}/chapters/{chapter}/hadiths/{hadith_number}/translations/{lang}', [HadithController::class, 'getHadithTranslation'])->name('hadith.chapter.translation');
 Route::get('/books/{book}/chapters/{chapter}/hadeeths/{hadith_number}/translations/{lang}', [HadithController::class, 'getHadithTranslation']); // Alias
 Route::get('/books/{book}/chapters/{chapter}/hadiths/{hadith_number}', [HadithController::class, 'getHadith']);
 Route::get('/books/{book}/chapters/{chapter}/hadeeths/{hadith_number}', [HadithController::class, 'getHadith']); // Alias
 Route::get('/books/{book}/chapters/{chapter}/hadeeths', [HadithController::class, 'chapterHadiths']); // Alias
 Route::get('/books/{book}/chapters/{chapter}', [HadithController::class, 'chapterHadiths']);
 Route::get('/books/{book}/chapters', [HadithController::class, 'bookChapters']);
-Route::get('/books/{book}/hadiths/{hadith_number}/translations/{lang}', [HadithController::class, 'getHadithTranslation']);
+Route::get('/books/{book}/hadiths/{hadith_number}/translations/{lang}', [HadithController::class, 'getHadithTranslation'])->name('hadith.translation');
 Route::get('/books/{book}/hadeeths/{hadith_number}/translations/{lang}', [HadithController::class, 'getHadithTranslation']); // Alias
 Route::get('/books/{book}/hadiths/{hadith_number}', [HadithController::class, 'getHadith']);
 Route::get('/books/{book}/hadeeths/{hadith_number}', [HadithController::class, 'getHadith']); // Alias
